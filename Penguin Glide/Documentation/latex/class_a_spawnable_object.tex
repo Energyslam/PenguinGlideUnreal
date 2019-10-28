@@ -1,0 +1,148 @@
+\section{A\+Spawnable\+Object Class Reference}
+\label{class_a_spawnable_object}\index{ASpawnableObject@{ASpawnableObject}}
+
+
+This class takes care of spawning powerups on the track.  
+
+
+
+
+{\ttfamily \#include $<$Spawnable\+Object.\+h$>$}
+
+Inheritance diagram for A\+Spawnable\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_spawnable_object}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ A\+Spawnable\+Object} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \textbf{ Spawn\+Object} ()
+\begin{DoxyCompactList}\small\item\em This Function is responsible for spawning the objects. \end{DoxyCompactList}\item 
+F\+Vector \textbf{ Get\+Vertices} (T\+Array$<$ F\+Vector $>$ vertices, F\+Vector track\+Scale, T\+Array$<$ F\+Vector $>$ normals)
+\begin{DoxyCompactList}\small\item\em This function is responsible for getting the track vertices and setting the exact location on which the powerup will spawn. \end{DoxyCompactList}\item 
+virtual void \textbf{ Tick} (float Delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Tick function of U\+E4, is called every frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T\+Subclass\+Of$<$ class \textbf{ A\+Power\+Up} $>$ \textbf{ Power\+Up\+BP}
+\begin{DoxyCompactList}\small\item\em The blueprint of the powerup, which will be spawned. Inherits from \doxyref{A\+Power\+Up}{p.}{class_a_power_up}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class takes care of spawning powerups on the track. 
+
+Each time a new mesh section is created in the class Track\+Generator\+Bezier, the function \doxyref{Get\+Vertices()}{p.}{class_a_spawnable_object_a61207dbb5413abbad589966bc3913edc} is called in the function Create\+Mesh() of Track\+Generator\+Bezier. Spawning the objects takes place in the following order\+:
+
+
+\begin{DoxyItemize}
+\item \doxyref{Get\+Vertices()}{p.}{class_a_spawnable_object_a61207dbb5413abbad589966bc3913edc} get called to get the vertices of the track on which powerups can be spawned
+\item From all the vertices on the track, a random one will be chosen on which the powerup will spawn
+\item If there is already an other object on that vertex, a new one will be picked untill it finds one which is free
+\item The powerup will get a small offset in the direction of the normal of the vertex it spawns on
+\begin{DoxyItemize}
+\item \doxyref{Spawn\+Object()}{p.}{class_a_spawnable_object_a3d8e547ac53cdf84030f95d20365816c} is called to spawn the powerup.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+This process will repeat itself each time a new mesh section spawns.
+
+{\bfseries{Design choices}} We chose to spawn a powerup each time a new mesh seciton is created, because we want the powerups to spawn frequently since they sometimes might be tricky to pick up. This way the player has enough oppurtunities to grab a powerup. We also chose to give the powerup a small offset from the track to give the impression its floating above the track.
+
+{\bfseries{Note\+: -\/ This script should be placed in the scene for the meshes to be able to spawn.
+\begin{DoxyItemize}
+\item The actor blueprint of the object to be spawned should be assigned in the inspector. \begin{DoxyAuthor}{Author}
+Lisa Groen 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+10/3/2019 
+\end{DoxyDate}
+
+\end{DoxyItemize}}}
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_a_spawnable_object_a617e54af9090187a1fa76124a689c402}} 
+\index{ASpawnableObject@{ASpawnableObject}!ASpawnableObject@{ASpawnableObject}}
+\index{ASpawnableObject@{ASpawnableObject}!ASpawnableObject@{ASpawnableObject}}
+\subsubsection{ASpawnableObject()}
+{\footnotesize\ttfamily A\+Spawnable\+Object\+::\+A\+Spawnable\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyItemize}
+\item Actors tickevents are set to true. 
+\end{DoxyItemize}
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_a_spawnable_object_a61207dbb5413abbad589966bc3913edc}} 
+\index{ASpawnableObject@{ASpawnableObject}!GetVertices@{GetVertices}}
+\index{GetVertices@{GetVertices}!ASpawnableObject@{ASpawnableObject}}
+\subsubsection{GetVertices()}
+{\footnotesize\ttfamily F\+Vector A\+Spawnable\+Object\+::\+Get\+Vertices (\begin{DoxyParamCaption}\item[{T\+Array$<$ F\+Vector $>$}]{vertices,  }\item[{F\+Vector}]{track\+Scale,  }\item[{T\+Array$<$ F\+Vector $>$}]{normals }\end{DoxyParamCaption})}
+
+
+
+This function is responsible for getting the track vertices and setting the exact location on which the powerup will spawn. 
+
+
+\begin{DoxyItemize}
+\item Takes a random vertex on the track untill it finds a vertex on which nothing has spawned yet
+\item Gives a small offset in the direction of the vertex normal to create a floating effect
+\end{DoxyItemize}
+
+\paragraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item {\bfseries{{\itshape T\+Array$<$\+F\+Vector$>$} vertices}} The vertices of the track
+\item {\bfseries{{\itshape F\+Vector} track\+Scale}} The scale of the track, the vertex should be multiplied by this number to find the exact location
+\item {\bfseries{{\itshape T\+Array$<$\+F\+Vector$>$} normals}} The vertex normals of the track, is used to calculate the offset of the powerups. 
+\end{DoxyItemize}\mbox{\label{class_a_spawnable_object_a3d8e547ac53cdf84030f95d20365816c}} 
+\index{ASpawnableObject@{ASpawnableObject}!SpawnObject@{SpawnObject}}
+\index{SpawnObject@{SpawnObject}!ASpawnableObject@{ASpawnableObject}}
+\subsubsection{SpawnObject()}
+{\footnotesize\ttfamily void A\+Spawnable\+Object\+::\+Spawn\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This Function is responsible for spawning the objects. 
+
+Objects get spawned using Unreal Engines World-\/$>$Spawn\+Actor$<$\+A\+Actor$>$() \mbox{\label{class_a_spawnable_object_ab3932866cd66536c0dd8af22e910ebdc}} 
+\index{ASpawnableObject@{ASpawnableObject}!Tick@{Tick}}
+\index{Tick@{Tick}!ASpawnableObject@{ASpawnableObject}}
+\subsubsection{Tick()}
+{\footnotesize\ttfamily void A\+Spawnable\+Object\+::\+Tick (\begin{DoxyParamCaption}\item[{float}]{Delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Tick function of U\+E4, is called every frame. 
+
+calls \doxyref{Spawn\+Object()}{p.}{class_a_spawnable_object_a3d8e547ac53cdf84030f95d20365816c} if the spawning position is calculated 
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_a_spawnable_object_a0b02416d8684de77e92b64ef9daf8144}} 
+\index{ASpawnableObject@{ASpawnableObject}!PowerUpBP@{PowerUpBP}}
+\index{PowerUpBP@{PowerUpBP}!ASpawnableObject@{ASpawnableObject}}
+\subsubsection{PowerUpBP}
+{\footnotesize\ttfamily T\+Subclass\+Of$<$class \textbf{ A\+Power\+Up}$>$ A\+Spawnable\+Object\+::\+Power\+Up\+BP\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The blueprint of the powerup, which will be spawned. Inherits from \doxyref{A\+Power\+Up}{p.}{class_a_power_up}. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/\textbf{ Spawnable\+Object.\+h}\item 
+Penguin\+Glide/\textbf{ Spawnable\+Object.\+cpp}\end{DoxyCompactItemize}

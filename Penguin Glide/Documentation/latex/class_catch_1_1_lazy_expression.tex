@@ -1,0 +1,112 @@
+\section{Catch\+::Lazy\+Expression Class Reference}
+\label{class_catch_1_1_lazy_expression}\index{Catch::LazyExpression@{Catch::LazyExpression}}
+
+
+{\ttfamily \#include $<$catch.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Lazy\+Expression} (bool is\+Negated)
+\item 
+\textbf{ Lazy\+Expression} (\textbf{ Lazy\+Expression} const \&other)
+\item 
+\textbf{ Lazy\+Expression} \& \textbf{ operator=} (\textbf{ Lazy\+Expression} const \&)=delete
+\item 
+\textbf{ operator bool} () const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ I\+Transient\+Expression} const  $\ast$ \textbf{ m\+\_\+transient\+Expression} = nullptr
+\item 
+bool \textbf{ m\+\_\+is\+Negated}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Assertion\+Handler}
+\item 
+struct \textbf{ Assertion\+Stats}
+\item 
+class \textbf{ Run\+Context}
+\item 
+auto \textbf{ operator$<$$<$} (std\+::ostream \&os, \textbf{ Lazy\+Expression} const \&lazy\+Expr) -\/$>$ std\+::ostream \&
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_catch_1_1_lazy_expression_a47186c2487bd4bf871e870ba8048553a}} 
+\index{Catch::LazyExpression@{Catch::LazyExpression}!LazyExpression@{LazyExpression}}
+\index{LazyExpression@{LazyExpression}!Catch::LazyExpression@{Catch::LazyExpression}}
+\subsubsection{LazyExpression()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Catch\+::\+Lazy\+Expression\+::\+Lazy\+Expression (\begin{DoxyParamCaption}\item[{bool}]{is\+Negated }\end{DoxyParamCaption})}
+
+\mbox{\label{class_catch_1_1_lazy_expression_ab82d5e94df0e159b018fbde0170e46f8}} 
+\index{Catch::LazyExpression@{Catch::LazyExpression}!LazyExpression@{LazyExpression}}
+\index{LazyExpression@{LazyExpression}!Catch::LazyExpression@{Catch::LazyExpression}}
+\subsubsection{LazyExpression()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Catch\+::\+Lazy\+Expression\+::\+Lazy\+Expression (\begin{DoxyParamCaption}\item[{\textbf{ Lazy\+Expression} const \&}]{other }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_catch_1_1_lazy_expression_acdb846cb230cecfc6aca7a925b31fbca}} 
+\index{Catch::LazyExpression@{Catch::LazyExpression}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!Catch::LazyExpression@{Catch::LazyExpression}}
+\subsubsection{operator bool()}
+{\footnotesize\ttfamily Catch\+::\+Lazy\+Expression\+::operator bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\label{class_catch_1_1_lazy_expression_ae4ae00d4f36f084c369f2da36565a822}} 
+\index{Catch::LazyExpression@{Catch::LazyExpression}!operator=@{operator=}}
+\index{operator=@{operator=}!Catch::LazyExpression@{Catch::LazyExpression}}
+\subsubsection{operator=()}
+{\footnotesize\ttfamily \textbf{ Lazy\+Expression}\& Catch\+::\+Lazy\+Expression\+::operator= (\begin{DoxyParamCaption}\item[{\textbf{ Lazy\+Expression} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\label{class_catch_1_1_lazy_expression_a4301a3aa57b612dd8b6ef8461742ecab}} 
+\index{Catch::LazyExpression@{Catch::LazyExpression}!AssertionHandler@{AssertionHandler}}
+\index{AssertionHandler@{AssertionHandler}!Catch::LazyExpression@{Catch::LazyExpression}}
+\subsubsection{AssertionHandler}
+{\footnotesize\ttfamily friend class \textbf{ Assertion\+Handler}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\label{class_catch_1_1_lazy_expression_a64019eb137f5ce447cdc71cb80b6e7a4}} 
+\index{Catch::LazyExpression@{Catch::LazyExpression}!AssertionStats@{AssertionStats}}
+\index{AssertionStats@{AssertionStats}!Catch::LazyExpression@{Catch::LazyExpression}}
+\subsubsection{AssertionStats}
+{\footnotesize\ttfamily friend struct Assertion\+Stats\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\label{class_catch_1_1_lazy_expression_aa01086581cab2fcd2d4580b8fa787dfc}} 
+\index{Catch::LazyExpression@{Catch::LazyExpression}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Catch::LazyExpression@{Catch::LazyExpression}}
+\subsubsection{operator$<$$<$}
+{\footnotesize\ttfamily auto operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{\textbf{ Lazy\+Expression} const \&}]{lazy\+Expr }\end{DoxyParamCaption}) -\/$>$  std\+::ostream \&\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\label{class_catch_1_1_lazy_expression_af3aa096bb29a772bc534830f29a2ce7a}} 
+\index{Catch::LazyExpression@{Catch::LazyExpression}!RunContext@{RunContext}}
+\index{RunContext@{RunContext}!Catch::LazyExpression@{Catch::LazyExpression}}
+\subsubsection{RunContext}
+{\footnotesize\ttfamily friend class Run\+Context\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_catch_1_1_lazy_expression_a975fdfe2bb139512024bb479d478425e}} 
+\index{Catch::LazyExpression@{Catch::LazyExpression}!m\_isNegated@{m\_isNegated}}
+\index{m\_isNegated@{m\_isNegated}!Catch::LazyExpression@{Catch::LazyExpression}}
+\subsubsection{m\_isNegated}
+{\footnotesize\ttfamily bool Catch\+::\+Lazy\+Expression\+::m\+\_\+is\+Negated\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_catch_1_1_lazy_expression_a5a9ce4c2401a262c21b4e107551180bc}} 
+\index{Catch::LazyExpression@{Catch::LazyExpression}!m\_transientExpression@{m\_transientExpression}}
+\index{m\_transientExpression@{m\_transientExpression}!Catch::LazyExpression@{Catch::LazyExpression}}
+\subsubsection{m\_transientExpression}
+{\footnotesize\ttfamily \textbf{ I\+Transient\+Expression} const$\ast$ Catch\+::\+Lazy\+Expression\+::m\+\_\+transient\+Expression = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/\textbf{ catch.\+hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,426 @@
+\section{A\+User\+Interface\+Manager Class Reference}
+\label{class_a_user_interface_manager}\index{AUserInterfaceManager@{AUserInterfaceManager}}
+
+
+This header manages the user interface.  
+
+
+
+
+{\ttfamily \#include $<$User\+Interface\+Manager.\+h$>$}
+
+Inheritance diagram for A\+User\+Interface\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_user_interface_manager}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ A\+User\+Interface\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual void \textbf{ Tick} (float Delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Called every frame. \end{DoxyCompactList}\item 
+float \textbf{ Get\+Current\+Score} ()
+\begin{DoxyCompactList}\small\item\em Returns the current score. \end{DoxyCompactList}\item 
+float \textbf{ Get\+Last\+Score} ()
+\begin{DoxyCompactList}\small\item\em Returns the last score. \end{DoxyCompactList}\item 
+float \textbf{ Get\+Score\+Multiplier} ()
+\begin{DoxyCompactList}\small\item\em Returns the current score multiplier. \end{DoxyCompactList}\item 
+float \textbf{ Get\+Current\+Speed} ()
+\begin{DoxyCompactList}\small\item\em Returns the current speed. \end{DoxyCompactList}\item 
+void \textbf{ Set\+Score\+Multiplier\+To} (float new\+Multiplier, int duration)
+\begin{DoxyCompactList}\small\item\em Change score multiplier. \end{DoxyCompactList}\item 
+void \textbf{ Reset\+Score\+Multiplier} ()
+\begin{DoxyCompactList}\small\item\em Resets score multiplier. \end{DoxyCompactList}\item 
+void \textbf{ Add\+Points\+To\+Score} (float points\+To\+Add)
+\begin{DoxyCompactList}\small\item\em Adds X to the current score. \end{DoxyCompactList}\item 
+void \textbf{ Save\+Points} ()
+\begin{DoxyCompactList}\small\item\em Save the score in the Singleton. \end{DoxyCompactList}\item 
+void \textbf{ Get\+Highscores} ()
+\begin{DoxyCompactList}\small\item\em Collects all highscores from text file. \end{DoxyCompactList}\item 
+void \textbf{ Set\+Highscores} ()
+\begin{DoxyCompactList}\small\item\em Applies changes in highscore array to text file. \end{DoxyCompactList}\item 
+void \textbf{ Add\+Int\+To\+High\+Scores\+String\+Array} (int number\+To\+Add)
+\begin{DoxyCompactList}\small\item\em Adds a new highscore to the array. \end{DoxyCompactList}\item 
+void \textbf{ Convert\+And\+Sort\+High\+Score\+Array} ()
+\begin{DoxyCompactList}\small\item\em Sorts the highscore array, using the newly added data. \end{DoxyCompactList}\item 
+T\+Array$<$ F\+String $>$ \textbf{ Get\+Top\+X\+High\+Scores} (int amount\+To\+Get)
+\begin{DoxyCompactList}\small\item\em Returns top X highscores. \end{DoxyCompactList}\item 
+void \textbf{ Game\+Over} ()
+\begin{DoxyCompactList}\small\item\em Loads the Game Over menu map. \end{DoxyCompactList}\item 
+void \textbf{ Countdown} ()
+\begin{DoxyCompactList}\small\item\em Counts down for the start sequence. \end{DoxyCompactList}\item 
+void \textbf{ Start\+Playing} ()
+\begin{DoxyCompactList}\small\item\em Starts playing the game. \end{DoxyCompactList}\item 
+int \textbf{ Get\+Seconds\+Left} ()
+\begin{DoxyCompactList}\small\item\em Returns the amount of seconds left before the game starts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Begin\+Play} () override
+\begin{DoxyCompactList}\small\item\em Called at the start of the game or when spawned. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \textbf{ current\+Score} = 0
+\item 
+float \textbf{ last\+Score}
+\item 
+float \textbf{ score\+Multiplier} = 1
+\item 
+float \textbf{ speed\+Score\+Multiplier} = 1
+\item 
+float \textbf{ average\+Speed} = 12
+\item 
+int \textbf{ time\+To\+Wait} = 5
+\item 
+int \textbf{ seconds\+Left} = 5
+\item 
+\textbf{ U\+Local\+Highscore\+Accesor} $\ast$ \textbf{ high\+Score\+Accessor}
+\item 
+\textbf{ U\+Penguin\+Slide\+Game\+Instance} $\ast$ \textbf{ penguin\+Slide\+Game\+Instance}
+\item 
+T\+Array$<$ int $>$ \textbf{ high\+Scores\+Int\+Array}
+\item 
+T\+Array$<$ F\+String $>$ \textbf{ high\+Scores\+String\+Array}
+\item 
+T\+Array$<$ F\+String $>$ \textbf{ top\+X\+High\+Scores}
+\item 
+F\+String \textbf{ Text\+File\+String}
+\item 
+F\+Timer\+Handle \textbf{ timer\+Handler}
+\item 
+F\+Timer\+Handle \textbf{ start\+Sequence\+Timer}
+\item 
+F\+Timer\+Handle \textbf{ countdown\+Timer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This header manages the user interface. 
+
+This header declares a bunch of user interface related variables and methods \begin{DoxyAuthor}{Author}
+Tycho Zaal 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+08-\/04-\/2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+T\+Z\+\_\+productions 
+\end{DoxyCopyright}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_a_user_interface_manager_a87749ed98cd7568c5de320bd6a9282ec}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!AUserInterfaceManager@{AUserInterfaceManager}}
+\index{AUserInterfaceManager@{AUserInterfaceManager}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{AUserInterfaceManager()}
+{\footnotesize\ttfamily A\+User\+Interface\+Manager\+::\+A\+User\+Interface\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_a_user_interface_manager_afa99d2da551223255ec04b264c0666ad}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!AddIntToHighScoresStringArray@{AddIntToHighScoresStringArray}}
+\index{AddIntToHighScoresStringArray@{AddIntToHighScoresStringArray}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{AddIntToHighScoresStringArray()}
+{\footnotesize\ttfamily void A\+User\+Interface\+Manager\+::\+Add\+Int\+To\+High\+Scores\+String\+Array (\begin{DoxyParamCaption}\item[{int}]{number\+To\+Add }\end{DoxyParamCaption})}
+
+
+
+Adds a new highscore to the array. 
+
+Add new int to string array. \mbox{\label{class_a_user_interface_manager_a9561409c4db7eb127ae67ea03036725c}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!AddPointsToScore@{AddPointsToScore}}
+\index{AddPointsToScore@{AddPointsToScore}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{AddPointsToScore()}
+{\footnotesize\ttfamily void A\+User\+Interface\+Manager\+::\+Add\+Points\+To\+Score (\begin{DoxyParamCaption}\item[{float}]{points\+To\+Add }\end{DoxyParamCaption})}
+
+
+
+Adds X to the current score. 
+
+Adds points to the score. \mbox{\label{class_a_user_interface_manager_a086ad1333d930c01bb0a64e324085e56}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!BeginPlay@{BeginPlay}}
+\index{BeginPlay@{BeginPlay}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{BeginPlay()}
+{\footnotesize\ttfamily void A\+User\+Interface\+Manager\+::\+Begin\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called at the start of the game or when spawned. 
+
+\mbox{\label{class_a_user_interface_manager_af1a58dc6b34721339b356b53efb54e45}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!ConvertAndSortHighScoreArray@{ConvertAndSortHighScoreArray}}
+\index{ConvertAndSortHighScoreArray@{ConvertAndSortHighScoreArray}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{ConvertAndSortHighScoreArray()}
+{\footnotesize\ttfamily void A\+User\+Interface\+Manager\+::\+Convert\+And\+Sort\+High\+Score\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sorts the highscore array, using the newly added data. 
+
+Converts data from text file string array, sorts it by number and converts it back to a string array. \mbox{\label{class_a_user_interface_manager_af3e35993c6a778b2d1dd50e377839296}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!Countdown@{Countdown}}
+\index{Countdown@{Countdown}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{Countdown()}
+{\footnotesize\ttfamily void A\+User\+Interface\+Manager\+::\+Countdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Counts down for the start sequence. 
+
+\mbox{\label{class_a_user_interface_manager_aa77f6ee265e9eb803e587e124242e545}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!GameOver@{GameOver}}
+\index{GameOver@{GameOver}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{GameOver()}
+{\footnotesize\ttfamily void A\+User\+Interface\+Manager\+::\+Game\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads the Game Over menu map. 
+
+Called when player dies. \mbox{\label{class_a_user_interface_manager_a1fd0354c446579ba0a7fdc7cc0fd520f}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!GetCurrentScore@{GetCurrentScore}}
+\index{GetCurrentScore@{GetCurrentScore}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{GetCurrentScore()}
+{\footnotesize\ttfamily float A\+User\+Interface\+Manager\+::\+Get\+Current\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the current score. 
+
+\mbox{\label{class_a_user_interface_manager_ab204b19e791bb6df7513e7cd72fe712a}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!GetCurrentSpeed@{GetCurrentSpeed}}
+\index{GetCurrentSpeed@{GetCurrentSpeed}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{GetCurrentSpeed()}
+{\footnotesize\ttfamily float A\+User\+Interface\+Manager\+::\+Get\+Current\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the current speed. 
+
+\mbox{\label{class_a_user_interface_manager_a60cd439b46ed433c1d37b9eb5da7a419}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!GetHighscores@{GetHighscores}}
+\index{GetHighscores@{GetHighscores}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{GetHighscores()}
+{\footnotesize\ttfamily void A\+User\+Interface\+Manager\+::\+Get\+Highscores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Collects all highscores from text file. 
+
+Gets all data from text file, converts them to ints and places then in an int array. \mbox{\label{class_a_user_interface_manager_a172fb08ed68ad0d6c60d9ebcac38e6de}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!GetLastScore@{GetLastScore}}
+\index{GetLastScore@{GetLastScore}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{GetLastScore()}
+{\footnotesize\ttfamily float A\+User\+Interface\+Manager\+::\+Get\+Last\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the last score. 
+
+\mbox{\label{class_a_user_interface_manager_ae8fbb5d467e403f4f8e6a871c77a2a97}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!GetScoreMultiplier@{GetScoreMultiplier}}
+\index{GetScoreMultiplier@{GetScoreMultiplier}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{GetScoreMultiplier()}
+{\footnotesize\ttfamily float A\+User\+Interface\+Manager\+::\+Get\+Score\+Multiplier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the current score multiplier. 
+
+\mbox{\label{class_a_user_interface_manager_ab66c9bb0fe8cdf1521d072d32b1db1ce}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!GetSecondsLeft@{GetSecondsLeft}}
+\index{GetSecondsLeft@{GetSecondsLeft}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{GetSecondsLeft()}
+{\footnotesize\ttfamily int A\+User\+Interface\+Manager\+::\+Get\+Seconds\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the amount of seconds left before the game starts. 
+
+\mbox{\label{class_a_user_interface_manager_a10887916bdb9f032b3e9b0782a2326a5}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!GetTopXHighScores@{GetTopXHighScores}}
+\index{GetTopXHighScores@{GetTopXHighScores}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{GetTopXHighScores()}
+{\footnotesize\ttfamily T\+Array$<$ F\+String $>$ A\+User\+Interface\+Manager\+::\+Get\+Top\+X\+High\+Scores (\begin{DoxyParamCaption}\item[{int}]{amount\+To\+Get }\end{DoxyParamCaption})}
+
+
+
+Returns top X highscores. 
+
+Gets the topX amount of high scores and returns them. \mbox{\label{class_a_user_interface_manager_ad0145ad451603ce045b9665fdadf5be4}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!ResetScoreMultiplier@{ResetScoreMultiplier}}
+\index{ResetScoreMultiplier@{ResetScoreMultiplier}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{ResetScoreMultiplier()}
+{\footnotesize\ttfamily void A\+User\+Interface\+Manager\+::\+Reset\+Score\+Multiplier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets score multiplier. 
+
+\mbox{\label{class_a_user_interface_manager_a0a5b197b438c541a0b88bede9f64ad52}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!SavePoints@{SavePoints}}
+\index{SavePoints@{SavePoints}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{SavePoints()}
+{\footnotesize\ttfamily void A\+User\+Interface\+Manager\+::\+Save\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Save the score in the Singleton. 
+
+\mbox{\label{class_a_user_interface_manager_a7d590e3c68674c78cce8f0af9a787504}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!SetHighscores@{SetHighscores}}
+\index{SetHighscores@{SetHighscores}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{SetHighscores()}
+{\footnotesize\ttfamily void A\+User\+Interface\+Manager\+::\+Set\+Highscores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Applies changes in highscore array to text file. 
+
+Edits the text file accordingly. \mbox{\label{class_a_user_interface_manager_a92bafd4cd76cc242921860d784799bd3}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!SetScoreMultiplierTo@{SetScoreMultiplierTo}}
+\index{SetScoreMultiplierTo@{SetScoreMultiplierTo}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{SetScoreMultiplierTo()}
+{\footnotesize\ttfamily void A\+User\+Interface\+Manager\+::\+Set\+Score\+Multiplier\+To (\begin{DoxyParamCaption}\item[{float}]{new\+Multiplier,  }\item[{int}]{duration }\end{DoxyParamCaption})}
+
+
+
+Change score multiplier. 
+
+\mbox{\label{class_a_user_interface_manager_a6a4122a2113d920c0e38588059a68839}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!StartPlaying@{StartPlaying}}
+\index{StartPlaying@{StartPlaying}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{StartPlaying()}
+{\footnotesize\ttfamily void A\+User\+Interface\+Manager\+::\+Start\+Playing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Starts playing the game. 
+
+\mbox{\label{class_a_user_interface_manager_a37044120f159092a04b598a4f4b83643}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!Tick@{Tick}}
+\index{Tick@{Tick}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{Tick()}
+{\footnotesize\ttfamily void A\+User\+Interface\+Manager\+::\+Tick (\begin{DoxyParamCaption}\item[{float}]{Delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called every frame. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_a_user_interface_manager_a15dcc4b8103484d37051511adbdf0632}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!averageSpeed@{averageSpeed}}
+\index{averageSpeed@{averageSpeed}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{averageSpeed}
+{\footnotesize\ttfamily float A\+User\+Interface\+Manager\+::average\+Speed = 12\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_user_interface_manager_ae6429246e4da07d706f496f9f72348d0}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!countdownTimer@{countdownTimer}}
+\index{countdownTimer@{countdownTimer}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{countdownTimer}
+{\footnotesize\ttfamily F\+Timer\+Handle A\+User\+Interface\+Manager\+::countdown\+Timer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_user_interface_manager_ae275c2952451e5ea11abc70eb49e343e}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!currentScore@{currentScore}}
+\index{currentScore@{currentScore}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{currentScore}
+{\footnotesize\ttfamily float A\+User\+Interface\+Manager\+::current\+Score = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_user_interface_manager_a6e0c943fbdddffdf31851316cb37003a}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!highScoreAccessor@{highScoreAccessor}}
+\index{highScoreAccessor@{highScoreAccessor}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{highScoreAccessor}
+{\footnotesize\ttfamily \textbf{ U\+Local\+Highscore\+Accesor}$\ast$ A\+User\+Interface\+Manager\+::high\+Score\+Accessor\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_user_interface_manager_a5a59e4b6816d8487506e135d6ab58e9d}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!highScoresIntArray@{highScoresIntArray}}
+\index{highScoresIntArray@{highScoresIntArray}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{highScoresIntArray}
+{\footnotesize\ttfamily T\+Array$<$int$>$ A\+User\+Interface\+Manager\+::high\+Scores\+Int\+Array\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_user_interface_manager_a7734553d624d2b332b2ded0813d43488}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!highScoresStringArray@{highScoresStringArray}}
+\index{highScoresStringArray@{highScoresStringArray}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{highScoresStringArray}
+{\footnotesize\ttfamily T\+Array$<$F\+String$>$ A\+User\+Interface\+Manager\+::high\+Scores\+String\+Array\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_user_interface_manager_a05d560148bb08bcc3d36fcdc645c3ad6}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!lastScore@{lastScore}}
+\index{lastScore@{lastScore}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{lastScore}
+{\footnotesize\ttfamily float A\+User\+Interface\+Manager\+::last\+Score\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_user_interface_manager_a1344dc13cd2ec0cb435de5bb4fdaaae0}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!penguinSlideGameInstance@{penguinSlideGameInstance}}
+\index{penguinSlideGameInstance@{penguinSlideGameInstance}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{penguinSlideGameInstance}
+{\footnotesize\ttfamily \textbf{ U\+Penguin\+Slide\+Game\+Instance}$\ast$ A\+User\+Interface\+Manager\+::penguin\+Slide\+Game\+Instance\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_user_interface_manager_ae020a4d6ae4e0275b87e07f1001b6d19}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!scoreMultiplier@{scoreMultiplier}}
+\index{scoreMultiplier@{scoreMultiplier}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{scoreMultiplier}
+{\footnotesize\ttfamily float A\+User\+Interface\+Manager\+::score\+Multiplier = 1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_user_interface_manager_a7425c749c15db93ba99c9c5a11299f8b}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!secondsLeft@{secondsLeft}}
+\index{secondsLeft@{secondsLeft}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{secondsLeft}
+{\footnotesize\ttfamily int A\+User\+Interface\+Manager\+::seconds\+Left = 5\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_user_interface_manager_a18f16c2da42be8df2e22e1fe340eb526}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!speedScoreMultiplier@{speedScoreMultiplier}}
+\index{speedScoreMultiplier@{speedScoreMultiplier}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{speedScoreMultiplier}
+{\footnotesize\ttfamily float A\+User\+Interface\+Manager\+::speed\+Score\+Multiplier = 1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_user_interface_manager_ae50c63146d1b7a9b1f36a83ecec61882}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!startSequenceTimer@{startSequenceTimer}}
+\index{startSequenceTimer@{startSequenceTimer}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{startSequenceTimer}
+{\footnotesize\ttfamily F\+Timer\+Handle A\+User\+Interface\+Manager\+::start\+Sequence\+Timer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_user_interface_manager_ae3e87aae747b7f525960a2b9e20f7a0b}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!TextFileString@{TextFileString}}
+\index{TextFileString@{TextFileString}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{TextFileString}
+{\footnotesize\ttfamily F\+String A\+User\+Interface\+Manager\+::\+Text\+File\+String\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_user_interface_manager_ae5be8f5675d666a92f1db61f2179d798}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!timerHandler@{timerHandler}}
+\index{timerHandler@{timerHandler}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{timerHandler}
+{\footnotesize\ttfamily F\+Timer\+Handle A\+User\+Interface\+Manager\+::timer\+Handler\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_user_interface_manager_a918923fd6b4045dc865093346d6c1bee}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!timeToWait@{timeToWait}}
+\index{timeToWait@{timeToWait}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{timeToWait}
+{\footnotesize\ttfamily int A\+User\+Interface\+Manager\+::time\+To\+Wait = 5\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_user_interface_manager_a5d65eaac6630841ca0d92d42b28db560}} 
+\index{AUserInterfaceManager@{AUserInterfaceManager}!topXHighScores@{topXHighScores}}
+\index{topXHighScores@{topXHighScores}!AUserInterfaceManager@{AUserInterfaceManager}}
+\subsubsection{topXHighScores}
+{\footnotesize\ttfamily T\+Array$<$F\+String$>$ A\+User\+Interface\+Manager\+::top\+X\+High\+Scores\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/\textbf{ User\+Interface\+Manager.\+h}\item 
+Penguin\+Glide/\textbf{ User\+Interface\+Manager.\+cpp}\end{DoxyCompactItemize}

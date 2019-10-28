@@ -1,0 +1,102 @@
+\section{Catch\+::Detail Namespace Reference}
+\label{namespace_catch_1_1_detail}\index{Catch::Detail@{Catch::Detail}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Approx}
+\item 
+struct \textbf{ Enum\+Info}
+\item 
+class \textbf{ Is\+Stream\+Insertable}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \textbf{ raw\+Memory\+To\+String} (const void $\ast$object, std\+::size\+\_\+t size)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::string \textbf{ raw\+Memory\+To\+String} (const T \&object)
+\item 
+{\footnotesize template$<$typename E $>$ }\\std\+::string \textbf{ convert\+Unknown\+Enum\+To\+String} (E e)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ !std\+::is\+\_\+enum$<$ T $>$\+::value \&\&!std\+::is\+\_\+base\+\_\+of$<$ std\+::exception, T $>$\+::value, std\+::string $>$\+::type \textbf{ convert\+Unstreamable} (T const \&)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ !std\+::is\+\_\+enum$<$ T $>$\+::value \&\&std\+::is\+\_\+base\+\_\+of$<$ std\+::exception, T $>$\+::value, std\+::string $>$\+::type \textbf{ convert\+Unstreamable} (T const \&ex)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+enum$<$ T $>$\+::value, std\+::string $>$\+::type \textbf{ convert\+Unstreamable} (T const \&value)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::string \textbf{ stringify} (const T \&e)
+\item 
+{\footnotesize template$<$typename Input\+Iterator $>$ }\\std\+::string \textbf{ range\+To\+String} (Input\+Iterator first, Input\+Iterator last)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \textbf{ unprintable\+String}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\label{namespace_catch_1_1_detail_a242396de537c5176710d680cc9ca6b93}} 
+\index{Catch::Detail@{Catch::Detail}!convertUnknownEnumToString@{convertUnknownEnumToString}}
+\index{convertUnknownEnumToString@{convertUnknownEnumToString}!Catch::Detail@{Catch::Detail}}
+\subsubsection{convertUnknownEnumToString()}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+std\+::string Catch\+::\+Detail\+::convert\+Unknown\+Enum\+To\+String (\begin{DoxyParamCaption}\item[{E}]{e }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_1_1_detail_a8e765acd7fc9eabdc34c786014cf02cd}} 
+\index{Catch::Detail@{Catch::Detail}!convertUnstreamable@{convertUnstreamable}}
+\index{convertUnstreamable@{convertUnstreamable}!Catch::Detail@{Catch::Detail}}
+\subsubsection{convertUnstreamable()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$ !std\+::is\+\_\+enum$<$T$>$\+::value \&\& !std\+::is\+\_\+base\+\_\+of$<$std\+::exception, T$>$\+::value, std\+::string$>$\+::type Catch\+::\+Detail\+::convert\+Unstreamable (\begin{DoxyParamCaption}\item[{T const \&}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_1_1_detail_aa5db7cae49c34a5e656be39ea52dbe22}} 
+\index{Catch::Detail@{Catch::Detail}!convertUnstreamable@{convertUnstreamable}}
+\index{convertUnstreamable@{convertUnstreamable}!Catch::Detail@{Catch::Detail}}
+\subsubsection{convertUnstreamable()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$ !std\+::is\+\_\+enum$<$T$>$\+::value \&\& std\+::is\+\_\+base\+\_\+of$<$std\+::exception, T$>$\+::value, std\+::string$>$\+::type Catch\+::\+Detail\+::convert\+Unstreamable (\begin{DoxyParamCaption}\item[{T const \&}]{ex }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_1_1_detail_abcc3139c8a868a369402e546045fbfb8}} 
+\index{Catch::Detail@{Catch::Detail}!convertUnstreamable@{convertUnstreamable}}
+\index{convertUnstreamable@{convertUnstreamable}!Catch::Detail@{Catch::Detail}}
+\subsubsection{convertUnstreamable()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$ std\+::is\+\_\+enum$<$T$>$\+::value , std\+::string$>$\+::type Catch\+::\+Detail\+::convert\+Unstreamable (\begin{DoxyParamCaption}\item[{T const \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_1_1_detail_a6650a1dff325bf29962ff15ae73fd972}} 
+\index{Catch::Detail@{Catch::Detail}!rangeToString@{rangeToString}}
+\index{rangeToString@{rangeToString}!Catch::Detail@{Catch::Detail}}
+\subsubsection{rangeToString()}
+{\footnotesize\ttfamily template$<$typename Input\+Iterator $>$ \\
+std\+::string Catch\+::\+Detail\+::range\+To\+String (\begin{DoxyParamCaption}\item[{Input\+Iterator}]{first,  }\item[{Input\+Iterator}]{last }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_1_1_detail_ac5d6c510e565ee5bddcc2236194ce29e}} 
+\index{Catch::Detail@{Catch::Detail}!rawMemoryToString@{rawMemoryToString}}
+\index{rawMemoryToString@{rawMemoryToString}!Catch::Detail@{Catch::Detail}}
+\subsubsection{rawMemoryToString()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string Catch\+::\+Detail\+::raw\+Memory\+To\+String (\begin{DoxyParamCaption}\item[{const void $\ast$}]{object,  }\item[{std\+::size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_1_1_detail_a371620ed524abfcae5c3772bf49b563a}} 
+\index{Catch::Detail@{Catch::Detail}!rawMemoryToString@{rawMemoryToString}}
+\index{rawMemoryToString@{rawMemoryToString}!Catch::Detail@{Catch::Detail}}
+\subsubsection{rawMemoryToString()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::string Catch\+::\+Detail\+::raw\+Memory\+To\+String (\begin{DoxyParamCaption}\item[{const T \&}]{object }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_1_1_detail_af0ad48344ffd3f92f3568465248a9880}} 
+\index{Catch::Detail@{Catch::Detail}!stringify@{stringify}}
+\index{stringify@{stringify}!Catch::Detail@{Catch::Detail}}
+\subsubsection{stringify()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::string Catch\+::\+Detail\+::stringify (\begin{DoxyParamCaption}\item[{const T \&}]{e }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\label{namespace_catch_1_1_detail_a466775f4eec29ffef29ab334cd885136}} 
+\index{Catch::Detail@{Catch::Detail}!unprintableString@{unprintableString}}
+\index{unprintableString@{unprintableString}!Catch::Detail@{Catch::Detail}}
+\subsubsection{unprintableString}
+{\footnotesize\ttfamily const std\+::string Catch\+::\+Detail\+::unprintable\+String}
+

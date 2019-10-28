@@ -1,0 +1,86 @@
+\hypertarget{class_a_track_generator}{}\section{A\+Track\+Generator Class Reference}
+\label{class_a_track_generator}\index{ATrackGenerator@{ATrackGenerator}}
+
+
+This class spawns an ever growing slide.  
+
+
+
+
+{\ttfamily \#include $<$Track\+Generator.\+h$>$}
+
+Inheritance diagram for A\+Track\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_track_generator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_track_generator_a3383e7f98eb7793881d77f222524c883}\label{class_a_track_generator_a3383e7f98eb7793881d77f222524c883}} 
+\mbox{\hyperlink{class_a_track_generator_a3383e7f98eb7793881d77f222524c883}{A\+Track\+Generator}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_a_track_generator_a14b4ef8eac6a9147d9849b128015a5f8}{Tick}} (float Delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Called every frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_track_generator_a3d0dd415286c79c74fc200265ca4dcd3}\label{class_a_track_generator_a3d0dd415286c79c74fc200265ca4dcd3}} 
+virtual void \mbox{\hyperlink{class_a_track_generator_a3d0dd415286c79c74fc200265ca4dcd3}{Begin\+Play}} () override
+\begin{DoxyCompactList}\small\item\em Called when the game starts or when spawned. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_track_generator_ad9f912deae33031f6ed1c924d8ecf24f}\label{class_a_track_generator_ad9f912deae33031f6ed1c924d8ecf24f}} 
+F\+Timer\+Handle {\bfseries timehandle}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class spawns an ever growing slide. 
+
+This class is used to demonstrate a number of section commands. \begin{DoxyAuthor}{Author}
+Lisa Groen 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+03-\/04-\/2019 
+\end{DoxyDate}
+\begin{DoxyPrecond}{Precondition}
+First initialize the system. 
+\end{DoxyPrecond}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]track grows based on time instead of on player location. \end{DoxyRefDesc}
+\begin{DoxyWarning}{Warning}
+Don\textquotesingle{}t press simulate or the launcher will crash 
+\end{DoxyWarning}
+\begin{DoxyCopyright}{Copyright}
+L\+G\+\_\+productions 
+\end{DoxyCopyright}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_track_generator_a14b4ef8eac6a9147d9849b128015a5f8}\label{class_a_track_generator_a14b4ef8eac6a9147d9849b128015a5f8}} 
+\index{ATrackGenerator@{ATrackGenerator}!Tick@{Tick}}
+\index{Tick@{Tick}!ATrackGenerator@{ATrackGenerator}}
+\subsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily void A\+Track\+Generator\+::\+Tick (\begin{DoxyParamCaption}\item[{float}]{Delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Delta\+Time} & explanation of Delta\+Time goes here. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/Track\+Generator.\+h\item 
+Penguin\+Glide/Track\+Generator.\+cpp\end{DoxyCompactItemize}

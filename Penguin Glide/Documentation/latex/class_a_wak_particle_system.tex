@@ -1,0 +1,100 @@
+\section{A\+Wak\+Particle\+System Class Reference}
+\label{class_a_wak_particle_system}\index{AWakParticleSystem@{AWakParticleSystem}}
+
+
+This class has the particle system attached to it to indicate where a wak is.  
+
+
+
+
+{\ttfamily \#include $<$Wak\+Particle\+System.\+h$>$}
+
+Inheritance diagram for A\+Wak\+Particle\+System\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_wak_particle_system}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ A\+Wak\+Particle\+System} ()
+\item 
+virtual void \textbf{ Tick} (float Delta\+Time) override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Begin\+Play} () override
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+class U\+Particle\+System\+Component $\ast$ \textbf{ My\+Particle\+System}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class has the particle system attached to it to indicate where a wak is. 
+
+This class is used to instantiate an actor in the level on the location of where a wak is to indicate that there is one. It automatically creates a particle system once it is instantiated and attaches it to itself. The wak is not an actual actor but a vertice in the track that has been moved downwards to simulate a pitfall. Due to this, we can\textquotesingle{}t actually attach a particle system to the wak.
+
+\begin{DoxyAuthor}{Author}
+Max Groen 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+29/05/2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Energyslam™ 
+\end{DoxyCopyright}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_a_wak_particle_system_a78b8230d8d1b1b263cc21332064ae7aa}} 
+\index{AWakParticleSystem@{AWakParticleSystem}!AWakParticleSystem@{AWakParticleSystem}}
+\index{AWakParticleSystem@{AWakParticleSystem}!AWakParticleSystem@{AWakParticleSystem}}
+\subsubsection{AWakParticleSystem()}
+{\footnotesize\ttfamily A\+Wak\+Particle\+System\+::\+A\+Wak\+Particle\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+$<$ Creates a default U\+Scene\+Component so we can see our root in the editor
+
+$<$ Finds the system in the content browser
+
+$<$ Creates a particle system component
+
+$<$ Only use the object of the found system if it is succesful
+
+$<$ Makes it a child of the root 
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_a_wak_particle_system_a72beab934ecd5b2344a96f980c3264c1}} 
+\index{AWakParticleSystem@{AWakParticleSystem}!BeginPlay@{BeginPlay}}
+\index{BeginPlay@{BeginPlay}!AWakParticleSystem@{AWakParticleSystem}}
+\subsubsection{BeginPlay()}
+{\footnotesize\ttfamily void A\+Wak\+Particle\+System\+::\+Begin\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+$<$ starts the system once the actor begins \mbox{\label{class_a_wak_particle_system_ae58528f3a3bf789eef52a4f9e7a60e14}} 
+\index{AWakParticleSystem@{AWakParticleSystem}!Tick@{Tick}}
+\index{Tick@{Tick}!AWakParticleSystem@{AWakParticleSystem}}
+\subsubsection{Tick()}
+{\footnotesize\ttfamily void A\+Wak\+Particle\+System\+::\+Tick (\begin{DoxyParamCaption}\item[{float}]{Delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_a_wak_particle_system_a774afe5f9b4f0eaefb55709ddc8e424e}} 
+\index{AWakParticleSystem@{AWakParticleSystem}!MyParticleSystem@{MyParticleSystem}}
+\index{MyParticleSystem@{MyParticleSystem}!AWakParticleSystem@{AWakParticleSystem}}
+\subsubsection{MyParticleSystem}
+{\footnotesize\ttfamily class U\+Particle\+System\+Component$\ast$ A\+Wak\+Particle\+System\+::\+My\+Particle\+System\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/public/\textbf{ Wak\+Particle\+System.\+h}\item 
+Penguin\+Glide/private/\textbf{ Wak\+Particle\+System.\+cpp}\end{DoxyCompactItemize}

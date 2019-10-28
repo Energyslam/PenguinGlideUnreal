@@ -1,0 +1,237 @@
+\section{A\+Snowball Class Reference}
+\label{class_a_snowball}\index{ASnowball@{ASnowball}}
+
+
+This class is used to handle the snowball movement and collision with the player.  
+
+
+
+
+{\ttfamily \#include $<$Snowball.\+h$>$}
+
+Inheritance diagram for A\+Snowball\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_snowball}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ A\+Snowball} ()
+\item 
+void \textbf{ Set\+Positions} (T\+Array$<$ F\+Vector $>$ lerp\+Pos, float \textbf{ offset})
+\begin{DoxyCompactList}\small\item\em initializes the positions for the bezier curve \end{DoxyCompactList}\item 
+void \textbf{ On\+Death} ()
+\begin{DoxyCompactList}\small\item\em function to handle player death \end{DoxyCompactList}\item 
+virtual void \textbf{ Tick} (float Delta\+Time) override
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ amazing\+Timer}
+\begin{DoxyCompactList}\small\item\em manual timer so the snowball does not keep triggering sound when it has a collision with the player \end{DoxyCompactList}\item 
+float \textbf{ lerp\+Value}
+\begin{DoxyCompactList}\small\item\em the position of the curve it is currently at between 0 and 1 \end{DoxyCompactList}\item 
+float \textbf{ speed\+Value}
+\begin{DoxyCompactList}\small\item\em float for the speed at which the snowball lerps \end{DoxyCompactList}\item 
+bool \textbf{ counting\+Down}
+\begin{DoxyCompactList}\small\item\em bool keeping track of whether the snowball is moving up or down (between 0 and 1) \end{DoxyCompactList}\item 
+T\+Array$<$ F\+Vector $>$ \textbf{ lerp\+Positions}
+\begin{DoxyCompactList}\small\item\em positions which the snowball moves between \end{DoxyCompactList}\item 
+U\+Material $\ast$ \textbf{ Stored\+Material}
+\begin{DoxyCompactList}\small\item\em Temporary stored material pointer used for the constructor helper. \end{DoxyCompactList}\item 
+class U\+Static\+Mesh\+Component $\ast$ \textbf{ sphere\+Visual}
+\begin{DoxyCompactList}\small\item\em pointer to static mesh component of the actor \end{DoxyCompactList}\item 
+class U\+Sphere\+Component $\ast$ \textbf{ sphere\+Component}
+\begin{DoxyCompactList}\small\item\em The sphere used for its collision box. \end{DoxyCompactList}\item 
+class \textbf{ A\+Sound\+Manager} $\ast$ \textbf{ sound\+Manager}
+\begin{DoxyCompactList}\small\item\em pointer to the soundmanager so it can play sound on collision \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Begin\+Play} () override
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ On\+Comp\+Overlap} (class U\+Primitive\+Component $\ast$This\+Comp, A\+Actor $\ast$Other\+Actor, class U\+Primitive\+Component $\ast$Other\+Comp, int32 Other\+Body\+Index, bool b\+From\+Sweep, const F\+Hit\+Result \&Sweep\+Result)
+\begin{DoxyCompactList}\small\item\em handles the collision events of the snowball by using the unreal function On\+Comp\+Overlap that is a part of A\+Actor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to handle the snowball movement and collision with the player. 
+
+The snowball uses a bezier curve to move across the horizontal curve of the track. A bezier curve is chosen because there was familiarity with the math and having two control points allows for more control over the curve that it follows. The track will give the node positions during the mesh creation. It relies on the left and right vertices for its start and end node, and the amount of vertices on the horizontal axis divided by 2/4 and 3/4 for its control points. The t for the lerp function of the bezier curve continuously counts up and down so the snowball moves positions. This is chosen over using actual physics due to difficulty of having the snowball follow the correct path using the physics engine. It has a pointer to the Sound\+Manager in the level to play the impact sound as we\textquotesingle{}re not using a blueprint for the snowball. Playing sound through c++ has proven to be difficult to implement.
+
+\begin{DoxyAuthor}{Author}
+Max Groen 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+04/06/2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Energyslam™ 
+\end{DoxyCopyright}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_a_snowball_a51e944d6eae2e6c4ff61087b4932988e}} 
+\index{ASnowball@{ASnowball}!ASnowball@{ASnowball}}
+\index{ASnowball@{ASnowball}!ASnowball@{ASnowball}}
+\subsubsection{ASnowball()}
+{\footnotesize\ttfamily A\+Snowball\+::\+A\+Snowball (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+$<$ Creates a basic static mesh to which we assign a sphere
+
+Creates the mesh by using the U\+E4 sphere and assign it several collision parameters to be used
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_a_snowball_a760c05ce68090af79cb18cf354c2476c}} 
+\index{ASnowball@{ASnowball}!BeginPlay@{BeginPlay}}
+\index{BeginPlay@{BeginPlay}!ASnowball@{ASnowball}}
+\subsubsection{BeginPlay()}
+{\footnotesize\ttfamily void A\+Snowball\+::\+Begin\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+$<$ tells the engine to check for overlaps with this object \mbox{\label{class_a_snowball_a6cf76f3208f159a0286c1bde49d14f80}} 
+\index{ASnowball@{ASnowball}!OnCompOverlap@{OnCompOverlap}}
+\index{OnCompOverlap@{OnCompOverlap}!ASnowball@{ASnowball}}
+\subsubsection{OnCompOverlap()}
+{\footnotesize\ttfamily void A\+Snowball\+::\+On\+Comp\+Overlap (\begin{DoxyParamCaption}\item[{class U\+Primitive\+Component $\ast$}]{This\+Comp,  }\item[{A\+Actor $\ast$}]{Other\+Actor,  }\item[{class U\+Primitive\+Component $\ast$}]{Other\+Comp,  }\item[{int32}]{Other\+Body\+Index,  }\item[{bool}]{b\+From\+Sweep,  }\item[{const F\+Hit\+Result \&}]{Sweep\+Result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+handles the collision events of the snowball by using the unreal function On\+Comp\+Overlap that is a part of A\+Actor. 
+
+\mbox{\label{class_a_snowball_abdd53cf202d12fc2c5f120c9c23d77d5}} 
+\index{ASnowball@{ASnowball}!OnDeath@{OnDeath}}
+\index{OnDeath@{OnDeath}!ASnowball@{ASnowball}}
+\subsubsection{OnDeath()}
+{\footnotesize\ttfamily void A\+Snowball\+::\+On\+Death (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+function to handle player death 
+
+calls the player ondeath function\mbox{\label{class_a_snowball_aa413616dcb4fdff34ab8c543f6bca7fe}} 
+\index{ASnowball@{ASnowball}!SetPositions@{SetPositions}}
+\index{SetPositions@{SetPositions}!ASnowball@{ASnowball}}
+\subsubsection{SetPositions()}
+{\footnotesize\ttfamily void A\+Snowball\+::\+Set\+Positions (\begin{DoxyParamCaption}\item[{T\+Array$<$ F\+Vector $>$}]{positions,  }\item[{float}]{z\+Offset }\end{DoxyParamCaption})}
+
+
+
+initializes the positions for the bezier curve 
+
+Sets the positions of the nodes that the snowball will create a bezier curve from and lerp between. \mbox{\label{class_a_snowball_a64d038ba27c2390cbd101505690a8e51}} 
+\index{ASnowball@{ASnowball}!Tick@{Tick}}
+\index{Tick@{Tick}!ASnowball@{ASnowball}}
+\subsubsection{Tick()}
+{\footnotesize\ttfamily void A\+Snowball\+::\+Tick (\begin{DoxyParamCaption}\item[{float}]{Delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+$<$ has a semi-\/timer to prevent the object from calling the player position each frame
+
+$<$ if it is not counter down, add the movement/speed value.
+
+This is the bezier curve function. It is the same way we create the track and its curve. It does a linear interpolation between the linear interpolation of the linear interpolation between the nodes, and then sets the snowball location to the distance between this interpolation $\ast$ the lerp\+Value. This way we can simulate a moving snowball.
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_a_snowball_a16a3fecfe246087a14c621092e812d11}} 
+\index{ASnowball@{ASnowball}!amazingTimer@{amazingTimer}}
+\index{amazingTimer@{amazingTimer}!ASnowball@{ASnowball}}
+\subsubsection{amazingTimer}
+{\footnotesize\ttfamily int A\+Snowball\+::amazing\+Timer}
+
+
+
+manual timer so the snowball does not keep triggering sound when it has a collision with the player 
+
+\mbox{\label{class_a_snowball_a366ca9a320d78e67099b6834bc91d1dd}} 
+\index{ASnowball@{ASnowball}!countingDown@{countingDown}}
+\index{countingDown@{countingDown}!ASnowball@{ASnowball}}
+\subsubsection{countingDown}
+{\footnotesize\ttfamily bool A\+Snowball\+::counting\+Down}
+
+
+
+bool keeping track of whether the snowball is moving up or down (between 0 and 1) 
+
+\mbox{\label{class_a_snowball_a236659ceac62b50917dd468a8c0f0bf6}} 
+\index{ASnowball@{ASnowball}!lerpPositions@{lerpPositions}}
+\index{lerpPositions@{lerpPositions}!ASnowball@{ASnowball}}
+\subsubsection{lerpPositions}
+{\footnotesize\ttfamily T\+Array$<$F\+Vector$>$ A\+Snowball\+::lerp\+Positions}
+
+
+
+positions which the snowball moves between 
+
+\mbox{\label{class_a_snowball_a22e89eae31283444d4457461c3ae2e8c}} 
+\index{ASnowball@{ASnowball}!lerpValue@{lerpValue}}
+\index{lerpValue@{lerpValue}!ASnowball@{ASnowball}}
+\subsubsection{lerpValue}
+{\footnotesize\ttfamily float A\+Snowball\+::lerp\+Value}
+
+
+
+the position of the curve it is currently at between 0 and 1 
+
+\mbox{\label{class_a_snowball_a9f9dacedd71e1f1170ba93a0552ae65c}} 
+\index{ASnowball@{ASnowball}!soundManager@{soundManager}}
+\index{soundManager@{soundManager}!ASnowball@{ASnowball}}
+\subsubsection{soundManager}
+{\footnotesize\ttfamily class \textbf{ A\+Sound\+Manager}$\ast$ A\+Snowball\+::sound\+Manager}
+
+
+
+pointer to the soundmanager so it can play sound on collision 
+
+\mbox{\label{class_a_snowball_a2972be36f79b5aa639ef1551631a3eb5}} 
+\index{ASnowball@{ASnowball}!speedValue@{speedValue}}
+\index{speedValue@{speedValue}!ASnowball@{ASnowball}}
+\subsubsection{speedValue}
+{\footnotesize\ttfamily float A\+Snowball\+::speed\+Value}
+
+
+
+float for the speed at which the snowball lerps 
+
+\mbox{\label{class_a_snowball_a24f97662faf4c907e876c1af9fea492d}} 
+\index{ASnowball@{ASnowball}!sphereComponent@{sphereComponent}}
+\index{sphereComponent@{sphereComponent}!ASnowball@{ASnowball}}
+\subsubsection{sphereComponent}
+{\footnotesize\ttfamily class U\+Sphere\+Component$\ast$ A\+Snowball\+::sphere\+Component}
+
+
+
+The sphere used for its collision box. 
+
+\mbox{\label{class_a_snowball_a83b9cb77a35dc0279e100389eb24a792}} 
+\index{ASnowball@{ASnowball}!sphereVisual@{sphereVisual}}
+\index{sphereVisual@{sphereVisual}!ASnowball@{ASnowball}}
+\subsubsection{sphereVisual}
+{\footnotesize\ttfamily class U\+Static\+Mesh\+Component$\ast$ A\+Snowball\+::sphere\+Visual}
+
+
+
+pointer to static mesh component of the actor 
+
+\mbox{\label{class_a_snowball_aa6aabbbfa810bcbceb4638a7af111f2a}} 
+\index{ASnowball@{ASnowball}!StoredMaterial@{StoredMaterial}}
+\index{StoredMaterial@{StoredMaterial}!ASnowball@{ASnowball}}
+\subsubsection{StoredMaterial}
+{\footnotesize\ttfamily U\+Material$\ast$ A\+Snowball\+::\+Stored\+Material}
+
+
+
+Temporary stored material pointer used for the constructor helper. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/public/\textbf{ Snowball.\+h}\item 
+Penguin\+Glide/private/\textbf{ Snowball.\+cpp}\end{DoxyCompactItemize}

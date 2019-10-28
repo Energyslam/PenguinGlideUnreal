@@ -1,0 +1,203 @@
+\section{Catch\+::Test\+Case\+Info Struct Reference}
+\label{struct_catch_1_1_test_case_info}\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}}
+
+
+{\ttfamily \#include $<$catch.\+hpp$>$}
+
+Inheritance diagram for Catch\+::Test\+Case\+Info\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_catch_1_1_test_case_info}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ Special\+Properties} \{ \newline
+\textbf{ None} = 0, 
+\textbf{ Is\+Hidden} = 1 $<$$<$ 1, 
+\textbf{ Should\+Fail} = 1 $<$$<$ 2, 
+\textbf{ May\+Fail} = 1 $<$$<$ 3, 
+\newline
+\textbf{ Throws} = 1 $<$$<$ 4, 
+\textbf{ Non\+Portable} = 1 $<$$<$ 5, 
+\textbf{ Benchmark} = 1 $<$$<$ 6
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Test\+Case\+Info} (std\+::string const \&\+\_\+name, std\+::string const \&\+\_\+class\+Name, std\+::string const \&\+\_\+description, std\+::vector$<$ std\+::string $>$ const \&\+\_\+tags, \textbf{ Source\+Line\+Info} const \&\+\_\+line\+Info)
+\item 
+bool \textbf{ is\+Hidden} () const
+\item 
+bool \textbf{ throws} () const
+\item 
+bool \textbf{ ok\+To\+Fail} () const
+\item 
+bool \textbf{ expected\+To\+Fail} () const
+\item 
+std\+::string \textbf{ tags\+As\+String} () const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \textbf{ name}
+\item 
+std\+::string \textbf{ class\+Name}
+\item 
+std\+::string \textbf{ description}
+\item 
+std\+::vector$<$ std\+::string $>$ \textbf{ tags}
+\item 
+std\+::vector$<$ std\+::string $>$ \textbf{ lcase\+Tags}
+\item 
+\textbf{ Source\+Line\+Info} \textbf{ line\+Info}
+\item 
+\textbf{ Special\+Properties} \textbf{ properties}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ set\+Tags} (\textbf{ Test\+Case\+Info} \&test\+Case\+Info, std\+::vector$<$ std\+::string $>$ \textbf{ tags})
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\label{struct_catch_1_1_test_case_info_a39b232f74b4a7a6f2183b96759027eac}} 
+\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!SpecialProperties@{SpecialProperties}}
+\index{SpecialProperties@{SpecialProperties}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}
+\subsubsection{SpecialProperties}
+{\footnotesize\ttfamily enum \textbf{ Catch\+::\+Test\+Case\+Info\+::\+Special\+Properties}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!None@{None}}}\mbox{\label{struct_catch_1_1_test_case_info_a39b232f74b4a7a6f2183b96759027eacaf94e9de5f8ec1e53b1aa761ec564b31a}} 
+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IsHidden@{IsHidden}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!IsHidden@{IsHidden}}}\mbox{\label{struct_catch_1_1_test_case_info_a39b232f74b4a7a6f2183b96759027eacaeda53906c14c3973e0980900c132b8f7}} 
+Is\+Hidden&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ShouldFail@{ShouldFail}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!ShouldFail@{ShouldFail}}}\mbox{\label{struct_catch_1_1_test_case_info_a39b232f74b4a7a6f2183b96759027eacaf9002285bccfc343935958f3953f4c01}} 
+Should\+Fail&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MayFail@{MayFail}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!MayFail@{MayFail}}}\mbox{\label{struct_catch_1_1_test_case_info_a39b232f74b4a7a6f2183b96759027eacadf1873d3271121cb9f52d7df45b416ca}} 
+May\+Fail&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Throws@{Throws}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!Throws@{Throws}}}\mbox{\label{struct_catch_1_1_test_case_info_a39b232f74b4a7a6f2183b96759027eaca4704adf89ed7f7ad653d08f99813a974}} 
+Throws&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NonPortable@{NonPortable}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!NonPortable@{NonPortable}}}\mbox{\label{struct_catch_1_1_test_case_info_a39b232f74b4a7a6f2183b96759027eaca06472887b53fda9eb8015d74e7fd2cf1}} 
+Non\+Portable&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Benchmark@{Benchmark}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!Benchmark@{Benchmark}}}\mbox{\label{struct_catch_1_1_test_case_info_a39b232f74b4a7a6f2183b96759027eacad0e25e337246ae34d555fe53baf81c16}} 
+Benchmark&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{struct_catch_1_1_test_case_info_ad1a6b08b5a83d1c5eb4596b727b5305f}} 
+\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!TestCaseInfo@{TestCaseInfo}}
+\index{TestCaseInfo@{TestCaseInfo}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}
+\subsubsection{TestCaseInfo()}
+{\footnotesize\ttfamily Catch\+::\+Test\+Case\+Info\+::\+Test\+Case\+Info (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{\+\_\+name,  }\item[{std\+::string const \&}]{\+\_\+class\+Name,  }\item[{std\+::string const \&}]{\+\_\+description,  }\item[{std\+::vector$<$ std\+::string $>$ const \&}]{\+\_\+tags,  }\item[{\textbf{ Source\+Line\+Info} const \&}]{\+\_\+line\+Info }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{struct_catch_1_1_test_case_info_abe33d81233230cdae8afa714688e905b}} 
+\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!expectedToFail@{expectedToFail}}
+\index{expectedToFail@{expectedToFail}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}
+\subsubsection{expectedToFail()}
+{\footnotesize\ttfamily bool Catch\+::\+Test\+Case\+Info\+::expected\+To\+Fail (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{struct_catch_1_1_test_case_info_a934b1a0952700743e99d62ec1731a2e2}} 
+\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!isHidden@{isHidden}}
+\index{isHidden@{isHidden}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}
+\subsubsection{isHidden()}
+{\footnotesize\ttfamily bool Catch\+::\+Test\+Case\+Info\+::is\+Hidden (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{struct_catch_1_1_test_case_info_a5f37291295e3a6de2dd85324c941edaf}} 
+\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!okToFail@{okToFail}}
+\index{okToFail@{okToFail}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}
+\subsubsection{okToFail()}
+{\footnotesize\ttfamily bool Catch\+::\+Test\+Case\+Info\+::ok\+To\+Fail (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{struct_catch_1_1_test_case_info_a17506de67fb18e27511c17f8a81119d8}} 
+\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!tagsAsString@{tagsAsString}}
+\index{tagsAsString@{tagsAsString}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}
+\subsubsection{tagsAsString()}
+{\footnotesize\ttfamily std\+::string Catch\+::\+Test\+Case\+Info\+::tags\+As\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{struct_catch_1_1_test_case_info_afc70d4379a2070cc22b693ffe3932c1a}} 
+\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!throws@{throws}}
+\index{throws@{throws}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}
+\subsubsection{throws()}
+{\footnotesize\ttfamily bool Catch\+::\+Test\+Case\+Info\+::throws (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\label{struct_catch_1_1_test_case_info_a0fe44abaf18ae7c26f98a9fc2b08679c}} 
+\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!setTags@{setTags}}
+\index{setTags@{setTags}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}
+\subsubsection{setTags}
+{\footnotesize\ttfamily void set\+Tags (\begin{DoxyParamCaption}\item[{\textbf{ Test\+Case\+Info} \&}]{test\+Case\+Info,  }\item[{std\+::vector$<$ std\+::string $>$}]{tags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{struct_catch_1_1_test_case_info_a1a5e0825132a38d091defdebbf2f8ce9}} 
+\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!className@{className}}
+\index{className@{className}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}
+\subsubsection{className}
+{\footnotesize\ttfamily std\+::string Catch\+::\+Test\+Case\+Info\+::class\+Name}
+
+\mbox{\label{struct_catch_1_1_test_case_info_a37fe2db9425bc45f6a33893eac31198e}} 
+\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!description@{description}}
+\index{description@{description}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}
+\subsubsection{description}
+{\footnotesize\ttfamily std\+::string Catch\+::\+Test\+Case\+Info\+::description}
+
+\mbox{\label{struct_catch_1_1_test_case_info_a844e3de9baf6e53cadfba9733c236bfe}} 
+\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!lcaseTags@{lcaseTags}}
+\index{lcaseTags@{lcaseTags}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}
+\subsubsection{lcaseTags}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Catch\+::\+Test\+Case\+Info\+::lcase\+Tags}
+
+\mbox{\label{struct_catch_1_1_test_case_info_aa9407b7f442655b51a2aad24b3fa2fd3}} 
+\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!lineInfo@{lineInfo}}
+\index{lineInfo@{lineInfo}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}
+\subsubsection{lineInfo}
+{\footnotesize\ttfamily \textbf{ Source\+Line\+Info} Catch\+::\+Test\+Case\+Info\+::line\+Info}
+
+\mbox{\label{struct_catch_1_1_test_case_info_a463794e2f5cfead307c93efd134ade36}} 
+\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!name@{name}}
+\index{name@{name}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}
+\subsubsection{name}
+{\footnotesize\ttfamily std\+::string Catch\+::\+Test\+Case\+Info\+::name}
+
+\mbox{\label{struct_catch_1_1_test_case_info_afc1e84bd7a2e180895a06d9131302af0}} 
+\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!properties@{properties}}
+\index{properties@{properties}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}
+\subsubsection{properties}
+{\footnotesize\ttfamily \textbf{ Special\+Properties} Catch\+::\+Test\+Case\+Info\+::properties}
+
+\mbox{\label{struct_catch_1_1_test_case_info_a150a7cbca1dd0c91799ccb14ff822eb0}} 
+\index{Catch::TestCaseInfo@{Catch::TestCaseInfo}!tags@{tags}}
+\index{tags@{tags}!Catch::TestCaseInfo@{Catch::TestCaseInfo}}
+\subsubsection{tags}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Catch\+::\+Test\+Case\+Info\+::tags}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/\textbf{ catch.\+hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,101 @@
+\section{Catch\+::Message\+Info Struct Reference}
+\label{struct_catch_1_1_message_info}\index{Catch::MessageInfo@{Catch::MessageInfo}}
+
+
+{\ttfamily \#include $<$catch.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Message\+Info} (\textbf{ String\+Ref} const \&\+\_\+macro\+Name, \textbf{ Source\+Line\+Info} const \&\+\_\+line\+Info, \textbf{ Result\+Was\+::\+Of\+Type} \+\_\+type)
+\item 
+bool \textbf{ operator==} (\textbf{ Message\+Info} const \&other) const
+\item 
+bool \textbf{ operator$<$} (\textbf{ Message\+Info} const \&other) const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ String\+Ref} \textbf{ macro\+Name}
+\item 
+std\+::string \textbf{ message}
+\item 
+\textbf{ Source\+Line\+Info} \textbf{ line\+Info}
+\item 
+\textbf{ Result\+Was\+::\+Of\+Type} \textbf{ type}
+\item 
+unsigned int \textbf{ sequence}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \textbf{ global\+Count}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{struct_catch_1_1_message_info_afac7a84a9e8655428035a3c5418044f0}} 
+\index{Catch::MessageInfo@{Catch::MessageInfo}!MessageInfo@{MessageInfo}}
+\index{MessageInfo@{MessageInfo}!Catch::MessageInfo@{Catch::MessageInfo}}
+\subsubsection{MessageInfo()}
+{\footnotesize\ttfamily Catch\+::\+Message\+Info\+::\+Message\+Info (\begin{DoxyParamCaption}\item[{\textbf{ String\+Ref} const \&}]{\+\_\+macro\+Name,  }\item[{\textbf{ Source\+Line\+Info} const \&}]{\+\_\+line\+Info,  }\item[{\textbf{ Result\+Was\+::\+Of\+Type}}]{\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{struct_catch_1_1_message_info_a8254cb8fca2da02a29a9843cdcb79df1}} 
+\index{Catch::MessageInfo@{Catch::MessageInfo}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Catch::MessageInfo@{Catch::MessageInfo}}
+\subsubsection{operator$<$()}
+{\footnotesize\ttfamily bool Catch\+::\+Message\+Info\+::operator$<$ (\begin{DoxyParamCaption}\item[{\textbf{ Message\+Info} const \&}]{other }\end{DoxyParamCaption}) const}
+
+\mbox{\label{struct_catch_1_1_message_info_af4b37f2172ba55395813b4bb6bbbde1a}} 
+\index{Catch::MessageInfo@{Catch::MessageInfo}!operator==@{operator==}}
+\index{operator==@{operator==}!Catch::MessageInfo@{Catch::MessageInfo}}
+\subsubsection{operator==()}
+{\footnotesize\ttfamily bool Catch\+::\+Message\+Info\+::operator== (\begin{DoxyParamCaption}\item[{\textbf{ Message\+Info} const \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{struct_catch_1_1_message_info_a250459555d236f9510a5afd78a6c1979}} 
+\index{Catch::MessageInfo@{Catch::MessageInfo}!globalCount@{globalCount}}
+\index{globalCount@{globalCount}!Catch::MessageInfo@{Catch::MessageInfo}}
+\subsubsection{globalCount}
+{\footnotesize\ttfamily unsigned int Catch\+::\+Message\+Info\+::global\+Count\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{struct_catch_1_1_message_info_a985165328723e599696ebd8e43195cc5}} 
+\index{Catch::MessageInfo@{Catch::MessageInfo}!lineInfo@{lineInfo}}
+\index{lineInfo@{lineInfo}!Catch::MessageInfo@{Catch::MessageInfo}}
+\subsubsection{lineInfo}
+{\footnotesize\ttfamily \textbf{ Source\+Line\+Info} Catch\+::\+Message\+Info\+::line\+Info}
+
+\mbox{\label{struct_catch_1_1_message_info_a3ee7cd41def0989d2193bad7101436a0}} 
+\index{Catch::MessageInfo@{Catch::MessageInfo}!macroName@{macroName}}
+\index{macroName@{macroName}!Catch::MessageInfo@{Catch::MessageInfo}}
+\subsubsection{macroName}
+{\footnotesize\ttfamily \textbf{ String\+Ref} Catch\+::\+Message\+Info\+::macro\+Name}
+
+\mbox{\label{struct_catch_1_1_message_info_ab6cd06e050bf426c6577502a5c50e256}} 
+\index{Catch::MessageInfo@{Catch::MessageInfo}!message@{message}}
+\index{message@{message}!Catch::MessageInfo@{Catch::MessageInfo}}
+\subsubsection{message}
+{\footnotesize\ttfamily std\+::string Catch\+::\+Message\+Info\+::message}
+
+\mbox{\label{struct_catch_1_1_message_info_a7f4f57ea21e50160adefce7b68a781d6}} 
+\index{Catch::MessageInfo@{Catch::MessageInfo}!sequence@{sequence}}
+\index{sequence@{sequence}!Catch::MessageInfo@{Catch::MessageInfo}}
+\subsubsection{sequence}
+{\footnotesize\ttfamily unsigned int Catch\+::\+Message\+Info\+::sequence}
+
+\mbox{\label{struct_catch_1_1_message_info_ae928b9117465c696e45951d9d0284e78}} 
+\index{Catch::MessageInfo@{Catch::MessageInfo}!type@{type}}
+\index{type@{type}!Catch::MessageInfo@{Catch::MessageInfo}}
+\subsubsection{type}
+{\footnotesize\ttfamily \textbf{ Result\+Was\+::\+Of\+Type} Catch\+::\+Message\+Info\+::type}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/\textbf{ catch.\+hpp}\end{DoxyCompactItemize}

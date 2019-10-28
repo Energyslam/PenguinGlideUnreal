@@ -1,0 +1,170 @@
+\section{A\+Interactable Class Reference}
+\label{class_a_interactable}\index{AInteractable@{AInteractable}}
+
+
+This class is used for the interactables in the game, namely the power-\/ups.  
+
+
+
+
+{\ttfamily \#include $<$Interactable.\+h$>$}
+
+Inheritance diagram for A\+Interactable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_a_interactable}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ A\+Interactable} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+class U\+Particle\+System\+Component $\ast$ \textbf{ My\+Particle\+System}
+\begin{DoxyCompactList}\small\item\em This particle system is always playing until it is picked up. \end{DoxyCompactList}\item 
+class U\+Particle\+System\+Component $\ast$ \textbf{ My\+Constant\+Particle\+System}
+\begin{DoxyCompactList}\small\item\em this particle system will only play once it has been picked up \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Begin\+Play} () override
+\item 
+virtual void \textbf{ Resolve\+Collision} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+U\+Static\+Mesh\+Component $\ast$ \textbf{ Static\+Mesh}
+\item 
+U\+Particle\+System $\ast$ \textbf{ particles}
+\item 
+F\+String \textbf{ warning}
+\item 
+F\+Color \textbf{ warning\+Color}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ On\+Comp\+Overlap} (class U\+Primitive\+Component $\ast$This\+Comp, A\+Actor $\ast$Other\+Actor, class U\+Primitive\+Component $\ast$Other\+Comp, int32 Other\+Body\+Index, bool b\+From\+Sweep, const F\+Hit\+Result \&Sweep\+Result)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used for the interactables in the game, namely the power-\/ups. 
+
+The interactables in the game right now is the power-\/up. The power-\/up has two seperate particle system, one to indicate to the player that there is something special about it, and one that plays once the player has picked it up to give some juice to the game. This makes it feel more impactful than simply picking it up. This class is derived from a blueprint. This blueprint holds the static mesh that the interactable has, which is a standard sphere with a material. It creates and attaches the particle system during runtime.
+
+\begin{DoxyAuthor}{Author}
+Max Groen 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+15/05/2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Energyslam™ 
+\end{DoxyCopyright}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_a_interactable_ad90cf570632e0d6b1955cd7e696938bf}} 
+\index{AInteractable@{AInteractable}!AInteractable@{AInteractable}}
+\index{AInteractable@{AInteractable}!AInteractable@{AInteractable}}
+\subsubsection{AInteractable()}
+{\footnotesize\ttfamily A\+Interactable\+::\+A\+Interactable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+$<$ creates a staticmeshcomponent and assigns it to the root later
+
+tells the mesh to adjust some of the default settings. A actor with collision needs to simulate physics but these physics have been set to non-\/functional in the blueprint as we don\textquotesingle{}t actually want these to move.
+
+$<$ the name of one of the default settings for UE physics
+
+$<$ the type of overlap response
+
+$<$ tells the engine that this object has an overlap event
+
+uses the constructorhelpers to find the particles system needed in the content browser
+
+$<$ only if it has succesfully found the particle system, will it try to use the object attached to it 
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_a_interactable_a8b71d8bae275d7f1aead02f0145a64eb}} 
+\index{AInteractable@{AInteractable}!BeginPlay@{BeginPlay}}
+\index{BeginPlay@{BeginPlay}!AInteractable@{AInteractable}}
+\subsubsection{BeginPlay()}
+{\footnotesize\ttfamily void A\+Interactable\+::\+Begin\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\label{class_a_interactable_a5d0480a668323ff7cf08a2ae1d2c813d}} 
+\index{AInteractable@{AInteractable}!OnCompOverlap@{OnCompOverlap}}
+\index{OnCompOverlap@{OnCompOverlap}!AInteractable@{AInteractable}}
+\subsubsection{OnCompOverlap()}
+{\footnotesize\ttfamily void A\+Interactable\+::\+On\+Comp\+Overlap (\begin{DoxyParamCaption}\item[{class U\+Primitive\+Component $\ast$}]{This\+Comp,  }\item[{A\+Actor $\ast$}]{Other\+Actor,  }\item[{class U\+Primitive\+Component $\ast$}]{Other\+Comp,  }\item[{int32}]{Other\+Body\+Index,  }\item[{bool}]{b\+From\+Sweep,  }\item[{const F\+Hit\+Result \&}]{Sweep\+Result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+$<$ Resolve collision is implemented in the class powerup. It is simply a function that starts a timer to destroy itself in 1 second. \mbox{\label{class_a_interactable_ae7841df055f81291b56b7f70c808fbb1}} 
+\index{AInteractable@{AInteractable}!ResolveCollision@{ResolveCollision}}
+\index{ResolveCollision@{ResolveCollision}!AInteractable@{AInteractable}}
+\subsubsection{ResolveCollision()}
+{\footnotesize\ttfamily void A\+Interactable\+::\+Resolve\+Collision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \textbf{ A\+Power\+Up} \doxyref{}{p.}{class_a_power_up_ae8a3c55a1833a816ccc320c91df19764}, and \textbf{ A\+Obstacle} \doxyref{}{p.}{class_a_obstacle_a71168a7223a250d37c95aef7325d3387}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_a_interactable_ae4a89c8a06832dfddc15258f63a20fd0}} 
+\index{AInteractable@{AInteractable}!MyConstantParticleSystem@{MyConstantParticleSystem}}
+\index{MyConstantParticleSystem@{MyConstantParticleSystem}!AInteractable@{AInteractable}}
+\subsubsection{MyConstantParticleSystem}
+{\footnotesize\ttfamily class U\+Particle\+System\+Component$\ast$ A\+Interactable\+::\+My\+Constant\+Particle\+System}
+
+
+
+this particle system will only play once it has been picked up 
+
+\mbox{\label{class_a_interactable_a3d2a5d5588e3f4eccdc46eb3713b8aa5}} 
+\index{AInteractable@{AInteractable}!MyParticleSystem@{MyParticleSystem}}
+\index{MyParticleSystem@{MyParticleSystem}!AInteractable@{AInteractable}}
+\subsubsection{MyParticleSystem}
+{\footnotesize\ttfamily class U\+Particle\+System\+Component$\ast$ A\+Interactable\+::\+My\+Particle\+System}
+
+
+
+This particle system is always playing until it is picked up. 
+
+\mbox{\label{class_a_interactable_aa10017f1987a0fb80dcad96bbd1ddb16}} 
+\index{AInteractable@{AInteractable}!particles@{particles}}
+\index{particles@{particles}!AInteractable@{AInteractable}}
+\subsubsection{particles}
+{\footnotesize\ttfamily U\+Particle\+System$\ast$ A\+Interactable\+::particles\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_a_interactable_ac479c0a70f57689b798fc15b2ad0c324}} 
+\index{AInteractable@{AInteractable}!StaticMesh@{StaticMesh}}
+\index{StaticMesh@{StaticMesh}!AInteractable@{AInteractable}}
+\subsubsection{StaticMesh}
+{\footnotesize\ttfamily U\+Static\+Mesh\+Component$\ast$ A\+Interactable\+::\+Static\+Mesh\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_a_interactable_ac286db2b4d096591ce93fa653e6410b9}} 
+\index{AInteractable@{AInteractable}!warning@{warning}}
+\index{warning@{warning}!AInteractable@{AInteractable}}
+\subsubsection{warning}
+{\footnotesize\ttfamily F\+String A\+Interactable\+::warning\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_a_interactable_a52d9ed98781301df4b341802e2356bea}} 
+\index{AInteractable@{AInteractable}!warningColor@{warningColor}}
+\index{warningColor@{warningColor}!AInteractable@{AInteractable}}
+\subsubsection{warningColor}
+{\footnotesize\ttfamily F\+Color A\+Interactable\+::warning\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/\textbf{ Interactable.\+h}\item 
+Penguin\+Glide/\textbf{ Interactable.\+cpp}\end{DoxyCompactItemize}

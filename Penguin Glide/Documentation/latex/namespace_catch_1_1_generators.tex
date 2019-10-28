@@ -1,0 +1,230 @@
+\section{Catch\+::Generators Namespace Reference}
+\label{namespace_catch_1_1_generators}\index{Catch::Generators@{Catch::Generators}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ pf}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ as}
+\item 
+class \textbf{ Chunk\+Generator}
+\item 
+class \textbf{ Filter\+Generator}
+\item 
+class \textbf{ Fixed\+Values\+Generator}
+\item 
+class \textbf{ Generators}
+\item 
+class \textbf{ Generator\+Untyped\+Base}
+\item 
+class \textbf{ Generator\+Wrapper}
+\item 
+struct \textbf{ I\+Generator}
+\item 
+class \textbf{ Map\+Generator}
+\item 
+class \textbf{ Random\+Floating\+Generator}
+\item 
+class \textbf{ Random\+Integer\+Generator}
+\item 
+class \textbf{ Range\+Generator}
+\item 
+class \textbf{ Repeat\+Generator}
+\item 
+class \textbf{ Single\+Value\+Generator}
+\item 
+class \textbf{ Take\+Generator}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \textbf{ Generator\+Base\+Ptr} = std\+::unique\+\_\+ptr$<$ \textbf{ Generator\+Untyped\+Base} $>$
+\item 
+{\footnotesize template$<$typename Func , typename U $>$ }\\using \textbf{ Map\+Function\+Return\+Type} = typename std\+::remove\+\_\+reference$<$ typename std\+::remove\+\_\+cv$<$ typename std\+::result\+\_\+of$<$ Func(U)$>$\+::type $>$\+::type $>$\+::type
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\\textbf{ Generator\+Wrapper}$<$ T $>$ \textbf{ value} (T \&\&value)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\textbf{ Generator\+Wrapper}$<$ T $>$ \textbf{ values} (std\+::initializer\+\_\+list$<$ T $>$ values)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\textbf{ Generator\+Wrapper}$<$ std\+::tuple$<$ Ts... $>$ $>$ \textbf{ table} (std\+::initializer\+\_\+list$<$ std\+::tuple$<$ typename std\+::decay$<$ Ts $>$\+::type... $>$$>$ tuples)
+\item 
+{\footnotesize template$<$typename T , typename... Gs$>$ }\\auto \textbf{ make\+Generators} (\textbf{ Generator\+Wrapper}$<$ T $>$ \&\&generator, Gs... more\+Generators) -\/$>$ \textbf{ Generators}$<$ T $>$
+\item 
+{\footnotesize template$<$typename T $>$ }\\auto \textbf{ make\+Generators} (\textbf{ Generator\+Wrapper}$<$ T $>$ \&\&generator) -\/$>$ \textbf{ Generators}$<$ T $>$
+\item 
+{\footnotesize template$<$typename T , typename... Gs$>$ }\\auto \textbf{ make\+Generators} (T \&\&val, Gs... more\+Generators) -\/$>$ \textbf{ Generators}$<$ T $>$
+\item 
+{\footnotesize template$<$typename T , typename U , typename... Gs$>$ }\\auto \textbf{ make\+Generators} (\textbf{ as}$<$ T $>$, U \&\&val, Gs... more\+Generators) -\/$>$ \textbf{ Generators}$<$ T $>$
+\item 
+auto \textbf{ acquire\+Generator\+Tracker} (\textbf{ Source\+Line\+Info} const \&line\+Info) -\/$>$ \textbf{ I\+Generator\+Tracker} \&
+\item 
+{\footnotesize template$<$typename L $>$ }\\auto \textbf{ generate} (\textbf{ Source\+Line\+Info} const \&line\+Info, L const \&generator\+Expression) -\/$>$ decltype(std\+::declval$<$ decltype(generator\+Expression())$>$().get())
+\item 
+{\footnotesize template$<$typename T $>$ }\\\textbf{ Generator\+Wrapper}$<$ T $>$ \textbf{ take} (size\+\_\+t target, \textbf{ Generator\+Wrapper}$<$ T $>$ \&\&generator)
+\item 
+{\footnotesize template$<$typename T , typename Predicate $>$ }\\\textbf{ Generator\+Wrapper}$<$ T $>$ \textbf{ filter} (Predicate \&\&pred, \textbf{ Generator\+Wrapper}$<$ T $>$ \&\&generator)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\textbf{ Generator\+Wrapper}$<$ T $>$ \textbf{ repeat} (size\+\_\+t repeats, \textbf{ Generator\+Wrapper}$<$ T $>$ \&\&generator)
+\item 
+{\footnotesize template$<$typename Func , typename U , typename T  = Map\+Function\+Return\+Type$<$\+Func, U$>$$>$ }\\\textbf{ Generator\+Wrapper}$<$ T $>$ \textbf{ map} (Func \&\&function, \textbf{ Generator\+Wrapper}$<$ U $>$ \&\&generator)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\textbf{ Generator\+Wrapper}$<$ std\+::vector$<$ T $>$ $>$ \textbf{ chunk} (size\+\_\+t size, \textbf{ Generator\+Wrapper}$<$ T $>$ \&\&generator)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ T $>$\+::\textbf{ value} \&\&!std\+::is\+\_\+same$<$ T, bool $>$\+::\textbf{ value}, \textbf{ Generator\+Wrapper}$<$ T $>$ $>$\+::type \textbf{ random} (T a, T b)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+floating\+\_\+point$<$ T $>$\+::\textbf{ value}, \textbf{ Generator\+Wrapper}$<$ T $>$ $>$\+::type \textbf{ random} (T a, T b)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\textbf{ Generator\+Wrapper}$<$ T $>$ \textbf{ range} (T const \&start, T const \&\textbf{ end}, T const \&step)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\textbf{ Generator\+Wrapper}$<$ T $>$ \textbf{ range} (T const \&start, T const \&\textbf{ end})
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\label{namespace_catch_1_1_generators_a1519f304113619d7d18670e2f08276c0}} 
+\index{Catch::Generators@{Catch::Generators}!GeneratorBasePtr@{GeneratorBasePtr}}
+\index{GeneratorBasePtr@{GeneratorBasePtr}!Catch::Generators@{Catch::Generators}}
+\subsubsection{GeneratorBasePtr}
+{\footnotesize\ttfamily using \textbf{ Catch\+::\+Generators\+::\+Generator\+Base\+Ptr} = typedef std\+::unique\+\_\+ptr$<$\textbf{ Generator\+Untyped\+Base}$>$}
+
+\mbox{\label{namespace_catch_1_1_generators_aa509b9b4dd25a6d6309ce8c7da441c02}} 
+\index{Catch::Generators@{Catch::Generators}!MapFunctionReturnType@{MapFunctionReturnType}}
+\index{MapFunctionReturnType@{MapFunctionReturnType}!Catch::Generators@{Catch::Generators}}
+\subsubsection{MapFunctionReturnType}
+{\footnotesize\ttfamily template$<$typename Func , typename U $>$ \\
+using \textbf{ Catch\+::\+Generators\+::\+Map\+Function\+Return\+Type} = typedef typename std\+::remove\+\_\+reference$<$typename std\+::remove\+\_\+cv$<$typename std\+::result\+\_\+of$<$Func(U)$>$\+::type$>$\+::type$>$\+::type}
+
+
+
+\subsection{Function Documentation}
+\mbox{\label{namespace_catch_1_1_generators_a36413e3baec520d89d21bea23b7bea5b}} 
+\index{Catch::Generators@{Catch::Generators}!acquireGeneratorTracker@{acquireGeneratorTracker}}
+\index{acquireGeneratorTracker@{acquireGeneratorTracker}!Catch::Generators@{Catch::Generators}}
+\subsubsection{acquireGeneratorTracker()}
+{\footnotesize\ttfamily auto Catch\+::\+Generators\+::acquire\+Generator\+Tracker (\begin{DoxyParamCaption}\item[{\textbf{ Source\+Line\+Info} const \&}]{line\+Info }\end{DoxyParamCaption}) -\/$>$  \textbf{ I\+Generator\+Tracker} \&}
+
+\mbox{\label{namespace_catch_1_1_generators_a0ac5eeee0354973c318f62d0937a7981}} 
+\index{Catch::Generators@{Catch::Generators}!chunk@{chunk}}
+\index{chunk@{chunk}!Catch::Generators@{Catch::Generators}}
+\subsubsection{chunk()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ Generator\+Wrapper}$<$std\+::vector$<$T$>$ $>$ Catch\+::\+Generators\+::chunk (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{\textbf{ Generator\+Wrapper}$<$ T $>$ \&\&}]{generator }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_1_1_generators_afd87f4cbf259f2252aee164d6905b18b}} 
+\index{Catch::Generators@{Catch::Generators}!filter@{filter}}
+\index{filter@{filter}!Catch::Generators@{Catch::Generators}}
+\subsubsection{filter()}
+{\footnotesize\ttfamily template$<$typename T , typename Predicate $>$ \\
+\textbf{ Generator\+Wrapper}$<$T$>$ Catch\+::\+Generators\+::filter (\begin{DoxyParamCaption}\item[{Predicate \&\&}]{pred,  }\item[{\textbf{ Generator\+Wrapper}$<$ T $>$ \&\&}]{generator }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_1_1_generators_adbda9e2d18cd3e4dbb124c7d8830c97b}} 
+\index{Catch::Generators@{Catch::Generators}!generate@{generate}}
+\index{generate@{generate}!Catch::Generators@{Catch::Generators}}
+\subsubsection{generate()}
+{\footnotesize\ttfamily template$<$typename L $>$ \\
+auto Catch\+::\+Generators\+::generate (\begin{DoxyParamCaption}\item[{\textbf{ Source\+Line\+Info} const \&}]{line\+Info,  }\item[{L const \&}]{generator\+Expression }\end{DoxyParamCaption}) -\/$>$ decltype(std\+::declval$<$decltype(generator\+Expression())$>$().get()) }
+
+\mbox{\label{namespace_catch_1_1_generators_adabbca9c7049bd8b5dd0474240108485}} 
+\index{Catch::Generators@{Catch::Generators}!makeGenerators@{makeGenerators}}
+\index{makeGenerators@{makeGenerators}!Catch::Generators@{Catch::Generators}}
+\subsubsection{makeGenerators()\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename T , typename... Gs$>$ \\
+auto Catch\+::\+Generators\+::make\+Generators (\begin{DoxyParamCaption}\item[{\textbf{ Generator\+Wrapper}$<$ T $>$ \&\&}]{generator,  }\item[{Gs...}]{more\+Generators }\end{DoxyParamCaption}) -\/$>$ \textbf{ Generators}$<$T$>$ }
+
+\mbox{\label{namespace_catch_1_1_generators_abefb1a0fab3c669b98a53037b3286d22}} 
+\index{Catch::Generators@{Catch::Generators}!makeGenerators@{makeGenerators}}
+\index{makeGenerators@{makeGenerators}!Catch::Generators@{Catch::Generators}}
+\subsubsection{makeGenerators()\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+auto Catch\+::\+Generators\+::make\+Generators (\begin{DoxyParamCaption}\item[{\textbf{ Generator\+Wrapper}$<$ T $>$ \&\&}]{generator }\end{DoxyParamCaption}) -\/$>$ \textbf{ Generators}$<$T$>$ }
+
+\mbox{\label{namespace_catch_1_1_generators_a0497b4463b7afee28df49631d6d75e83}} 
+\index{Catch::Generators@{Catch::Generators}!makeGenerators@{makeGenerators}}
+\index{makeGenerators@{makeGenerators}!Catch::Generators@{Catch::Generators}}
+\subsubsection{makeGenerators()\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename T , typename... Gs$>$ \\
+auto Catch\+::\+Generators\+::make\+Generators (\begin{DoxyParamCaption}\item[{T \&\&}]{val,  }\item[{Gs...}]{more\+Generators }\end{DoxyParamCaption}) -\/$>$ \textbf{ Generators}$<$T$>$ }
+
+\mbox{\label{namespace_catch_1_1_generators_a4032a75da538c6897f826399368e16ed}} 
+\index{Catch::Generators@{Catch::Generators}!makeGenerators@{makeGenerators}}
+\index{makeGenerators@{makeGenerators}!Catch::Generators@{Catch::Generators}}
+\subsubsection{makeGenerators()\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename T , typename U , typename... Gs$>$ \\
+auto Catch\+::\+Generators\+::make\+Generators (\begin{DoxyParamCaption}\item[{\textbf{ as}$<$ T $>$}]{,  }\item[{U \&\&}]{val,  }\item[{Gs...}]{more\+Generators }\end{DoxyParamCaption}) -\/$>$ \textbf{ Generators}$<$T$>$ }
+
+\mbox{\label{namespace_catch_1_1_generators_af33fd06c51ac9173c3bee2ddee2559a6}} 
+\index{Catch::Generators@{Catch::Generators}!map@{map}}
+\index{map@{map}!Catch::Generators@{Catch::Generators}}
+\subsubsection{map()}
+{\footnotesize\ttfamily template$<$typename Func , typename U , typename T  = Map\+Function\+Return\+Type$<$\+Func, U$>$$>$ \\
+\textbf{ Generator\+Wrapper}$<$ T $>$ Catch\+::\+Generators\+::map (\begin{DoxyParamCaption}\item[{Func \&\&}]{function,  }\item[{\textbf{ Generator\+Wrapper}$<$ U $>$ \&\&}]{generator }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_1_1_generators_a5003f0b96aaa4b1a53ebd81f4e93ab0c}} 
+\index{Catch::Generators@{Catch::Generators}!random@{random}}
+\index{random@{random}!Catch::Generators@{Catch::Generators}}
+\subsubsection{random()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$std\+::is\+\_\+integral$<$T$>$\+::\textbf{ value} \&\& !std\+::is\+\_\+same$<$T, bool$>$\+::\textbf{ value},\textbf{ Generator\+Wrapper}$<$T$>$ $>$\+::type Catch\+::\+Generators\+::random (\begin{DoxyParamCaption}\item[{T}]{a,  }\item[{T}]{b }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_1_1_generators_a677b543146adcdfe23fdfff48007a57e}} 
+\index{Catch::Generators@{Catch::Generators}!random@{random}}
+\index{random@{random}!Catch::Generators@{Catch::Generators}}
+\subsubsection{random()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if$<$std\+::is\+\_\+floating\+\_\+point$<$T$>$\+::\textbf{ value},\textbf{ Generator\+Wrapper}$<$T$>$ $>$\+::type Catch\+::\+Generators\+::random (\begin{DoxyParamCaption}\item[{T}]{a,  }\item[{T}]{b }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_1_1_generators_a3c79134931f824e63588bfa5baa77a43}} 
+\index{Catch::Generators@{Catch::Generators}!range@{range}}
+\index{range@{range}!Catch::Generators@{Catch::Generators}}
+\subsubsection{range()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ Generator\+Wrapper}$<$T$>$ Catch\+::\+Generators\+::range (\begin{DoxyParamCaption}\item[{T const \&}]{start,  }\item[{T const \&}]{end,  }\item[{T const \&}]{step }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_1_1_generators_a75b1b4ab3b52a8d99f9d049824500371}} 
+\index{Catch::Generators@{Catch::Generators}!range@{range}}
+\index{range@{range}!Catch::Generators@{Catch::Generators}}
+\subsubsection{range()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ Generator\+Wrapper}$<$T$>$ Catch\+::\+Generators\+::range (\begin{DoxyParamCaption}\item[{T const \&}]{start,  }\item[{T const \&}]{end }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_1_1_generators_a3a30dce0fd8e3818baaca086ba5fd35a}} 
+\index{Catch::Generators@{Catch::Generators}!repeat@{repeat}}
+\index{repeat@{repeat}!Catch::Generators@{Catch::Generators}}
+\subsubsection{repeat()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ Generator\+Wrapper}$<$T$>$ Catch\+::\+Generators\+::repeat (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{repeats,  }\item[{\textbf{ Generator\+Wrapper}$<$ T $>$ \&\&}]{generator }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_1_1_generators_a6e0436ad4eddeabdc34281119201dbfe}} 
+\index{Catch::Generators@{Catch::Generators}!table@{table}}
+\index{table@{table}!Catch::Generators@{Catch::Generators}}
+\subsubsection{table()}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+\textbf{ Generator\+Wrapper}$<$std\+::tuple$<$Ts...$>$ $>$ Catch\+::\+Generators\+::table (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ std\+::tuple$<$ typename std\+::decay$<$ Ts $>$\+::type... $>$$>$}]{tuples }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_1_1_generators_a972480864d60131946f6f53c566de070}} 
+\index{Catch::Generators@{Catch::Generators}!take@{take}}
+\index{take@{take}!Catch::Generators@{Catch::Generators}}
+\subsubsection{take()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ Generator\+Wrapper}$<$T$>$ Catch\+::\+Generators\+::take (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{target,  }\item[{\textbf{ Generator\+Wrapper}$<$ T $>$ \&\&}]{generator }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_1_1_generators_a3c4989dd0dca44455f55484cedaa18da}} 
+\index{Catch::Generators@{Catch::Generators}!value@{value}}
+\index{value@{value}!Catch::Generators@{Catch::Generators}}
+\subsubsection{value()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ Generator\+Wrapper}$<$T$>$ Catch\+::\+Generators\+::value (\begin{DoxyParamCaption}\item[{T \&\&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_1_1_generators_a55ca9a1132e662d9603c516161dcae35}} 
+\index{Catch::Generators@{Catch::Generators}!values@{values}}
+\index{values@{values}!Catch::Generators@{Catch::Generators}}
+\subsubsection{values()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ Generator\+Wrapper}$<$T$>$ Catch\+::\+Generators\+::values (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ T $>$}]{values }\end{DoxyParamCaption})}
+

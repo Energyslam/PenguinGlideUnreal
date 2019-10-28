@@ -1,0 +1,165 @@
+\section{Catch\+::Binary\+Expr$<$ LhsT, RhsT $>$ Class Template Reference}
+\label{class_catch_1_1_binary_expr}\index{Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}}
+
+
+{\ttfamily \#include $<$catch.\+hpp$>$}
+
+Inheritance diagram for Catch\+::Binary\+Expr$<$ LhsT, RhsT $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_catch_1_1_binary_expr}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Binary\+Expr} (bool comparison\+Result, LhsT lhs, \textbf{ String\+Ref} op, RhsT rhs)
+\item 
+{\footnotesize template$<$typename T $>$ }\\auto \textbf{ operator \&\&} (T) const -\/$>$ \textbf{ Binary\+Expr}$<$ LhsT, RhsT const \& $>$ const
+\item 
+{\footnotesize template$<$typename T $>$ }\\auto \textbf{ operator$\vert$$\vert$} (T) const -\/$>$ \textbf{ Binary\+Expr}$<$ LhsT, RhsT const \& $>$ const
+\item 
+{\footnotesize template$<$typename T $>$ }\\auto \textbf{ operator==} (T) const -\/$>$ \textbf{ Binary\+Expr}$<$ LhsT, RhsT const \& $>$ const
+\item 
+{\footnotesize template$<$typename T $>$ }\\auto \textbf{ operator !=} (T) const -\/$>$ \textbf{ Binary\+Expr}$<$ LhsT, RhsT const \& $>$ const
+\item 
+{\footnotesize template$<$typename T $>$ }\\auto \textbf{ operator $>$} (T) const -\/$>$ \textbf{ Binary\+Expr}$<$ LhsT, RhsT const \& $>$ const
+\item 
+{\footnotesize template$<$typename T $>$ }\\auto \textbf{ operator$<$} (T) const -\/$>$ \textbf{ Binary\+Expr}$<$ LhsT, RhsT const \& $>$ const
+\item 
+{\footnotesize template$<$typename T $>$ }\\auto \textbf{ operator $>$=} (T) const -\/$>$ \textbf{ Binary\+Expr}$<$ LhsT, RhsT const \& $>$ const
+\item 
+{\footnotesize template$<$typename T $>$ }\\auto \textbf{ operator$<$=} (T) const -\/$>$ \textbf{ Binary\+Expr}$<$ LhsT, RhsT const \& $>$ const
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ stream\+Reconstructed\+Expression} (std\+::ostream \&os) const override
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+LhsT \textbf{ m\+\_\+lhs}
+\item 
+\textbf{ String\+Ref} \textbf{ m\+\_\+op}
+\item 
+RhsT \textbf{ m\+\_\+rhs}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_catch_1_1_binary_expr_a657d66346aef97a760c22776fe6008b6}} 
+\index{Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}!BinaryExpr@{BinaryExpr}}
+\index{BinaryExpr@{BinaryExpr}!Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}}
+\subsubsection{BinaryExpr()}
+{\footnotesize\ttfamily template$<$typename LhsT , typename RhsT $>$ \\
+\textbf{ Catch\+::\+Binary\+Expr}$<$ LhsT, RhsT $>$\+::\textbf{ Binary\+Expr} (\begin{DoxyParamCaption}\item[{bool}]{comparison\+Result,  }\item[{LhsT}]{lhs,  }\item[{\textbf{ String\+Ref}}]{op,  }\item[{RhsT}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_catch_1_1_binary_expr_a4bbd87a1dc9759185432fce44765d4f5}} 
+\index{Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}!operator "!=@{operator "!=}}
+\index{operator "!=@{operator "!=}!Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}}
+\subsubsection{operator "!=()}
+{\footnotesize\ttfamily template$<$typename LhsT , typename RhsT $>$ \\
+template$<$typename T $>$ \\
+auto \textbf{ Catch\+::\+Binary\+Expr}$<$ LhsT, RhsT $>$\+::operator != (\begin{DoxyParamCaption}\item[{T}]{ }\end{DoxyParamCaption}) const -\/$>$ \textbf{ Binary\+Expr}$<$LhsT, RhsT const\&$>$ const \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_catch_1_1_binary_expr_a46d218bd9e184e6b9a940df77c64f729}} 
+\index{Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}!operator \&\&@{operator \&\&}}
+\index{operator \&\&@{operator \&\&}!Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}}
+\subsubsection{operator \&\&()}
+{\footnotesize\ttfamily template$<$typename LhsT , typename RhsT $>$ \\
+template$<$typename T $>$ \\
+auto \textbf{ Catch\+::\+Binary\+Expr}$<$ LhsT, RhsT $>$\+::operator \&\& (\begin{DoxyParamCaption}\item[{T}]{ }\end{DoxyParamCaption}) const -\/$>$ \textbf{ Binary\+Expr}$<$LhsT, RhsT const\&$>$ const \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_catch_1_1_binary_expr_a93f643d30d7617ab7a2a50dfaccde029}} 
+\index{Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}!operator $>$@{operator $>$}}
+\index{operator $>$@{operator $>$}!Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}}
+\subsubsection{operator $>$()}
+{\footnotesize\ttfamily template$<$typename LhsT , typename RhsT $>$ \\
+template$<$typename T $>$ \\
+auto \textbf{ Catch\+::\+Binary\+Expr}$<$ LhsT, RhsT $>$\+::operator $>$ (\begin{DoxyParamCaption}\item[{T}]{ }\end{DoxyParamCaption}) const -\/$>$ \textbf{ Binary\+Expr}$<$LhsT, RhsT const\&$>$ const \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_catch_1_1_binary_expr_a5b61ffcbbfd28c40bd25bb56599df489}} 
+\index{Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}!operator $>$=@{operator $>$=}}
+\index{operator $>$=@{operator $>$=}!Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}}
+\subsubsection{operator $>$=()}
+{\footnotesize\ttfamily template$<$typename LhsT , typename RhsT $>$ \\
+template$<$typename T $>$ \\
+auto \textbf{ Catch\+::\+Binary\+Expr}$<$ LhsT, RhsT $>$\+::operator $>$= (\begin{DoxyParamCaption}\item[{T}]{ }\end{DoxyParamCaption}) const -\/$>$ \textbf{ Binary\+Expr}$<$LhsT, RhsT const\&$>$ const \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_catch_1_1_binary_expr_a7e6c3dcf59b3cd51e7c82355da3ef451}} 
+\index{Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}}
+\subsubsection{operator$<$()}
+{\footnotesize\ttfamily template$<$typename LhsT , typename RhsT $>$ \\
+template$<$typename T $>$ \\
+auto \textbf{ Catch\+::\+Binary\+Expr}$<$ LhsT, RhsT $>$\+::operator$<$ (\begin{DoxyParamCaption}\item[{T}]{ }\end{DoxyParamCaption}) const -\/$>$ \textbf{ Binary\+Expr}$<$LhsT, RhsT const\&$>$ const \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_catch_1_1_binary_expr_a5590a2c5f5074ca2509c09b92bfcdf57}} 
+\index{Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}}
+\subsubsection{operator$<$=()}
+{\footnotesize\ttfamily template$<$typename LhsT , typename RhsT $>$ \\
+template$<$typename T $>$ \\
+auto \textbf{ Catch\+::\+Binary\+Expr}$<$ LhsT, RhsT $>$\+::operator$<$= (\begin{DoxyParamCaption}\item[{T}]{ }\end{DoxyParamCaption}) const -\/$>$ \textbf{ Binary\+Expr}$<$LhsT, RhsT const\&$>$ const \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_catch_1_1_binary_expr_a245bffd2aab2f560814739986710aaf1}} 
+\index{Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}}
+\subsubsection{operator==()}
+{\footnotesize\ttfamily template$<$typename LhsT , typename RhsT $>$ \\
+template$<$typename T $>$ \\
+auto \textbf{ Catch\+::\+Binary\+Expr}$<$ LhsT, RhsT $>$\+::operator== (\begin{DoxyParamCaption}\item[{T}]{ }\end{DoxyParamCaption}) const -\/$>$ \textbf{ Binary\+Expr}$<$LhsT, RhsT const\&$>$ const \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_catch_1_1_binary_expr_a331e53968b1a2f92827c35721cc7eded}} 
+\index{Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}!operator\texttt{"|}\texttt{"|}@{operator\texttt{"|}\texttt{"|}}}
+\index{operator\texttt{"|}\texttt{"|}@{operator\texttt{"|}\texttt{"|}}!Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}}
+\subsubsection{operator\texttt{"|}\texttt{"|}()}
+{\footnotesize\ttfamily template$<$typename LhsT , typename RhsT $>$ \\
+template$<$typename T $>$ \\
+auto \textbf{ Catch\+::\+Binary\+Expr}$<$ LhsT, RhsT $>$\+::operator$\vert$$\vert$ (\begin{DoxyParamCaption}\item[{T}]{ }\end{DoxyParamCaption}) const -\/$>$ \textbf{ Binary\+Expr}$<$LhsT, RhsT const\&$>$ const \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_catch_1_1_binary_expr_af998022712d4bd3e4fc7ab9b8a38b445}} 
+\index{Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}!streamReconstructedExpression@{streamReconstructedExpression}}
+\index{streamReconstructedExpression@{streamReconstructedExpression}!Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}}
+\subsubsection{streamReconstructedExpression()}
+{\footnotesize\ttfamily template$<$typename LhsT , typename RhsT $>$ \\
+void \textbf{ Catch\+::\+Binary\+Expr}$<$ LhsT, RhsT $>$\+::stream\+Reconstructed\+Expression (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Catch\+::\+I\+Transient\+Expression} \doxyref{}{p.}{struct_catch_1_1_i_transient_expression_aabe1889df9c6e639a24afb08d8a0fe9e}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_catch_1_1_binary_expr_a306b29e77b48f9c538c5031a59adc4ce}} 
+\index{Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}!m\_lhs@{m\_lhs}}
+\index{m\_lhs@{m\_lhs}!Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}}
+\subsubsection{m\_lhs}
+{\footnotesize\ttfamily template$<$typename LhsT , typename RhsT $>$ \\
+LhsT \textbf{ Catch\+::\+Binary\+Expr}$<$ LhsT, RhsT $>$\+::m\+\_\+lhs\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_catch_1_1_binary_expr_ab21dea40c53fd64d4f7a073dbe93ec95}} 
+\index{Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}!m\_op@{m\_op}}
+\index{m\_op@{m\_op}!Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}}
+\subsubsection{m\_op}
+{\footnotesize\ttfamily template$<$typename LhsT , typename RhsT $>$ \\
+\textbf{ String\+Ref} \textbf{ Catch\+::\+Binary\+Expr}$<$ LhsT, RhsT $>$\+::m\+\_\+op\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_catch_1_1_binary_expr_a54cb1629bf304ebe0c1560f4cc2bc186}} 
+\index{Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}!m\_rhs@{m\_rhs}}
+\index{m\_rhs@{m\_rhs}!Catch::BinaryExpr$<$ LhsT, RhsT $>$@{Catch::BinaryExpr$<$ LhsT, RhsT $>$}}
+\subsubsection{m\_rhs}
+{\footnotesize\ttfamily template$<$typename LhsT , typename RhsT $>$ \\
+RhsT \textbf{ Catch\+::\+Binary\+Expr}$<$ LhsT, RhsT $>$\+::m\+\_\+rhs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/\textbf{ catch.\+hpp}\end{DoxyCompactItemize}

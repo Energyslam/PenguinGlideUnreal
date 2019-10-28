@@ -1,0 +1,113 @@
+\section{Catch\+::Generators\+::Repeat\+Generator$<$ T $>$ Class Template Reference}
+\label{class_catch_1_1_generators_1_1_repeat_generator}\index{Catch::Generators::RepeatGenerator$<$ T $>$@{Catch::Generators::RepeatGenerator$<$ T $>$}}
+
+
+{\ttfamily \#include $<$catch.\+hpp$>$}
+
+Inheritance diagram for Catch\+::Generators\+::Repeat\+Generator$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_catch_1_1_generators_1_1_repeat_generator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Repeat\+Generator} (size\+\_\+t repeats, \textbf{ Generator\+Wrapper}$<$ T $>$ \&\&generator)
+\item 
+T const  \& \textbf{ get} () const override
+\item 
+bool \textbf{ next} () override
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Generator\+Wrapper}$<$ T $>$ \textbf{ m\+\_\+generator}
+\item 
+std\+::vector$<$ T $>$ \textbf{ m\+\_\+returned}
+\item 
+size\+\_\+t \textbf{ m\+\_\+target\+\_\+repeats}
+\item 
+size\+\_\+t \textbf{ m\+\_\+current\+\_\+repeat} = 0
+\item 
+size\+\_\+t \textbf{ m\+\_\+repeat\+\_\+index} = 0
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_catch_1_1_generators_1_1_repeat_generator_a3aee12c4f9c2c04823ca3c75a20f234f}} 
+\index{Catch::Generators::RepeatGenerator$<$ T $>$@{Catch::Generators::RepeatGenerator$<$ T $>$}!RepeatGenerator@{RepeatGenerator}}
+\index{RepeatGenerator@{RepeatGenerator}!Catch::Generators::RepeatGenerator$<$ T $>$@{Catch::Generators::RepeatGenerator$<$ T $>$}}
+\subsubsection{RepeatGenerator()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ Catch\+::\+Generators\+::\+Repeat\+Generator}$<$ T $>$\+::\textbf{ Repeat\+Generator} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{repeats,  }\item[{\textbf{ Generator\+Wrapper}$<$ T $>$ \&\&}]{generator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_catch_1_1_generators_1_1_repeat_generator_a43bd573274c9a0cd7f4406a3d0d36d49}} 
+\index{Catch::Generators::RepeatGenerator$<$ T $>$@{Catch::Generators::RepeatGenerator$<$ T $>$}!get@{get}}
+\index{get@{get}!Catch::Generators::RepeatGenerator$<$ T $>$@{Catch::Generators::RepeatGenerator$<$ T $>$}}
+\subsubsection{get()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T const\& \textbf{ Catch\+::\+Generators\+::\+Repeat\+Generator}$<$ T $>$\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Catch\+::\+Generators\+::\+I\+Generator$<$ T $>$} \doxyref{}{p.}{struct_catch_1_1_generators_1_1_i_generator_a525d381fc9249a885b075a0632a8579a}.
+
+\mbox{\label{class_catch_1_1_generators_1_1_repeat_generator_a24d5c2b1c09d6d220d4bd4c83f222dcb}} 
+\index{Catch::Generators::RepeatGenerator$<$ T $>$@{Catch::Generators::RepeatGenerator$<$ T $>$}!next@{next}}
+\index{next@{next}!Catch::Generators::RepeatGenerator$<$ T $>$@{Catch::Generators::RepeatGenerator$<$ T $>$}}
+\subsubsection{next()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \textbf{ Catch\+::\+Generators\+::\+Repeat\+Generator}$<$ T $>$\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Catch\+::\+Generators\+::\+Generator\+Untyped\+Base} \doxyref{}{p.}{class_catch_1_1_generators_1_1_generator_untyped_base_aeed3c0cd6233c5f553549e453b8d6638}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_catch_1_1_generators_1_1_repeat_generator_ad834535fe3a2aec44bf53632c43f68cf}} 
+\index{Catch::Generators::RepeatGenerator$<$ T $>$@{Catch::Generators::RepeatGenerator$<$ T $>$}!m\_current\_repeat@{m\_current\_repeat}}
+\index{m\_current\_repeat@{m\_current\_repeat}!Catch::Generators::RepeatGenerator$<$ T $>$@{Catch::Generators::RepeatGenerator$<$ T $>$}}
+\subsubsection{m\_current\_repeat}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \textbf{ Catch\+::\+Generators\+::\+Repeat\+Generator}$<$ T $>$\+::m\+\_\+current\+\_\+repeat = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_catch_1_1_generators_1_1_repeat_generator_ae4eeba772ffba6d928f959835e8db154}} 
+\index{Catch::Generators::RepeatGenerator$<$ T $>$@{Catch::Generators::RepeatGenerator$<$ T $>$}!m\_generator@{m\_generator}}
+\index{m\_generator@{m\_generator}!Catch::Generators::RepeatGenerator$<$ T $>$@{Catch::Generators::RepeatGenerator$<$ T $>$}}
+\subsubsection{m\_generator}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ Generator\+Wrapper}$<$T$>$ \textbf{ Catch\+::\+Generators\+::\+Repeat\+Generator}$<$ T $>$\+::m\+\_\+generator\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_catch_1_1_generators_1_1_repeat_generator_ab311143cc38451a21de61f444fbc7cf6}} 
+\index{Catch::Generators::RepeatGenerator$<$ T $>$@{Catch::Generators::RepeatGenerator$<$ T $>$}!m\_repeat\_index@{m\_repeat\_index}}
+\index{m\_repeat\_index@{m\_repeat\_index}!Catch::Generators::RepeatGenerator$<$ T $>$@{Catch::Generators::RepeatGenerator$<$ T $>$}}
+\subsubsection{m\_repeat\_index}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \textbf{ Catch\+::\+Generators\+::\+Repeat\+Generator}$<$ T $>$\+::m\+\_\+repeat\+\_\+index = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_catch_1_1_generators_1_1_repeat_generator_aee4c7a8c54c739f2fea75c01b02ccc6e}} 
+\index{Catch::Generators::RepeatGenerator$<$ T $>$@{Catch::Generators::RepeatGenerator$<$ T $>$}!m\_returned@{m\_returned}}
+\index{m\_returned@{m\_returned}!Catch::Generators::RepeatGenerator$<$ T $>$@{Catch::Generators::RepeatGenerator$<$ T $>$}}
+\subsubsection{m\_returned}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$T$>$ \textbf{ Catch\+::\+Generators\+::\+Repeat\+Generator}$<$ T $>$\+::m\+\_\+returned\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+\mbox{\label{class_catch_1_1_generators_1_1_repeat_generator_af73981a50e1e1438d0159ac0b55a84bf}} 
+\index{Catch::Generators::RepeatGenerator$<$ T $>$@{Catch::Generators::RepeatGenerator$<$ T $>$}!m\_target\_repeats@{m\_target\_repeats}}
+\index{m\_target\_repeats@{m\_target\_repeats}!Catch::Generators::RepeatGenerator$<$ T $>$@{Catch::Generators::RepeatGenerator$<$ T $>$}}
+\subsubsection{m\_target\_repeats}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \textbf{ Catch\+::\+Generators\+::\+Repeat\+Generator}$<$ T $>$\+::m\+\_\+target\+\_\+repeats\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/\textbf{ catch.\+hpp}\end{DoxyCompactItemize}

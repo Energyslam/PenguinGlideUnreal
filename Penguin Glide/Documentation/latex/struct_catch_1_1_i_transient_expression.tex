@@ -1,0 +1,92 @@
+\section{Catch\+::I\+Transient\+Expression Struct Reference}
+\label{struct_catch_1_1_i_transient_expression}\index{Catch::ITransientExpression@{Catch::ITransientExpression}}
+
+
+{\ttfamily \#include $<$catch.\+hpp$>$}
+
+Inheritance diagram for Catch\+::I\+Transient\+Expression\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.588652cm]{struct_catch_1_1_i_transient_expression}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+auto \textbf{ is\+Binary\+Expression} () const -\/$>$ bool
+\item 
+auto \textbf{ get\+Result} () const -\/$>$ bool
+\item 
+virtual void \textbf{ stream\+Reconstructed\+Expression} (std\+::ostream \&os) const =0
+\item 
+\textbf{ I\+Transient\+Expression} (bool \textbf{ is\+Binary\+Expression}, bool result)
+\item 
+virtual \textbf{ $\sim$\+I\+Transient\+Expression} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ m\+\_\+is\+Binary\+Expression}
+\item 
+bool \textbf{ m\+\_\+result}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{struct_catch_1_1_i_transient_expression_aafe69572b7ed884e63ec81f58d4afd8c}} 
+\index{Catch::ITransientExpression@{Catch::ITransientExpression}!ITransientExpression@{ITransientExpression}}
+\index{ITransientExpression@{ITransientExpression}!Catch::ITransientExpression@{Catch::ITransientExpression}}
+\subsubsection{ITransientExpression()}
+{\footnotesize\ttfamily Catch\+::\+I\+Transient\+Expression\+::\+I\+Transient\+Expression (\begin{DoxyParamCaption}\item[{bool}]{is\+Binary\+Expression,  }\item[{bool}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{struct_catch_1_1_i_transient_expression_aeadf426de589938c4964fe4068eeee77}} 
+\index{Catch::ITransientExpression@{Catch::ITransientExpression}!````~ITransientExpression@{$\sim$ITransientExpression}}
+\index{````~ITransientExpression@{$\sim$ITransientExpression}!Catch::ITransientExpression@{Catch::ITransientExpression}}
+\subsubsection{$\sim$ITransientExpression()}
+{\footnotesize\ttfamily virtual Catch\+::\+I\+Transient\+Expression\+::$\sim$\+I\+Transient\+Expression (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{struct_catch_1_1_i_transient_expression_a101c7db86c87eff93a8ff496720e6320}} 
+\index{Catch::ITransientExpression@{Catch::ITransientExpression}!getResult@{getResult}}
+\index{getResult@{getResult}!Catch::ITransientExpression@{Catch::ITransientExpression}}
+\subsubsection{getResult()}
+{\footnotesize\ttfamily auto Catch\+::\+I\+Transient\+Expression\+::get\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ bool \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{struct_catch_1_1_i_transient_expression_a3b436e13a0a6d3522bbf70d4e31deb22}} 
+\index{Catch::ITransientExpression@{Catch::ITransientExpression}!isBinaryExpression@{isBinaryExpression}}
+\index{isBinaryExpression@{isBinaryExpression}!Catch::ITransientExpression@{Catch::ITransientExpression}}
+\subsubsection{isBinaryExpression()}
+{\footnotesize\ttfamily auto Catch\+::\+I\+Transient\+Expression\+::is\+Binary\+Expression (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ bool \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{struct_catch_1_1_i_transient_expression_aabe1889df9c6e639a24afb08d8a0fe9e}} 
+\index{Catch::ITransientExpression@{Catch::ITransientExpression}!streamReconstructedExpression@{streamReconstructedExpression}}
+\index{streamReconstructedExpression@{streamReconstructedExpression}!Catch::ITransientExpression@{Catch::ITransientExpression}}
+\subsubsection{streamReconstructedExpression()}
+{\footnotesize\ttfamily virtual void Catch\+::\+I\+Transient\+Expression\+::stream\+Reconstructed\+Expression (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \textbf{ Catch\+::\+Match\+Expr$<$ Arg\+T, Matcher\+T $>$} \doxyref{}{p.}{class_catch_1_1_match_expr_ad3e41adb597750b2219bb37e51185629}, \textbf{ Catch\+::\+Unary\+Expr$<$ Lhs\+T $>$} \doxyref{}{p.}{class_catch_1_1_unary_expr_aaabf30455a996c80675c0f388a6e4110}, and \textbf{ Catch\+::\+Binary\+Expr$<$ Lhs\+T, Rhs\+T $>$} \doxyref{}{p.}{class_catch_1_1_binary_expr_af998022712d4bd3e4fc7ab9b8a38b445}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{struct_catch_1_1_i_transient_expression_a75ce48da824d514d08152d396abb28d8}} 
+\index{Catch::ITransientExpression@{Catch::ITransientExpression}!m\_isBinaryExpression@{m\_isBinaryExpression}}
+\index{m\_isBinaryExpression@{m\_isBinaryExpression}!Catch::ITransientExpression@{Catch::ITransientExpression}}
+\subsubsection{m\_isBinaryExpression}
+{\footnotesize\ttfamily bool Catch\+::\+I\+Transient\+Expression\+::m\+\_\+is\+Binary\+Expression}
+
+\mbox{\label{struct_catch_1_1_i_transient_expression_a4646e2b5e0156e913653ec3b9b60c942}} 
+\index{Catch::ITransientExpression@{Catch::ITransientExpression}!m\_result@{m\_result}}
+\index{m\_result@{m\_result}!Catch::ITransientExpression@{Catch::ITransientExpression}}
+\subsubsection{m\_result}
+{\footnotesize\ttfamily bool Catch\+::\+I\+Transient\+Expression\+::m\+\_\+result}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/\textbf{ catch.\+hpp}\end{DoxyCompactItemize}

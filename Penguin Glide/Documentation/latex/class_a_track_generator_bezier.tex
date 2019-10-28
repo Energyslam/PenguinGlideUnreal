@@ -1,0 +1,629 @@
+\section{A\+Track\+Generator\+Bezier Class Reference}
+\label{class_a_track_generator_bezier}\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+
+
+This class takes care of the procedurally generated track mesh.  
+
+
+
+
+{\ttfamily \#include $<$Track\+Generator\+Bezier.\+h$>$}
+
+Inheritance diagram for A\+Track\+Generator\+Bezier\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_track_generator_bezier}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Tick} (float Delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Called every frame. \end{DoxyCompactList}\item 
+\textbf{ A\+Track\+Generator\+Bezier} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \textbf{ Create\+Snowball} (T\+Array$<$ F\+Vector $>$ \&verts, int vert\+Amount, int column)
+\item 
+void \textbf{ Create\+Triangles} (int vertice\+Amount, T\+Array$<$ int32 $>$ $\ast$triangles)
+\item 
+void \textbf{ Create\+Vertices} (T\+Array$<$ F\+Vector $>$ \&points, T\+Array$<$ F\+Vector $>$ \&vertices, T\+Array$<$ F\+Vector $>$ \&normals)
+\item 
+void \textbf{ Back\+To\+Front} ()
+\begin{DoxyCompactList}\small\item\em Takes the mesh section on the back of the track and places it to the front of the track. \end{DoxyCompactList}\item 
+void \textbf{ Create\+Wak\+Particles} (F\+Vector)
+\begin{DoxyCompactList}\small\item\em Creates a particle system at the location of the wak to indicate danger. \end{DoxyCompactList}\item 
+void \textbf{ Create\+Mesh} (T\+Array$<$ F\+Vector $>$ points, int counter)
+\begin{DoxyCompactList}\small\item\em Calculates the vertices and triangles of the mesh and draws the mesh. \end{DoxyCompactList}\item 
+\textbf{ Mesh\+Section} \textbf{ Change\+Section} (\textbf{ Mesh\+Section} sect)
+\begin{DoxyCompactList}\small\item\em Changes the nodes of the mesh section and makes sure the pieces roughly connect. \end{DoxyCompactList}\item 
+F\+Vector \textbf{ Get\+Player\+Spawn\+Position} (F\+Vector right\+Vert, F\+Vector left\+Vert)
+\begin{DoxyCompactList}\small\item\em Gets coordinates on the track to spawn the player. \end{DoxyCompactList}\item 
+float \textbf{ Calculate\+Arc\+LengthY} (T\+Array$<$ F\+Vector $>$ \&vertices, int \&y\+Count)
+\begin{DoxyCompactList}\small\item\em Calculates the arc length of a given curve. \end{DoxyCompactList}\item 
+float \textbf{ Calculate\+Arc\+LengthX} (T\+Array$<$ F\+Vector $>$ \&vertices, int \&x\+Count, int \&y\+Count)
+\item 
+float \textbf{ Get\+Ending\+Verts} ()
+\begin{DoxyCompactList}\small\item\em Returns the lowest vertice of the track. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \textbf{ steepness} = 1
+\item 
+int \textbf{ array\+Size}
+\item 
+int \textbf{ placement\+Counter} = 0
+\item 
+int \textbf{ y\+Per\+Section} = 0
+\item 
+int \textbf{ z\+Position} = 0
+\begin{DoxyCompactList}\small\item\em \textbackslash{}initial z position of the track \end{DoxyCompactList}\item 
+int \textbf{ replacement\+Section} = 3
+\begin{DoxyCompactList}\small\item\em \textbackslash{}\+Mesh section to be replaced, based on player position \end{DoxyCompactList}\item 
+int \textbf{ triangle\+Amount}
+\item 
+int \textbf{ y\+Per\+Sect\+Base}
+\item 
+float \textbf{ spawn\+Speed} = 3.\+0f
+\item 
+float \textbf{ z\+Offset}
+\item 
+F\+Vector \textbf{ spawn\+Position}
+\begin{DoxyCompactList}\small\item\em \textbackslash{}\+Spawn\+Position of the player \end{DoxyCompactList}\item 
+T\+Array$<$ F\+Vector $>$ \textbf{ initial\+Nodes}
+\begin{DoxyCompactList}\small\item\em \textbackslash{}\+Nodes of first mesh section \end{DoxyCompactList}\item 
+class \textbf{ A\+Speed\+Boost\+Generator} $\ast$ \textbf{ speed\+Boost\+Generator}
+\item 
+class \textbf{ A\+Temp\+Player} $\ast$ \textbf{ temp\+Player}
+\item 
+U\+Material\+Interface $\ast$ \textbf{ ice\+Material}
+\begin{DoxyCompactList}\small\item\em \textbackslash{}\+Material of the track \end{DoxyCompactList}\item 
+U\+Material\+Interface $\ast$ \textbf{ speed\+Boost\+Material}
+\item 
+class U\+Particle\+System $\ast$ \textbf{ wak\+Particle\+System}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Begin\+Play} () override
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ ending\+Verts\+Initialized}
+\begin{DoxyCompactList}\small\item\em \textbackslash{}\+Determines whether ending\+Verts array is initialized \end{DoxyCompactList}\item 
+bool \textbf{ spawn\+Position\+Initialized} = false
+\item 
+U\+Procedural\+Mesh\+Component $\ast$ \textbf{ mesh}
+\item 
+U\+Procedural\+Mesh\+Component $\ast$ \textbf{ speed\+Boost}
+\item 
+F\+Vector \textbf{ track\+Scale}
+\item 
+T\+Array$<$ F\+Vector $>$ \textbf{ ending\+Verts}
+\begin{DoxyCompactList}\small\item\em \textbackslash{}\+Holds ending vertices of most recently spawned mesh section \end{DoxyCompactList}\item 
+F\+Timer\+Handle \textbf{ timehandle}
+\begin{DoxyCompactList}\small\item\em \textbackslash{}\+Handle to manage the timer \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class takes care of the procedurally generated track mesh. 
+
+For the generation of the track, Unreal Engines Procedural\+Mesh\+Component is used. This component makes it possible to create a procedurally generated mesh. To calculate the shape of the mesh, we use an algorithm to calculate the points on a cubic Bezier curve. This way, the track wil be curvy and interesting for the player while also ensuring that the generated curve looks natural, like a river. This algorithm is also used to create the half pipe shape of the mesh.
+
+The track is composed out of several sections. When the game starts, 4 of these mesh sections are created which all fit to one another. The process of creating these mesh sections is as follows\+:
+
+The following steps are taken to create each mesh section\+:
+\begin{DoxyItemize}
+\item Four random positioned nodes are taken for each mesh section, used to calculate the curve of the mesh section
+\item The last node is equal to the first node of following mesh section to make sure the mesh sections connect
+\item The vertices and the triangles are calculated, and based on the result, the mesh will be rendered
+\item The vertex normals are calculating by normalizing the difference between the vertices and the origin
+\item The uv\textquotesingle{}s are calculated to be able to use a material on the track
+\item Mesh will be rendered
+\end{DoxyItemize}
+
+When the player has reached a certain position on the track, the mesh section on the back will be placed to the front to prevent the mesh from getting infinitely long. This prevents unnecessary calculations and unnecessary rendering.
+
+This generator is also used to create snowballs, speedboosts and power-\/ups as they rely on the positions of the vertices. This is done by giving the vertice array to the appropriate method in their respective classes.
+
+{\bfseries{Note\+: This script should be placed in the scene for the track to be able to spawn.}} \begin{DoxyAuthor}{Author}
+Max Groen \& Lisa Groen 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+09/06/2019 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_a_track_generator_bezier_a1a0bcd8948e1a9762e3ffaa931daf5fc}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{ATrackGeneratorBezier()}
+{\footnotesize\ttfamily A\+Track\+Generator\+Bezier\+::\+A\+Track\+Generator\+Bezier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyItemize}
+\item All tick events are enabled
+\item The Track Mesh is set as root component from the class 
+\end{DoxyItemize}
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_a_track_generator_bezier_a39d9dbc7a7a0d30ce12f5c2d46e8cd6f}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!BackToFront@{BackToFront}}
+\index{BackToFront@{BackToFront}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{BackToFront()}
+{\footnotesize\ttfamily void A\+Track\+Generator\+Bezier\+::\+Back\+To\+Front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Takes the mesh section on the back of the track and places it to the front of the track. 
+
+Gets called based on where the player is located on the track. This is done for performance reasons, so the mesh does not keep growing in amount of faces to be rendered.
+
+
+\begin{DoxyItemize}
+\item Calls \doxyref{Change\+Section()}{p.}{class_a_track_generator_bezier_a7e0d9a91c85f202a673a2d6ec995613b} for the mesh section on the back of the track, to calculate the new mesh section
+\item Calls \doxyref{Create\+Mesh()}{p.}{class_a_track_generator_bezier_add24d98642fb9bf3565bfc1f9ca59b97} to calculate the new mesh data and render the mesh section
+\item Changes placementcounter to keep track of the index of the mesh section on the back
+\end{DoxyItemize}
+
+{\bfseries{Note\+: }}
+
+Back\+To\+Front manages the re-\/use of the existing meshes to create new meshes. It passes the mesh before the newly created one to the Create\+Mesh function so the meshes align properly. Meshes the player has already passed are overwritten. $<$ Gets the number of meshes existing
+
+$<$ If the placement\+Counter is 0, it has to call the last mesh in the array instead of just the previous one
+
+$<$ Creates the mesh using the points of the section before it
+
+$<$ Once the counter goes over the amount of meshes in the array, reset it to 0 \mbox{\label{class_a_track_generator_bezier_a79c2361e336c86302c2c895ed05022d4}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!BeginPlay@{BeginPlay}}
+\index{BeginPlay@{BeginPlay}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{BeginPlay()}
+{\footnotesize\ttfamily void A\+Track\+Generator\+Bezier\+::\+Begin\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\textbackslash{}\+Called when the game starts or when spawned $<$ sets the scale of the actor assigned in the editor
+
+$<$ ending\+Verts don\textquotesingle{}t exist at the start
+
+$<$ It stores meshes somewhere in between plays, have to always empty it at the start or it will do funky things
+
+$<$ Call \doxyref{A\+Track\+Generator\+Bezier\+::\+Back\+To\+Front()}{p.}{class_a_track_generator_bezier_a39d9dbc7a7a0d30ce12f5c2d46e8cd6f} every spawn\+Speed seconds, set true to loop
+
+$<$ Have to create the first mesh with a different method as it doesn\textquotesingle{}t have previous nodes yet
+
+$<$ Creates the second mesh manually as it needs the first mesh that has no previous meshes
+
+$<$ starts at 1 because 0 has already been done \mbox{\label{class_a_track_generator_bezier_afc717555960f90812874306371f2f316}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!CalculateArcLengthX@{CalculateArcLengthX}}
+\index{CalculateArcLengthX@{CalculateArcLengthX}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{CalculateArcLengthX()}
+{\footnotesize\ttfamily float A\+Track\+Generator\+Bezier\+::\+Calculate\+Arc\+LengthX (\begin{DoxyParamCaption}\item[{T\+Array$<$ F\+Vector $>$ \&}]{vertices,  }\item[{int \&}]{x\+Count,  }\item[{int \&}]{y\+Count }\end{DoxyParamCaption})}
+
+Calculates the curve length in the horizontal axis $<$ Calculates the distance from one point to the next
+
+$<$ Used a mathmatical function to calculate the curve length \mbox{\label{class_a_track_generator_bezier_a8f525f68b49a3f4feffdb2982af838ea}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!CalculateArcLengthY@{CalculateArcLengthY}}
+\index{CalculateArcLengthY@{CalculateArcLengthY}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{CalculateArcLengthY()}
+{\footnotesize\ttfamily float A\+Track\+Generator\+Bezier\+::\+Calculate\+Arc\+LengthY (\begin{DoxyParamCaption}\item[{T\+Array$<$ F\+Vector $>$ \&}]{vertices,  }\item[{int \&}]{y\+Count }\end{DoxyParamCaption})}
+
+
+
+Calculates the arc length of a given curve. 
+
+Calculates the curve length in the vertical axis $<$ Calculates the distance from one point to the next
+
+$<$ Used a mathmatical function to calculate the curve length \mbox{\label{class_a_track_generator_bezier_a7e0d9a91c85f202a673a2d6ec995613b}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!ChangeSection@{ChangeSection}}
+\index{ChangeSection@{ChangeSection}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{ChangeSection()}
+{\footnotesize\ttfamily \textbf{ Mesh\+Section} A\+Track\+Generator\+Bezier\+::\+Change\+Section (\begin{DoxyParamCaption}\item[{\textbf{ Mesh\+Section}}]{sect }\end{DoxyParamCaption})}
+
+
+
+Changes the nodes of the mesh section and makes sure the pieces roughly connect. 
+
+$<$ Creates a new mesh section
+
+$<$ assigns the new mesh its positions based on the previous mesh section given \mbox{\label{class_a_track_generator_bezier_add24d98642fb9bf3565bfc1f9ca59b97}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!CreateMesh@{CreateMesh}}
+\index{CreateMesh@{CreateMesh}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{CreateMesh()}
+{\footnotesize\ttfamily void A\+Track\+Generator\+Bezier\+::\+Create\+Mesh (\begin{DoxyParamCaption}\item[{T\+Array$<$ F\+Vector $>$}]{points,  }\item[{int}]{counter }\end{DoxyParamCaption})}
+
+
+
+Calculates the vertices and triangles of the mesh and draws the mesh. 
+
+Manages the creation of the mesh sections and calls the creation of the objects that are spawned on the track that depend on the vertices of the track. These objects can be created at the same time as the mesh, so it is included at the same time as the meshes are created Set triangle\+Amount to an even number. These are the amount of horizontal vertices
+
+incase someone sets triangle\+Amount to an uneven number, this reduces it by 1
+
+$<$ F\+Vector array to hold the vertices
+
+$<$ int32 array to hold the number of the triangle sides
+
+$<$ F\+Vector2D array to hold uvs used for the material of the track
+
+$<$array of V\+E\+R\+T\+EX normals
+
+Creates all the vertices used in the mesh
+
+Random row used to spawn objects
+
+Random coloum used to spawn objects
+
+$<$ Creates the particles for the wak and sets their location
+
+$<$ Wak is created at the vertex index. The depth of the wak is the assigned variable.
+
+$<$ Creates the triangles from the
+
+$<$ Only calls the method every other mesh to prevent too many snowballs
+
+$<$ Creates the snowball by given the vertices to the method and spawning the snowball on the vertice position
+
+$<$ Returns the length of the vertical length of the curve of the track
+
+$<$ Returns the length of the horizontal curve of the track
+
+$<$ Adds the created uvs to the uv array
+
+$<$ Increases so each mesh curves downwards
+
+$<$ increased by one per mesh to create an offset for the built-\/in physics engine
+
+$<$ Creates the mesh using U\+Procedural\+Mesh\+Component function
+
+$<$ assigns the mesh with a material
+
+$<$ Empties the uv array as unreal saves some of the information between builds which can cause errors
+
+$<$ Sets the position of the spawnable\+Object
+
+$<$ sets the position of the speedboost\+Generator \mbox{\label{class_a_track_generator_bezier_af4a9e0a8ece1081213592017e2818ffe}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!CreateSnowball@{CreateSnowball}}
+\index{CreateSnowball@{CreateSnowball}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{CreateSnowball()}
+{\footnotesize\ttfamily void A\+Track\+Generator\+Bezier\+::\+Create\+Snowball (\begin{DoxyParamCaption}\item[{T\+Array$<$ F\+Vector $>$ \&}]{verts,  }\item[{int}]{vert\+Amount,  }\item[{int}]{column }\end{DoxyParamCaption})}
+
+$<$ Spawnparameters needed for the spawactor function
+
+$<$ F\+Vector array for holding the positions used for doing its movement
+
+$<$ random location on the track along its curve
+
+$<$ random location on the track along its curve
+
+$<$ if the position is the same as a position already used, get a new position
+
+$<$ if the position is the same as a position already used, get a new position
+
+$<$ Adds the left position for the movement
+
+$<$ adds the left control point
+
+$<$ adds the right control point
+
+$<$ Adds the right position for the movement
+
+$<$ uses the U\+Function Spawn\+Actor to create the snowball in the game
+
+$<$ Empties the position array to be used again \mbox{\label{class_a_track_generator_bezier_a69a9e713291c5735a3f36a9c5094f2e8}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!CreateTriangles@{CreateTriangles}}
+\index{CreateTriangles@{CreateTriangles}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{CreateTriangles()}
+{\footnotesize\ttfamily void A\+Track\+Generator\+Bezier\+::\+Create\+Triangles (\begin{DoxyParamCaption}\item[{int}]{vertice\+Amount,  }\item[{T\+Array$<$ int32 $>$ $\ast$}]{triangles }\end{DoxyParamCaption})}
+
+$<$ loop through all the rows of a mesh section
+
+$<$ loop through all the triangles of a row
+
+$<$ create first triangle of face
+
+$<$ create second triangle of face \mbox{\label{class_a_track_generator_bezier_a963320bc9b629724355a5f9cb6a6b141}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!CreateVertices@{CreateVertices}}
+\index{CreateVertices@{CreateVertices}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{CreateVertices()}
+{\footnotesize\ttfamily void A\+Track\+Generator\+Bezier\+::\+Create\+Vertices (\begin{DoxyParamCaption}\item[{T\+Array$<$ F\+Vector $>$ \&}]{points,  }\item[{T\+Array$<$ F\+Vector $>$ \&}]{vertices,  }\item[{T\+Array$<$ F\+Vector $>$ \&}]{normals }\end{DoxyParamCaption})}
+
+$<$ Leftvertice of the vertice row
+
+$<$ Rightvertice of the vertice row
+
+$<$ Pivot point of the track used for normals
+
+$<$ amount of vertices on the track
+
+$<$ keeps track of which vertice is used
+
+$<$ sets the forward\+Direction to 0,0,0 because we are adding unto it.
+
+$<$ First point doesn\textquotesingle{}t contain a previous point, so starts at 1 instead of 0
+
+$<$ Normalizes the created forward direction
+
+$<$ Left point in the direction of the forwardvector
+
+$<$ Creates the left vertice in the direction of the point
+
+$<$ Adds z-\/position for the curve
+
+$<$ Creates the right vertice in the direction of the point
+
+$<$ Adds z-\/position for the curve
+
+$<$ substract the constant steepness factor for the next mesh
+
+$<$ Assigns the first control point
+
+$<$ Assigns the second control point
+
+$<$ Calculates the pivot point of the track
+
+$<$ Gives the tempplayer the pivot points for its rotation
+
+$<$ use cubic B{\ucr}zier curve algorithm to calculate points on a curve in between two points
+
+$<$ set the first row of vertices equal to the last row of the previous mesh section
+
+$<$ empty ending\+Verts, to make room of the ending\+Verts of current mesh section
+
+$<$ last row of mesh section, add vertices to ending\+Verts array
+
+$<$ increase t to shift to the next point on the curve \mbox{\label{class_a_track_generator_bezier_a5997b6d3fc32dd5e2ebb18b548de593b}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!CreateWakParticles@{CreateWakParticles}}
+\index{CreateWakParticles@{CreateWakParticles}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{CreateWakParticles()}
+{\footnotesize\ttfamily void A\+Track\+Generator\+Bezier\+::\+Create\+Wak\+Particles (\begin{DoxyParamCaption}\item[{F\+Vector}]{pos }\end{DoxyParamCaption})}
+
+
+
+Creates a particle system at the location of the wak to indicate danger. 
+
+Gets called based on where the player is located on the track $<$ Default spawn\+Parameters for Spawn\+Actor
+
+$<$ Makes sure the particlesystem always spawns
+
+$<$ Spawns to actor \mbox{\label{class_a_track_generator_bezier_ab3623ddd81be538a80c1c6356c0a1740}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!GetEndingVerts@{GetEndingVerts}}
+\index{GetEndingVerts@{GetEndingVerts}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{GetEndingVerts()}
+{\footnotesize\ttfamily float A\+Track\+Generator\+Bezier\+::\+Get\+Ending\+Verts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the lowest vertice of the track. 
+
+$<$ Gets the Z position of the middle vertice at the end of the mesh \mbox{\label{class_a_track_generator_bezier_a383bbfd04a3daeb4afbeb54d76504890}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!GetPlayerSpawnPosition@{GetPlayerSpawnPosition}}
+\index{GetPlayerSpawnPosition@{GetPlayerSpawnPosition}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{GetPlayerSpawnPosition()}
+{\footnotesize\ttfamily F\+Vector A\+Track\+Generator\+Bezier\+::\+Get\+Player\+Spawn\+Position (\begin{DoxyParamCaption}\item[{F\+Vector}]{right\+Vert,  }\item[{F\+Vector}]{left\+Vert }\end{DoxyParamCaption})}
+
+
+
+Gets coordinates on the track to spawn the player. 
+
+$<$ Calculates the width between the left and right vertices on the horizontal axis
+
+$<$ sets the position to the middle
+
+$<$ Sets the position forward a bit to make sure it doesn\textquotesingle{}t spawn outside of the track and falls off
+
+$<$ sets the position to initialized \mbox{\label{class_a_track_generator_bezier_a875dca0bb4c7cd9752963b59fd80d154}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!Tick@{Tick}}
+\index{Tick@{Tick}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{Tick()}
+{\footnotesize\ttfamily void A\+Track\+Generator\+Bezier\+::\+Tick (\begin{DoxyParamCaption}\item[{float}]{Delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called every frame. 
+
+All the data of the track will be calculated, the track will be drawn and respawned $<$ Only do this if the mesh exists
+
+$<$ Get player position
+
+Manages the respawn of the mesh sections based on player position
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_a_track_generator_bezier_ad984ad4e3d1b9dce8866ff691b03cfa1}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!arraySize@{arraySize}}
+\index{arraySize@{arraySize}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{arraySize}
+{\footnotesize\ttfamily int A\+Track\+Generator\+Bezier\+::array\+Size}
+
+\mbox{\label{class_a_track_generator_bezier_a797cd696c8a263c437ffcd40e186a783}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!endingVerts@{endingVerts}}
+\index{endingVerts@{endingVerts}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{endingVerts}
+{\footnotesize\ttfamily T\+Array$<$F\+Vector$>$ A\+Track\+Generator\+Bezier\+::ending\+Verts\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\textbackslash{}\+Holds ending vertices of most recently spawned mesh section 
+
+\mbox{\label{class_a_track_generator_bezier_a6e4b8e8d24a05e7d3c44c0121c51750d}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!endingVertsInitialized@{endingVertsInitialized}}
+\index{endingVertsInitialized@{endingVertsInitialized}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{endingVertsInitialized}
+{\footnotesize\ttfamily bool A\+Track\+Generator\+Bezier\+::ending\+Verts\+Initialized\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\textbackslash{}\+Determines whether ending\+Verts array is initialized 
+
+\mbox{\label{class_a_track_generator_bezier_a40fd958794b48264d53aef7b825a7664}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!iceMaterial@{iceMaterial}}
+\index{iceMaterial@{iceMaterial}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{iceMaterial}
+{\footnotesize\ttfamily U\+Material\+Interface$\ast$ A\+Track\+Generator\+Bezier\+::ice\+Material}
+
+
+
+\textbackslash{}\+Material of the track 
+
+\mbox{\label{class_a_track_generator_bezier_afcd90d4b734a7aa568136c4a99fedc90}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!initialNodes@{initialNodes}}
+\index{initialNodes@{initialNodes}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{initialNodes}
+{\footnotesize\ttfamily T\+Array$<$F\+Vector$>$ A\+Track\+Generator\+Bezier\+::initial\+Nodes}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{ }
+\DoxyCodeLine{                                    FVector(0,0,0),}
+\DoxyCodeLine{                                    FVector(50, 50, 0), }
+\DoxyCodeLine{                                    FVector(200, -50, 0), }
+\DoxyCodeLine{                                    FVector(400, 100, 0) }
+\DoxyCodeLine{                                    \}}
+
+\end{DoxyCode}
+
+
+\textbackslash{}\+Nodes of first mesh section 
+
+\mbox{\label{class_a_track_generator_bezier_a1c784eb1bf93f84a07b9b7c559799da1}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!mesh@{mesh}}
+\index{mesh@{mesh}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{mesh}
+{\footnotesize\ttfamily U\+Procedural\+Mesh\+Component$\ast$ A\+Track\+Generator\+Bezier\+::mesh\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_track_generator_bezier_a309c7225418eef7520a98e6f91b35307}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!placementCounter@{placementCounter}}
+\index{placementCounter@{placementCounter}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{placementCounter}
+{\footnotesize\ttfamily int A\+Track\+Generator\+Bezier\+::placement\+Counter = 0}
+
+\mbox{\label{class_a_track_generator_bezier_a03bd872cb140fca37bf573f05fd9393e}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!replacementSection@{replacementSection}}
+\index{replacementSection@{replacementSection}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{replacementSection}
+{\footnotesize\ttfamily int A\+Track\+Generator\+Bezier\+::replacement\+Section = 3}
+
+
+
+\textbackslash{}\+Mesh section to be replaced, based on player position 
+
+\mbox{\label{class_a_track_generator_bezier_ae059c4bff2cd7b2f90a15e5e401bfcba}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!spawnPosition@{spawnPosition}}
+\index{spawnPosition@{spawnPosition}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{spawnPosition}
+{\footnotesize\ttfamily F\+Vector A\+Track\+Generator\+Bezier\+::spawn\+Position}
+
+
+
+\textbackslash{}\+Spawn\+Position of the player 
+
+\mbox{\label{class_a_track_generator_bezier_a6c557cfc714f3aef322da361ab479695}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!spawnPositionInitialized@{spawnPositionInitialized}}
+\index{spawnPositionInitialized@{spawnPositionInitialized}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{spawnPositionInitialized}
+{\footnotesize\ttfamily bool A\+Track\+Generator\+Bezier\+::spawn\+Position\+Initialized = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_track_generator_bezier_a52f1d614e304b18fed3ff0428ed6388a}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!spawnSpeed@{spawnSpeed}}
+\index{spawnSpeed@{spawnSpeed}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{spawnSpeed}
+{\footnotesize\ttfamily float A\+Track\+Generator\+Bezier\+::spawn\+Speed = 3.\+0f}
+
+\mbox{\label{class_a_track_generator_bezier_a1aa7a4a58019a5f36839d09535a88e85}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!speedBoost@{speedBoost}}
+\index{speedBoost@{speedBoost}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{speedBoost}
+{\footnotesize\ttfamily U\+Procedural\+Mesh\+Component$\ast$ A\+Track\+Generator\+Bezier\+::speed\+Boost\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_track_generator_bezier_a88e84c85b4e4a3e85bc8330d41cea021}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!speedBoostGenerator@{speedBoostGenerator}}
+\index{speedBoostGenerator@{speedBoostGenerator}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{speedBoostGenerator}
+{\footnotesize\ttfamily class \textbf{ A\+Speed\+Boost\+Generator}$\ast$ A\+Track\+Generator\+Bezier\+::speed\+Boost\+Generator}
+
+\mbox{\label{class_a_track_generator_bezier_a0e97ecef6b1559e084b0e08fb91ba5e9}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!speedBoostMaterial@{speedBoostMaterial}}
+\index{speedBoostMaterial@{speedBoostMaterial}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{speedBoostMaterial}
+{\footnotesize\ttfamily U\+Material\+Interface$\ast$ A\+Track\+Generator\+Bezier\+::speed\+Boost\+Material}
+
+\mbox{\label{class_a_track_generator_bezier_a7655f04c3a6c384567be7d335814100e}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!steepness@{steepness}}
+\index{steepness@{steepness}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{steepness}
+{\footnotesize\ttfamily const int A\+Track\+Generator\+Bezier\+::steepness = 1}
+
+\mbox{\label{class_a_track_generator_bezier_ac6b1c1a0d3b8d7c68504a5e060266de8}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!tempPlayer@{tempPlayer}}
+\index{tempPlayer@{tempPlayer}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{tempPlayer}
+{\footnotesize\ttfamily class \textbf{ A\+Temp\+Player}$\ast$ A\+Track\+Generator\+Bezier\+::temp\+Player}
+
+\mbox{\label{class_a_track_generator_bezier_a7965346651a1d7c1cfbf1d4b044be0c9}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!timehandle@{timehandle}}
+\index{timehandle@{timehandle}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{timehandle}
+{\footnotesize\ttfamily F\+Timer\+Handle A\+Track\+Generator\+Bezier\+::timehandle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\textbackslash{}\+Handle to manage the timer 
+
+\mbox{\label{class_a_track_generator_bezier_a3e978129beb8f966fc40647fb55cf66d}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!trackScale@{trackScale}}
+\index{trackScale@{trackScale}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{trackScale}
+{\footnotesize\ttfamily F\+Vector A\+Track\+Generator\+Bezier\+::track\+Scale\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_track_generator_bezier_a174f27061bcb8c7d3d0372d099065265}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!triangleAmount@{triangleAmount}}
+\index{triangleAmount@{triangleAmount}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{triangleAmount}
+{\footnotesize\ttfamily int A\+Track\+Generator\+Bezier\+::triangle\+Amount}
+
+\mbox{\label{class_a_track_generator_bezier_a2ad18c177748032fab1f2e6377c65dd8}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!wakParticleSystem@{wakParticleSystem}}
+\index{wakParticleSystem@{wakParticleSystem}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{wakParticleSystem}
+{\footnotesize\ttfamily class U\+Particle\+System$\ast$ A\+Track\+Generator\+Bezier\+::wak\+Particle\+System}
+
+\mbox{\label{class_a_track_generator_bezier_a395ab645fc6c70a1c97f8dac67da89d1}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!yPerSectBase@{yPerSectBase}}
+\index{yPerSectBase@{yPerSectBase}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{yPerSectBase}
+{\footnotesize\ttfamily int A\+Track\+Generator\+Bezier\+::y\+Per\+Sect\+Base}
+
+\mbox{\label{class_a_track_generator_bezier_a6812edb9f63ac27872dede8a8f7c5e16}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!yPerSection@{yPerSection}}
+\index{yPerSection@{yPerSection}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{yPerSection}
+{\footnotesize\ttfamily int A\+Track\+Generator\+Bezier\+::y\+Per\+Section = 0}
+
+\mbox{\label{class_a_track_generator_bezier_a56ede95f18e151488eac59cf977df7c5}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!zOffset@{zOffset}}
+\index{zOffset@{zOffset}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{zOffset}
+{\footnotesize\ttfamily float A\+Track\+Generator\+Bezier\+::z\+Offset}
+
+\mbox{\label{class_a_track_generator_bezier_ad09f8b8abcd1149ee4eaf82a67f0d608}} 
+\index{ATrackGeneratorBezier@{ATrackGeneratorBezier}!zPosition@{zPosition}}
+\index{zPosition@{zPosition}!ATrackGeneratorBezier@{ATrackGeneratorBezier}}
+\subsubsection{zPosition}
+{\footnotesize\ttfamily int A\+Track\+Generator\+Bezier\+::z\+Position = 0}
+
+
+
+\textbackslash{}initial z position of the track 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/\textbf{ Track\+Generator\+Bezier.\+h}\item 
+Penguin\+Glide/\textbf{ Track\+Generator\+Bezier.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,340 @@
+\section{A\+Speed\+Boost\+Generator Class Reference}
+\label{class_a_speed_boost_generator}\index{ASpeedBoostGenerator@{ASpeedBoostGenerator}}
+
+
+This class generates the speedboost and ramp.  
+
+
+
+
+{\ttfamily \#include $<$Speed\+Boost\+Generator.\+h$>$}
+
+Inheritance diagram for A\+Speed\+Boost\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_speed_boost_generator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ A\+Speed\+Boost\+Generator} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \textbf{ Generate\+Speed\+Boost} (T\+Array$<$ F\+Vector $>$ vertices, T\+Array$<$ F\+Vector $>$ track\+Normals, int track\+Vert\+Amount, int counter, F\+Vector track\+Scale, int engaged\+Vert)
+\begin{DoxyCompactList}\small\item\em Generates the mesh for the speedboost. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Begin\+Play} () override
+\begin{DoxyCompactList}\small\item\em Calls when game starts or when spawned in the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Speed\+Up} ()
+\begin{DoxyCompactList}\small\item\em Causes the player to slow down over time untill the default speed has been reached once again. \end{DoxyCompactList}\item 
+F\+Vector \textbf{ Calculate\+Normal} (F\+Vector first\+Point, F\+Vector second\+Point)
+\item 
+void \textbf{ Generate\+Ramp} (int arrow\+Amount, int position, T\+Array$<$ F\+Vector $>$ track\+Vertices, T\+Array$<$ F\+Vector $>$ track\+Normals, int track\+Vert\+Amount, int counter, F\+Vector track\+Scale)
+\item 
+T\+Array$<$ int32 $>$ \textbf{ Create\+Triangle} (int first\+Vertex, int second\+Vertex, int third\+Vertex, int vertex\+Amount, int arrow\+Index)
+\item 
+T\+Array$<$ F\+Vector $>$ \textbf{ Calculate\+Speedboost\+Vertices} (T\+Array$<$ F\+Vector $>$ track\+Vertices, int position, int i, int track\+Vert\+Amount, F\+Vector track\+Scale, int arrow\+Vertices, int arrow\+Thickness)
+\item 
+void \textbf{ Notify} (class U\+Primitive\+Component $\ast$This\+Comp, A\+Actor $\ast$Other\+Actor, class U\+Primitive\+Component $\ast$Other\+Comp, int32 Other\+Body\+Index, bool b\+From\+Sweep, const F\+Hit\+Result \&Sweep\+Result)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+U\+Procedural\+Mesh\+Component $\ast$ \textbf{ speedboost\+Mesh}
+\begin{DoxyCompactList}\small\item\em This is the procedural mesh component of the speedboost. \end{DoxyCompactList}\item 
+U\+Procedural\+Mesh\+Component $\ast$ \textbf{ ramp\+Mesh}
+\begin{DoxyCompactList}\small\item\em This is the procedural mesh component of the ramp. \end{DoxyCompactList}\item 
+U\+Material\+Interface $\ast$ \textbf{ speed\+Boost\+Material}
+\begin{DoxyCompactList}\small\item\em Material of the speedboost, should be assigned in the inspector. \end{DoxyCompactList}\item 
+U\+Material\+Interface $\ast$ \textbf{ ramp\+Material}
+\begin{DoxyCompactList}\small\item\em Material of the ramp, should be assigned in the inspector. \end{DoxyCompactList}\item 
+\textbf{ A\+Temp\+Player} $\ast$ \textbf{ player}
+\begin{DoxyCompactList}\small\item\em Pointer to the player in the scene, should be assigned in the inspector. \end{DoxyCompactList}\item 
+bool \textbf{ is\+Speed\+Up} = false
+\begin{DoxyCompactList}\small\item\em This bool wil be set to true on overlap to prevent double overlap detection on the same speedboost. \end{DoxyCompactList}\item 
+F\+Timer\+Handle \textbf{ timehandle}
+\begin{DoxyCompactList}\small\item\em Unreal Engines timerhandle to handle the timer. \end{DoxyCompactList}\item 
+class \textbf{ A\+Sound\+Manager} $\ast$ \textbf{ sound\+Manager}
+\begin{DoxyCompactList}\small\item\em Pointer to the sound\+Manager which handles the in game soundeffects, should be assigned in the inspector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class generates the speedboost and ramp. 
+
+For the generation of the meshes, Unreal Engines Procedural\+Mesh\+Component is used. This component makes it possible to create a procedurally generated mesh. The function responsible for generating the meshes is called in the track class, each time a new part of the track gets spawned, because the newly spawned track part is still empty and yet has to get a speedboost.
+
+{\bfseries{Generation process}} The speedboosts gets spawned on a random location in the middle of the track. To find the position of where to be generated, it uses the vertex coordinates of the track. Based on the position of 1 vertex of the track, the rest of the speedboost gets generated. Before the generating process will happen, there will be checked whether there is already an object on the chosen random position. If there is already an object on that position, a new random position on the track will be chosen untill one is found which is empty. There are two seperate functions which are responsible for calculating the vertex and the triangle data. After the speedboost is generated, there is a 50 percent change that a ramp will be generated right after the speedboost. There is a seperate function that handles the generation of the ramp.
+
+{\bfseries{Speed up process}} For the speedboost, overlap events are enabled in the constructor. The speedboost mesh is set as rootcomponent, because otherwise collission detection cannot take place. Every tick, there will be checked whether the speedboost overlaps with the player. If this is true the following events will take place\+:
+\begin{DoxyItemize}
+\item the speed of the player will be multiplied with a value greater than 1
+\item the field of view will temporarily increase in size
+\item a sound will be played through the Sound\+Manager class
+\end{DoxyItemize}
+
+{\bfseries{Design choices}} I chose to use mesh generation for creating the arrows, because this way it can easily fit exactly on the generated track, but still have collision detection on its own. The ramp also gets generated in this class because it is part of the speedboost as well; it always gets generated, paired together with the speedboost. This is because the player needs a speedboost before entering the ramp to get launched in the air.
+
+{\bfseries{Note\+: This script should be placed in the scene for the meshes to be able to spawn.}} \begin{DoxyAuthor}{Author}
+Lisa Groen 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11/06/2019 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_a_speed_boost_generator_ae4c51ecf78ab8084c3bdc807ec63e54d}} 
+\index{ASpeedBoostGenerator@{ASpeedBoostGenerator}!ASpeedBoostGenerator@{ASpeedBoostGenerator}}
+\index{ASpeedBoostGenerator@{ASpeedBoostGenerator}!ASpeedBoostGenerator@{ASpeedBoostGenerator}}
+\subsubsection{ASpeedBoostGenerator()}
+{\footnotesize\ttfamily A\+Speed\+Boost\+Generator\+::\+A\+Speed\+Boost\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyItemize}
+\item The procedural mesh component of the speedboost and ramp are initialized.
+\item All overlap settings are set for the speedboost to be able to detect overlap events. 
+\end{DoxyItemize}
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_a_speed_boost_generator_a0955d69b464390d67fce233692d2d704}} 
+\index{ASpeedBoostGenerator@{ASpeedBoostGenerator}!BeginPlay@{BeginPlay}}
+\index{BeginPlay@{BeginPlay}!ASpeedBoostGenerator@{ASpeedBoostGenerator}}
+\subsubsection{BeginPlay()}
+{\footnotesize\ttfamily void A\+Speed\+Boost\+Generator\+::\+Begin\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Calls when game starts or when spawned in the scene. 
+
+Starts overlap detection of the speedboost and loops through the inspector to find the soundmanager. \mbox{\label{class_a_speed_boost_generator_a21b292aaeeeb490dfc88f8fabda3530b}} 
+\index{ASpeedBoostGenerator@{ASpeedBoostGenerator}!CalculateNormal@{CalculateNormal}}
+\index{CalculateNormal@{CalculateNormal}!ASpeedBoostGenerator@{ASpeedBoostGenerator}}
+\subsubsection{CalculateNormal()}
+{\footnotesize\ttfamily F\+Vector A\+Speed\+Boost\+Generator\+::\+Calculate\+Normal (\begin{DoxyParamCaption}\item[{F\+Vector}]{first\+Point,  }\item[{F\+Vector}]{second\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\paragraph*{A function to calculate the normal of a point}
+
+This function calculates and normalized the normal. In this class, it is used to determine the thickness of the speedboost mesh.
+
+\paragraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item {\bfseries{{\itshape F\+Vector} first\+Point}} The point of which the normal is calculated
+\item {\bfseries{{\itshape F\+Vector} second\+Point}} The direction point of the normal -\/ the normalized direction towards from first\+Point to Secondpoint is the final result 
+\end{DoxyItemize}\mbox{\label{class_a_speed_boost_generator_a58aad86e24d45a333e78cd8f24256b66}} 
+\index{ASpeedBoostGenerator@{ASpeedBoostGenerator}!CalculateSpeedboostVertices@{CalculateSpeedboostVertices}}
+\index{CalculateSpeedboostVertices@{CalculateSpeedboostVertices}!ASpeedBoostGenerator@{ASpeedBoostGenerator}}
+\subsubsection{CalculateSpeedboostVertices()}
+{\footnotesize\ttfamily T\+Array$<$ F\+Vector $>$ A\+Speed\+Boost\+Generator\+::\+Calculate\+Speedboost\+Vertices (\begin{DoxyParamCaption}\item[{T\+Array$<$ F\+Vector $>$}]{track\+Vertices,  }\item[{int}]{position,  }\item[{int}]{i,  }\item[{int}]{track\+Vert\+Amount,  }\item[{F\+Vector}]{track\+Scale,  }\item[{int}]{arrow\+Vertices,  }\item[{int}]{arrow\+Thickness }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\paragraph*{Calculates the vertices of the speedboost}
+
+This function is responsible for calculating the vertices of the speedboost mesh.
+
+\paragraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item {\bfseries{{\itshape T\+Array$<$\+F\+Vector$>$} track\+Vertices}} The vertices of the track, used to determine the location of the speedboost vertices.
+\item {\bfseries{{\itshape int} position}} The position of the top vertex of the arrow-\/shaped mesh. From this position the rest of the vertices are calculated.
+\item {\bfseries{{\itshape int} i}} The index of the arrow. Determines which arrow is being drawn.
+\item {\bfseries{{\itshape int} track\+Vert\+Amount}} The amount of Vertices on the track, used to determine on which row of the track the ramp will spawn.
+\item {\bfseries{{\itshape F\+Vector} track\+Scale}} The scale of the Track. The positions of the ramp vertices should be multiplied by this number, to get the right position coordinates.
+\end{DoxyItemize}
+
+{\bfseries{{\itshape int} arrow\+Vertices}} The amount of vertices on one arrow. Is used to determine the index of the arrow when there are more arrows than 1.
+\begin{DoxyItemize}
+\item {\bfseries{{\itshape int} arrow\+Thickness}} A factor that determines the thickness of the arrows. 
+\end{DoxyItemize}\mbox{\label{class_a_speed_boost_generator_a0c616e9517480d7e418b4f94053a264c}} 
+\index{ASpeedBoostGenerator@{ASpeedBoostGenerator}!CreateTriangle@{CreateTriangle}}
+\index{CreateTriangle@{CreateTriangle}!ASpeedBoostGenerator@{ASpeedBoostGenerator}}
+\subsubsection{CreateTriangle()}
+{\footnotesize\ttfamily T\+Array$<$ int32 $>$ A\+Speed\+Boost\+Generator\+::\+Create\+Triangle (\begin{DoxyParamCaption}\item[{int}]{first\+Vertex,  }\item[{int}]{second\+Vertex,  }\item[{int}]{third\+Vertex,  }\item[{int}]{vertex\+Amount,  }\item[{int}]{arrow\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\paragraph*{Calculates a single triangle from three vertices}
+
+This function calculates a triangle from three vertices and returns this value. It\textquotesingle{}s reusable for different classes. Triangles should be drawn counter-\/clockwise.
+
+\paragraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item {\bfseries{{\itshape int} first\+Vertex}} the first vertex of the triangle
+\item {\bfseries{{\itshape int} second\+Vertex}} the second vertex of the triangle
+\item {\bfseries{{\itshape int} third\+Vertex}} the third vertex of the triangle
+\item {\bfseries{{\itshape int} vertex\+Amount}} A factor that is used by the speedboost to calculate the position of the arrow vertices when there are multiple arrows
+\item {\bfseries{{\itshape int} arrow\+Index}} The index of the arrow that is being drawn. Only used for the speedboost. 
+\end{DoxyItemize}\mbox{\label{class_a_speed_boost_generator_a1e4d4f7b23b18e0696f680e50d182080}} 
+\index{ASpeedBoostGenerator@{ASpeedBoostGenerator}!GenerateRamp@{GenerateRamp}}
+\index{GenerateRamp@{GenerateRamp}!ASpeedBoostGenerator@{ASpeedBoostGenerator}}
+\subsubsection{GenerateRamp()}
+{\footnotesize\ttfamily void A\+Speed\+Boost\+Generator\+::\+Generate\+Ramp (\begin{DoxyParamCaption}\item[{int}]{arrow\+Amount,  }\item[{int}]{position,  }\item[{T\+Array$<$ F\+Vector $>$}]{track\+Vertices,  }\item[{T\+Array$<$ F\+Vector $>$}]{track\+Normals,  }\item[{int}]{track\+Vert\+Amount,  }\item[{int}]{counter,  }\item[{F\+Vector}]{track\+Scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\paragraph*{Generates the ramp mesh}
+
+Calculates the vertices, triangles and uvs of the ramp mesh and draws it on the screen.
+
+\paragraph*{Parameters}
+
+
+\begin{DoxyItemize}
+\item {\bfseries{{\itshape int} arrow\+Amount}} the amount of arrows of the speedboost determines the offset on the position of the ramp on the track
+\item {\bfseries{{\itshape int} position}} the relative position of the ramp
+\item {\bfseries{{\itshape T\+Array$<$\+F\+Vector$>$} track\+Vertices}} The position of the vertices of the track. Used to determine the coordinates of the ramp.
+\item {\bfseries{{\itshape T\+Array$<$\+F\+Vector$>$} track\+Normals}} The normals of the track, used to determine the angle of the ramp.
+\item {\bfseries{{\itshape int} track\+Vert\+Amount}} The amount of Vertices on the track, used to determine on which row of the track the ramp will spawn.
+\item {\bfseries{{\itshape int} counter}} The mesh section index of the track. The mesh section index of the ramp will be set equal to this number.
+\item {\bfseries{{\itshape F\+Vector} track\+Scale}} The scale of the Track. The positions of the ramp vertices should be multiplied by this number, to get the right position coordinates. 
+\end{DoxyItemize}\mbox{\label{class_a_speed_boost_generator_ab97b89474741da3978be945c305cf5f5}} 
+\index{ASpeedBoostGenerator@{ASpeedBoostGenerator}!GenerateSpeedBoost@{GenerateSpeedBoost}}
+\index{GenerateSpeedBoost@{GenerateSpeedBoost}!ASpeedBoostGenerator@{ASpeedBoostGenerator}}
+\subsubsection{GenerateSpeedBoost()}
+{\footnotesize\ttfamily void A\+Speed\+Boost\+Generator\+::\+Generate\+Speed\+Boost (\begin{DoxyParamCaption}\item[{T\+Array$<$ F\+Vector $>$}]{vertices,  }\item[{T\+Array$<$ F\+Vector $>$}]{track\+Normals,  }\item[{int}]{track\+Vert\+Amount,  }\item[{int}]{counter,  }\item[{F\+Vector}]{track\+Scale,  }\item[{int}]{engaged\+Vert }\end{DoxyParamCaption})}
+
+
+
+Generates the mesh for the speedboost. 
+
+
+\begin{DoxyItemize}
+\item Checks what position on the track is available (there is no other object on that spot present), untill it finds an emtpy spot
+\item Calls \doxyref{Calculate\+Speedboost\+Vertices()}{p.}{class_a_speed_boost_generator_a58aad86e24d45a333e78cd8f24256b66} to calculate the vertices of the speedboost
+\item Calls \doxyref{Create\+Triangle()}{p.}{class_a_speed_boost_generator_a0c616e9517480d7e418b4f94053a264c} to create each triangle of the mesh
+\item Generates a random int which makes sure that there is a 50\% chance of calling Create\+Ramp() 
+\end{DoxyItemize}\mbox{\label{class_a_speed_boost_generator_a858b8817b72fbaf3872591ca86362773}} 
+\index{ASpeedBoostGenerator@{ASpeedBoostGenerator}!Notify@{Notify}}
+\index{Notify@{Notify}!ASpeedBoostGenerator@{ASpeedBoostGenerator}}
+\subsubsection{Notify()}
+{\footnotesize\ttfamily void A\+Speed\+Boost\+Generator\+::\+Notify (\begin{DoxyParamCaption}\item[{class U\+Primitive\+Component $\ast$}]{This\+Comp,  }\item[{A\+Actor $\ast$}]{Other\+Actor,  }\item[{class U\+Primitive\+Component $\ast$}]{Other\+Comp,  }\item[{int32}]{Other\+Body\+Index,  }\item[{bool}]{b\+From\+Sweep,  }\item[{const F\+Hit\+Result \&}]{Sweep\+Result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\paragraph*{Causes the player to speed up}
+
+Gets called when there is overlap between the player and the speedboost. When there is overlap\+:
+\begin{DoxyItemize}
+\item The players speed will be multiplied with a factor greater than 1
+\item The field of view wil temporarily increase, so the player gets a nice feel of speeding up
+\item A sound will be played
+
+Lastly, a timer will start which will cause the player to slow down after x seconds
+\begin{DoxyItemize}
+\item \paragraph*{Parameters}
+\end{DoxyItemize}
+\item {\bfseries{{\itshape U\+Primitive\+Component$\ast$} This\+Comp}} The component from which the overlap event is detected.
+\item {\bfseries{{\itshape A\+Actor} $\ast$\+Other\+Actor}} The actor that overlaps with This\+Comp.
+\item {\bfseries{{\itshape U\+Primitive\+Component$\ast$} Other\+Comp}} The component that overlaps with This\+Comp.
+\item {\bfseries{{\itshape int32} Other\+Body\+Index}} The body index of the object that overlaps with This\+Comp.
+\item {\bfseries{{\itshape bool} b\+From\+Sweep}} Set to true if it is hit by a sweep function.
+\end{DoxyItemize}
+
+{\bfseries{{\itshape F\+Hit\+Result} \&Sweep\+Result}} If b\+From\+Sweep is true, this contains the data of the sweep. \mbox{\label{class_a_speed_boost_generator_acbf68a3eb8e1d2705832d1b909a779c3}} 
+\index{ASpeedBoostGenerator@{ASpeedBoostGenerator}!SpeedUp@{SpeedUp}}
+\index{SpeedUp@{SpeedUp}!ASpeedBoostGenerator@{ASpeedBoostGenerator}}
+\subsubsection{SpeedUp()}
+{\footnotesize\ttfamily void A\+Speed\+Boost\+Generator\+::\+Speed\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Causes the player to slow down over time untill the default speed has been reached once again. 
+
+Subtracts a value of the speed untill it reaches the default speed. Sets bool is\+Speed\+Up back to false, so the player will regain the ability to speed up. 
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_a_speed_boost_generator_a9c7a21f638a974eeb55e1cc3b69acd1e}} 
+\index{ASpeedBoostGenerator@{ASpeedBoostGenerator}!isSpeedUp@{isSpeedUp}}
+\index{isSpeedUp@{isSpeedUp}!ASpeedBoostGenerator@{ASpeedBoostGenerator}}
+\subsubsection{isSpeedUp}
+{\footnotesize\ttfamily bool A\+Speed\+Boost\+Generator\+::is\+Speed\+Up = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This bool wil be set to true on overlap to prevent double overlap detection on the same speedboost. 
+
+\mbox{\label{class_a_speed_boost_generator_ae12c4296fd2dbf7a367296605bc98411}} 
+\index{ASpeedBoostGenerator@{ASpeedBoostGenerator}!player@{player}}
+\index{player@{player}!ASpeedBoostGenerator@{ASpeedBoostGenerator}}
+\subsubsection{player}
+{\footnotesize\ttfamily \textbf{ A\+Temp\+Player}$\ast$ A\+Speed\+Boost\+Generator\+::player\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the player in the scene, should be assigned in the inspector. 
+
+\mbox{\label{class_a_speed_boost_generator_a813372b86b2b0d1150f863d7ae495bac}} 
+\index{ASpeedBoostGenerator@{ASpeedBoostGenerator}!rampMaterial@{rampMaterial}}
+\index{rampMaterial@{rampMaterial}!ASpeedBoostGenerator@{ASpeedBoostGenerator}}
+\subsubsection{rampMaterial}
+{\footnotesize\ttfamily U\+Material\+Interface$\ast$ A\+Speed\+Boost\+Generator\+::ramp\+Material\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Material of the ramp, should be assigned in the inspector. 
+
+\mbox{\label{class_a_speed_boost_generator_a2bdad0d5797dd4b92a488e9ff2dd0d49}} 
+\index{ASpeedBoostGenerator@{ASpeedBoostGenerator}!rampMesh@{rampMesh}}
+\index{rampMesh@{rampMesh}!ASpeedBoostGenerator@{ASpeedBoostGenerator}}
+\subsubsection{rampMesh}
+{\footnotesize\ttfamily U\+Procedural\+Mesh\+Component$\ast$ A\+Speed\+Boost\+Generator\+::ramp\+Mesh\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This is the procedural mesh component of the ramp. 
+
+\mbox{\label{class_a_speed_boost_generator_a24606aee74e0e68e2173796397fdc612}} 
+\index{ASpeedBoostGenerator@{ASpeedBoostGenerator}!soundManager@{soundManager}}
+\index{soundManager@{soundManager}!ASpeedBoostGenerator@{ASpeedBoostGenerator}}
+\subsubsection{soundManager}
+{\footnotesize\ttfamily class \textbf{ A\+Sound\+Manager}$\ast$ A\+Speed\+Boost\+Generator\+::sound\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the sound\+Manager which handles the in game soundeffects, should be assigned in the inspector. 
+
+\mbox{\label{class_a_speed_boost_generator_acafbaa5f7eb6710cfe21119e0a7d255b}} 
+\index{ASpeedBoostGenerator@{ASpeedBoostGenerator}!speedBoostMaterial@{speedBoostMaterial}}
+\index{speedBoostMaterial@{speedBoostMaterial}!ASpeedBoostGenerator@{ASpeedBoostGenerator}}
+\subsubsection{speedBoostMaterial}
+{\footnotesize\ttfamily U\+Material\+Interface$\ast$ A\+Speed\+Boost\+Generator\+::speed\+Boost\+Material\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Material of the speedboost, should be assigned in the inspector. 
+
+\mbox{\label{class_a_speed_boost_generator_ae732ed993361d93b5a4ee2438d19877a}} 
+\index{ASpeedBoostGenerator@{ASpeedBoostGenerator}!speedboostMesh@{speedboostMesh}}
+\index{speedboostMesh@{speedboostMesh}!ASpeedBoostGenerator@{ASpeedBoostGenerator}}
+\subsubsection{speedboostMesh}
+{\footnotesize\ttfamily U\+Procedural\+Mesh\+Component$\ast$ A\+Speed\+Boost\+Generator\+::speedboost\+Mesh\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This is the procedural mesh component of the speedboost. 
+
+\mbox{\label{class_a_speed_boost_generator_abbaa3736168b9493034e5a450b85d409}} 
+\index{ASpeedBoostGenerator@{ASpeedBoostGenerator}!timehandle@{timehandle}}
+\index{timehandle@{timehandle}!ASpeedBoostGenerator@{ASpeedBoostGenerator}}
+\subsubsection{timehandle}
+{\footnotesize\ttfamily F\+Timer\+Handle A\+Speed\+Boost\+Generator\+::timehandle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Unreal Engines timerhandle to handle the timer. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/public/\textbf{ Speed\+Boost\+Generator.\+h}\item 
+Penguin\+Glide/private/\textbf{ Speed\+Boost\+Generator.\+cpp}\end{DoxyCompactItemize}

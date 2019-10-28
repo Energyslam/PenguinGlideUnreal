@@ -1,0 +1,147 @@
+\section{Mesh\+Section Class Reference}
+\label{class_mesh_section}\index{MeshSection@{MeshSection}}
+
+
+This class is the section out of which the track is built. It holds the curve and points along the curve, ready to be used to create a mesh.  
+
+
+
+
+{\ttfamily \#include $<$Mesh\+Section.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Mesh\+Section} (int segment\+Amount)
+\item 
+void \textbf{ Initialize\+Mesh} (T\+Array$<$ F\+Vector $>$)
+\begin{DoxyCompactList}\small\item\em Initializes the first mesh section. \end{DoxyCompactList}\item 
+void \textbf{ Update\+Mesh} (F\+Vector last\+Node, F\+Vector previous\+Node)
+\begin{DoxyCompactList}\small\item\em Creates or updates a mesh section. \end{DoxyCompactList}\item 
+void \textbf{ set\+Points} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ node\+Amount} = 4
+\begin{DoxyCompactList}\small\item\em We always use 4 points for our curve. \end{DoxyCompactList}\item 
+int \textbf{ point\+Spacer}
+\begin{DoxyCompactList}\small\item\em The amount of points along the curve. Gets set in the constructor. \end{DoxyCompactList}\item 
+int \textbf{ offsetY} = 600
+\begin{DoxyCompactList}\small\item\em \textbackslash{}uses this value for the random range in generating the Y position for nodes \end{DoxyCompactList}\item 
+T\+Array$<$ F\+Vector $>$ \textbf{ nodes}
+\item 
+T\+Array$<$ F\+Vector $>$ \textbf{ points}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is the section out of which the track is built. It holds the curve and points along the curve, ready to be used to create a mesh. 
+
+The mesh keeps track of the nodes it has used in order to create its Bezier curve. It splits this bezier curve into an amount of smaller points so these points can be used to create vertices. \begin{DoxyAuthor}{Author}
+Max Groen 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+05/05/2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Energyslam™ 
+\end{DoxyCopyright}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_mesh_section_ac9593af2d5ab23e51e24c984286a0791}} 
+\index{MeshSection@{MeshSection}!MeshSection@{MeshSection}}
+\index{MeshSection@{MeshSection}!MeshSection@{MeshSection}}
+\subsubsection{MeshSection()}
+{\footnotesize\ttfamily Mesh\+Section\+::\+Mesh\+Section (\begin{DoxyParamCaption}\item[{int}]{segment\+Amount }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_mesh_section_a15518f15c79cf505c24fbf10f972479d}} 
+\index{MeshSection@{MeshSection}!InitializeMesh@{InitializeMesh}}
+\index{InitializeMesh@{InitializeMesh}!MeshSection@{MeshSection}}
+\subsubsection{InitializeMesh()}
+{\footnotesize\ttfamily void Mesh\+Section\+::\+Initialize\+Mesh (\begin{DoxyParamCaption}\item[{T\+Array$<$ F\+Vector $>$}]{new\+Nodes }\end{DoxyParamCaption})}
+
+
+
+Initializes the first mesh section. 
+
+The class needs a seperate initialize function as the update function uses the nodes of the previous mesh section. This function only uses the initial nodes to create the first mesh section
+
+This function is used for the initial mesh. It has to be created using this method as it adds to the readability of the code and makes it clear this function initializes the first mesh. This is only called at the start of the program as no previous sections exist yet. $<$ nodes are assigned here. You can set these in the editor if you want to use different ones than the initially assigned ones \mbox{\label{class_mesh_section_aecd00c67ca21f9ec4d800bfc4e8f3c45}} 
+\index{MeshSection@{MeshSection}!setPoints@{setPoints}}
+\index{setPoints@{setPoints}!MeshSection@{MeshSection}}
+\subsubsection{setPoints()}
+{\footnotesize\ttfamily void Mesh\+Section\+::set\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_mesh_section_a476125d3e8a5d3524946644e76913321}} 
+\index{MeshSection@{MeshSection}!UpdateMesh@{UpdateMesh}}
+\index{UpdateMesh@{UpdateMesh}!MeshSection@{MeshSection}}
+\subsubsection{UpdateMesh()}
+{\footnotesize\ttfamily void Mesh\+Section\+::\+Update\+Mesh (\begin{DoxyParamCaption}\item[{F\+Vector}]{last\+Node,  }\item[{F\+Vector}]{previous\+Node }\end{DoxyParamCaption})}
+
+
+
+Creates or updates a mesh section. 
+
+The class needs a seperate initialize function as the update function uses the nodes of the previous mesh section. This function only uses the initial nodes to create the first mesh section
+
+This function takes care of changes the nodes of the mesh and creating new points. These newly created points are used in the Track\+Generator\+Bezier to create a new mesh, re-\/using points of previous nodes to make sure the meshes fit on each other in the same direction This loop splits the bezier curve into smaller points. It splits it in the amount that point\+Spacer has been given. If this is not done the mesh will only exist out of its four initial nodes which only creates four huge blocks as track parts. Not pretty!
+
+Each points needs an offset in the Y direction to make sure it aligns with the previous mesh. If this is not done, it will create a part of the mesh over the old mesh
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_mesh_section_ad512298b76157bb8f773e206dd285a5d}} 
+\index{MeshSection@{MeshSection}!nodeAmount@{nodeAmount}}
+\index{nodeAmount@{nodeAmount}!MeshSection@{MeshSection}}
+\subsubsection{nodeAmount}
+{\footnotesize\ttfamily int Mesh\+Section\+::node\+Amount = 4}
+
+
+
+We always use 4 points for our curve. 
+
+\mbox{\label{class_mesh_section_a645e35fc77b40139c0092e7814340d74}} 
+\index{MeshSection@{MeshSection}!nodes@{nodes}}
+\index{nodes@{nodes}!MeshSection@{MeshSection}}
+\subsubsection{nodes}
+{\footnotesize\ttfamily T\+Array$<$F\+Vector$>$ Mesh\+Section\+::nodes}
+
+\mbox{\label{class_mesh_section_ab0a1a229898405d3c20fb3f48ae954b2}} 
+\index{MeshSection@{MeshSection}!offsetY@{offsetY}}
+\index{offsetY@{offsetY}!MeshSection@{MeshSection}}
+\subsubsection{offsetY}
+{\footnotesize\ttfamily int Mesh\+Section\+::offsetY = 600}
+
+
+
+\textbackslash{}uses this value for the random range in generating the Y position for nodes 
+
+\mbox{\label{class_mesh_section_adc7ea8da6fb89688309b91442946efc1}} 
+\index{MeshSection@{MeshSection}!points@{points}}
+\index{points@{points}!MeshSection@{MeshSection}}
+\subsubsection{points}
+{\footnotesize\ttfamily T\+Array$<$F\+Vector$>$ Mesh\+Section\+::points}
+
+\mbox{\label{class_mesh_section_a188f8de85abd38f3fe7ba38dfc399a56}} 
+\index{MeshSection@{MeshSection}!pointSpacer@{pointSpacer}}
+\index{pointSpacer@{pointSpacer}!MeshSection@{MeshSection}}
+\subsubsection{pointSpacer}
+{\footnotesize\ttfamily int Mesh\+Section\+::point\+Spacer}
+
+
+
+The amount of points along the curve. Gets set in the constructor. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/public/\textbf{ Mesh\+Section.\+h}\item 
+Penguin\+Glide/private/\textbf{ Mesh\+Section.\+cpp}\end{DoxyCompactItemize}

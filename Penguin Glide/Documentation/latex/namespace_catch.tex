@@ -1,0 +1,833 @@
+\section{Catch Namespace Reference}
+\label{namespace_catch}\index{Catch@{Catch}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ Detail}
+\item 
+ \textbf{ Generators}
+\item 
+ \textbf{ literals}
+\item 
+ \textbf{ Matchers}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ always\+\_\+false}
+\item 
+class \textbf{ Assertion\+Handler}
+\item 
+struct \textbf{ Assertion\+Info}
+\item 
+struct \textbf{ Assertion\+Reaction}
+\item 
+struct \textbf{ Auto\+Reg}
+\item 
+class \textbf{ Benchmark\+Looper}
+\item 
+class \textbf{ Binary\+Expr}
+\item 
+class \textbf{ Capturer}
+\item 
+struct \textbf{ Case\+Sensitive}
+\item 
+struct \textbf{ Counts}
+\item 
+struct \textbf{ Decomposer}
+\item 
+class \textbf{ Exception\+Translator\+Registrar}
+\item 
+class \textbf{ Expr\+Lhs}
+\item 
+class \textbf{ Generator\+Exception}
+\item 
+struct \textbf{ I\+Config}
+\item 
+struct \textbf{ I\+Context}
+\item 
+struct \textbf{ I\+Exception\+Translator}
+\item 
+struct \textbf{ I\+Exception\+Translator\+Registry}
+\item 
+struct \textbf{ I\+Generator\+Tracker}
+\item 
+struct \textbf{ I\+Mutable\+Context}
+\item 
+struct \textbf{ I\+Mutable\+Enum\+Values\+Registry}
+\item 
+struct \textbf{ I\+Mutable\+Registry\+Hub}
+\item 
+struct \textbf{ I\+Registry\+Hub}
+\item 
+struct \textbf{ I\+Result\+Capture}
+\item 
+struct \textbf{ I\+Runner}
+\item 
+struct \textbf{ is\+\_\+range}
+\item 
+struct \textbf{ is\+\_\+unique}
+\item 
+struct \textbf{ is\+\_\+unique$<$ T0, T1, Rest... $>$}
+\item 
+struct \textbf{ I\+Stream}
+\item 
+struct \textbf{ I\+Test\+Case\+Registry}
+\item 
+struct \textbf{ I\+Test\+Invoker}
+\item 
+struct \textbf{ I\+Transient\+Expression}
+\item 
+class \textbf{ Lazy\+Expression}
+\item 
+class \textbf{ Match\+Expr}
+\item 
+struct \textbf{ Message\+Builder}
+\item 
+struct \textbf{ Message\+Info}
+\item 
+struct \textbf{ Message\+Stream}
+\item 
+struct \textbf{ Name\+And\+Tags}
+\item 
+class \textbf{ Non\+Copyable}
+\item 
+struct \textbf{ not\+\_\+this\+\_\+one}
+\item 
+struct \textbf{ pluralise}
+\item 
+struct \textbf{ Registrar\+For\+Tag\+Aliases}
+\item 
+struct \textbf{ Result\+Disposition}
+\item 
+struct \textbf{ Result\+Was}
+\item 
+class \textbf{ Reusable\+String\+Stream}
+\item 
+struct \textbf{ Run\+Tests}
+\item 
+class \textbf{ Scoped\+Message}
+\item 
+class \textbf{ Section}
+\item 
+struct \textbf{ Section\+End\+Info}
+\item 
+struct \textbf{ Section\+Info}
+\item 
+struct \textbf{ Show\+Durations}
+\item 
+struct \textbf{ Source\+Line\+Info}
+\item 
+struct \textbf{ Stream\+End\+Stop}
+\item 
+struct \textbf{ String\+Maker}
+\item 
+struct \textbf{ String\+Maker$<$ bool $>$}
+\item 
+struct \textbf{ String\+Maker$<$ Catch\+::\+Detail\+::\+Approx $>$}
+\item 
+struct \textbf{ String\+Maker$<$ char $\ast$ $>$}
+\item 
+struct \textbf{ String\+Maker$<$ char $>$}
+\item 
+struct \textbf{ String\+Maker$<$ char const $\ast$ $>$}
+\item 
+struct \textbf{ String\+Maker$<$ char[\+S\+Z]$>$}
+\item 
+struct \textbf{ String\+Maker$<$ double $>$}
+\item 
+struct \textbf{ String\+Maker$<$ float $>$}
+\item 
+struct \textbf{ String\+Maker$<$ int $>$}
+\item 
+struct \textbf{ String\+Maker$<$ long $>$}
+\item 
+struct \textbf{ String\+Maker$<$ long long $>$}
+\item 
+struct \textbf{ String\+Maker$<$ R C\+::$\ast$ $>$}
+\item 
+struct \textbf{ String\+Maker$<$ R, typename std\+::enable\+\_\+if$<$ is\+\_\+range$<$ R $>$\+::value \&\&!\+::\+Catch\+::\+Detail\+::\+Is\+Stream\+Insertable$<$ R $>$\+::value $>$\+::type $>$}
+\item 
+struct \textbf{ String\+Maker$<$ signed char $>$}
+\item 
+struct \textbf{ String\+Maker$<$ signed char[\+S\+Z]$>$}
+\item 
+struct \textbf{ String\+Maker$<$ std\+::nullptr\+\_\+t $>$}
+\item 
+struct \textbf{ String\+Maker$<$ std\+::string $>$}
+\item 
+struct \textbf{ String\+Maker$<$ std\+::wstring $>$}
+\item 
+struct \textbf{ String\+Maker$<$ T $\ast$ $>$}
+\item 
+struct \textbf{ String\+Maker$<$ T[\+S\+Z]$>$}
+\item 
+struct \textbf{ String\+Maker$<$ unsigned char $>$}
+\item 
+struct \textbf{ String\+Maker$<$ unsigned char[\+S\+Z]$>$}
+\item 
+struct \textbf{ String\+Maker$<$ unsigned int $>$}
+\item 
+struct \textbf{ String\+Maker$<$ unsigned long $>$}
+\item 
+struct \textbf{ String\+Maker$<$ unsigned long long $>$}
+\item 
+struct \textbf{ String\+Maker$<$ wchar\+\_\+t $\ast$ $>$}
+\item 
+struct \textbf{ String\+Maker$<$ wchar\+\_\+t const $\ast$ $>$}
+\item 
+class \textbf{ String\+Ref}
+\item 
+class \textbf{ Test\+Case}
+\item 
+struct \textbf{ Test\+Case\+Info}
+\item 
+struct \textbf{ Test\+Failure\+Exception}
+\item 
+class \textbf{ Test\+Invoker\+As\+Method}
+\item 
+class \textbf{ Timer}
+\item 
+struct \textbf{ Totals}
+\item 
+class \textbf{ Unary\+Expr}
+\item 
+struct \textbf{ Use\+Colour}
+\item 
+struct \textbf{ Wait\+For\+Keypress}
+\item 
+struct \textbf{ Warn\+About}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \textbf{ I\+Reporter\+Factory\+Ptr} = std\+::shared\+\_\+ptr$<$ I\+Reporter\+Factory $>$
+\item 
+using \textbf{ exception\+Translate\+Function} = std\+::string($\ast$)()
+\item 
+using \textbf{ Exception\+Translators} = std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \textbf{ I\+Exception\+Translator} const  $>$ $>$
+\item 
+using \textbf{ String\+Matcher} = \textbf{ Matchers\+::\+Impl\+::\+Matcher\+Base}$<$ std\+::string $>$
+\item 
+using \textbf{ I\+Config\+Ptr} = std\+::shared\+\_\+ptr$<$ \textbf{ I\+Config} const  $>$
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ Verbosity} \{ \textbf{ Verbosity\+::\+Quiet} = 0, 
+\textbf{ Verbosity\+::\+Normal}, 
+\textbf{ Verbosity\+::\+High}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \textbf{ rng\+Seed} ()
+\item 
+std\+::ostream \& \textbf{ operator$<$$<$} (std\+::ostream \&os, \textbf{ Source\+Line\+Info} const \&info)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T const  \& \textbf{ operator+} (T const \&value, \textbf{ Stream\+End\+Stop})
+\item 
+bool \textbf{ match\+Test} (\textbf{ Test\+Case} const \&test\+Case, Test\+Spec const \&test\+Spec, \textbf{ I\+Config} const \&config)
+\item 
+std\+::vector$<$ \textbf{ Test\+Case} $>$ \textbf{ filter\+Tests} (std\+::vector$<$ \textbf{ Test\+Case} $>$ const \&test\+Cases, Test\+Spec const \&test\+Spec, \textbf{ I\+Config} const \&config)
+\item 
+std\+::vector$<$ \textbf{ Test\+Case} $>$ const  \& \textbf{ get\+All\+Test\+Cases\+Sorted} (\textbf{ I\+Config} const \&config)
+\item 
+auto \textbf{ operator+} (\textbf{ String\+Ref} const \&lhs, \textbf{ String\+Ref} const \&rhs) -\/$>$ std\+::string
+\item 
+auto \textbf{ operator+} (\textbf{ String\+Ref} const \&lhs, char const $\ast$rhs) -\/$>$ std\+::string
+\item 
+auto \textbf{ operator+} (char const $\ast$lhs, \textbf{ String\+Ref} const \&rhs) -\/$>$ std\+::string
+\item 
+auto \textbf{ operator+=} (std\+::string \&lhs, \textbf{ String\+Ref} const \&sr) -\/$>$ std\+::string \&
+\item 
+auto \textbf{ operator$<$$<$} (std\+::ostream \&os, \textbf{ String\+Ref} const \&sr) -\/$>$ std\+::ostream \&
+\item 
+auto \textbf{ operator\char`\"{}\char`\"{}\+\_\+sr} (char const $\ast$raw\+Chars, std\+::size\+\_\+t size) noexcept -\/$>$ \textbf{ String\+Ref}
+\item 
+auto \textbf{ make\+Test\+Invoker} (void($\ast$test\+As\+Function)()) noexcept -\/$>$ \textbf{ I\+Test\+Invoker} $\ast$
+\item 
+{\footnotesize template$<$typename C $>$ }\\auto \textbf{ make\+Test\+Invoker} (void(C\+::$\ast$test\+As\+Method)()) noexcept -\/$>$ \textbf{ I\+Test\+Invoker} $\ast$
+\item 
+bool \textbf{ is\+Ok} (\textbf{ Result\+Was\+::\+Of\+Type} result\+Type)
+\item 
+bool \textbf{ is\+Just\+Info} (int flags)
+\item 
+\textbf{ Result\+Disposition\+::\+Flags} \textbf{ operator$\vert$} (\textbf{ Result\+Disposition\+::\+Flags} lhs, \textbf{ Result\+Disposition\+::\+Flags} rhs)
+\item 
+bool \textbf{ should\+Continue\+On\+Failure} (int flags)
+\item 
+bool \textbf{ is\+False\+Test} (int flags)
+\item 
+bool \textbf{ should\+Suppress\+Failure} (int flags)
+\item 
+std\+::ostream \& \textbf{ cout} ()
+\item 
+std\+::ostream \& \textbf{ cerr} ()
+\item 
+std\+::ostream \& \textbf{ clog} ()
+\item 
+auto \textbf{ make\+Stream} (\textbf{ String\+Ref} const \&filename) -\/$>$ \textbf{ I\+Stream} const $\ast$
+\item 
+{\footnotesize template$<$typename Range $>$ }\\std\+::string \textbf{ range\+To\+String} (Range const \&range)
+\item 
+{\footnotesize template$<$typename Allocator $>$ }\\std\+::string \textbf{ range\+To\+String} (std\+::vector$<$ bool, Allocator $>$ const \&v)
+\item 
+void \textbf{ format\+Reconstructed\+Expression} (std\+::ostream \&os, std\+::string const \&lhs, \textbf{ String\+Ref} op, std\+::string const \&rhs)
+\item 
+{\footnotesize template$<$typename LhsT , typename RhsT $>$ }\\auto \textbf{ compare\+Equal} (LhsT const \&lhs, RhsT const \&rhs) -\/$>$ bool
+\item 
+{\footnotesize template$<$typename T $>$ }\\auto \textbf{ compare\+Equal} (T $\ast$const \&lhs, int rhs) -\/$>$ bool
+\item 
+{\footnotesize template$<$typename T $>$ }\\auto \textbf{ compare\+Equal} (T $\ast$const \&lhs, long rhs) -\/$>$ bool
+\item 
+{\footnotesize template$<$typename T $>$ }\\auto \textbf{ compare\+Equal} (int lhs, T $\ast$const \&rhs) -\/$>$ bool
+\item 
+{\footnotesize template$<$typename T $>$ }\\auto \textbf{ compare\+Equal} (long lhs, T $\ast$const \&rhs) -\/$>$ bool
+\item 
+{\footnotesize template$<$typename LhsT , typename RhsT $>$ }\\auto \textbf{ compare\+Not\+Equal} (LhsT const \&lhs, RhsT \&\&rhs) -\/$>$ bool
+\item 
+{\footnotesize template$<$typename T $>$ }\\auto \textbf{ compare\+Not\+Equal} (T $\ast$const \&lhs, int rhs) -\/$>$ bool
+\item 
+{\footnotesize template$<$typename T $>$ }\\auto \textbf{ compare\+Not\+Equal} (T $\ast$const \&lhs, long rhs) -\/$>$ bool
+\item 
+{\footnotesize template$<$typename T $>$ }\\auto \textbf{ compare\+Not\+Equal} (int lhs, T $\ast$const \&rhs) -\/$>$ bool
+\item 
+{\footnotesize template$<$typename T $>$ }\\auto \textbf{ compare\+Not\+Equal} (long lhs, T $\ast$const \&rhs) -\/$>$ bool
+\item 
+void \textbf{ handle\+Expression} (\textbf{ I\+Transient\+Expression} const \&expr)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \textbf{ handle\+Expression} (\textbf{ Expr\+Lhs}$<$ T $>$ const \&expr)
+\item 
+\textbf{ I\+Result\+Capture} \& \textbf{ get\+Result\+Capture} ()
+\item 
+void \textbf{ handle\+Exception\+Match\+Expr} (\textbf{ Assertion\+Handler} \&handler, std\+::string const \&str, \textbf{ String\+Ref} const \&matcher\+String)
+\item 
+auto \textbf{ get\+Current\+Nanoseconds\+Since\+Epoch} () -\/$>$ uint64\+\_\+t
+\item 
+auto \textbf{ get\+Estimated\+Clock\+Resolution} () -\/$>$ uint64\+\_\+t
+\item 
+\textbf{ I\+Registry\+Hub} const  \& \textbf{ get\+Registry\+Hub} ()
+\item 
+\textbf{ I\+Mutable\+Registry\+Hub} \& \textbf{ get\+Mutable\+Registry\+Hub} ()
+\item 
+void \textbf{ clean\+Up} ()
+\item 
+std\+::string \textbf{ translate\+Active\+Exception} ()
+\item 
+bool \textbf{ starts\+With} (std\+::string const \&s, std\+::string const \&prefix)
+\item 
+bool \textbf{ starts\+With} (std\+::string const \&s, char prefix)
+\item 
+bool \textbf{ ends\+With} (std\+::string const \&s, std\+::string const \&suffix)
+\item 
+bool \textbf{ ends\+With} (std\+::string const \&s, char suffix)
+\item 
+bool \textbf{ contains} (std\+::string const \&s, std\+::string const \&infix)
+\item 
+void \textbf{ to\+Lower\+In\+Place} (std\+::string \&s)
+\item 
+std\+::string \textbf{ to\+Lower} (std\+::string const \&s)
+\item 
+std\+::string \textbf{ trim} (std\+::string const \&str)
+\item 
+std\+::vector$<$ \textbf{ String\+Ref} $>$ \textbf{ split\+String\+Ref} (\textbf{ String\+Ref} str, char delimiter)
+\item 
+bool \textbf{ replace\+In\+Place} (std\+::string \&str, std\+::string const \&replace\+This, std\+::string const \&with\+This)
+\item 
+void \textbf{ handle\+Exception\+Match\+Expr} (\textbf{ Assertion\+Handler} \&handler, \textbf{ String\+Matcher} const \&matcher, \textbf{ String\+Ref} const \&matcher\+String)
+\item 
+{\footnotesize template$<$typename ArgT , typename MatcherT $>$ }\\auto \textbf{ make\+Match\+Expr} (ArgT const \&arg, MatcherT const \&matcher, \textbf{ String\+Ref} const \&matcher\+String) -\/$>$ \textbf{ Match\+Expr}$<$ ArgT, MatcherT $>$
+\item 
+void \textbf{ throw\+\_\+exception} (std\+::exception const \&e)
+\item 
+\textbf{ I\+Mutable\+Context} \& \textbf{ get\+Current\+Mutable\+Context} ()
+\item 
+\textbf{ I\+Context} \& \textbf{ get\+Current\+Context} ()
+\item 
+void \textbf{ clean\+Up\+Context} ()
+\item 
+\textbf{ Test\+Case} \textbf{ make\+Test\+Case} (\textbf{ I\+Test\+Invoker} $\ast$test\+Case, std\+::string const \&class\+Name, \textbf{ Name\+And\+Tags} const \&name\+And\+Tags, \textbf{ Source\+Line\+Info} const \&line\+Info)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ not\+\_\+this\+\_\+one} \textbf{ begin} (...)
+\item 
+\textbf{ not\+\_\+this\+\_\+one} \textbf{ end} (...)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\label{namespace_catch_ae8d8673884dc36b98875106322a2a37b}} 
+\index{Catch@{Catch}!exceptionTranslateFunction@{exceptionTranslateFunction}}
+\index{exceptionTranslateFunction@{exceptionTranslateFunction}!Catch@{Catch}}
+\subsubsection{exceptionTranslateFunction}
+{\footnotesize\ttfamily using \textbf{ Catch\+::exception\+Translate\+Function} = typedef std\+::string($\ast$)()}
+
+\mbox{\label{namespace_catch_a7ad07967e688fdc03cf784f58be4b741}} 
+\index{Catch@{Catch}!ExceptionTranslators@{ExceptionTranslators}}
+\index{ExceptionTranslators@{ExceptionTranslators}!Catch@{Catch}}
+\subsubsection{ExceptionTranslators}
+{\footnotesize\ttfamily using \textbf{ Catch\+::\+Exception\+Translators} = typedef std\+::vector$<$std\+::unique\+\_\+ptr$<$\textbf{ I\+Exception\+Translator} const$>$ $>$}
+
+\mbox{\label{namespace_catch_afd20a5d4f9d2f4d525db81a7765367b0}} 
+\index{Catch@{Catch}!IConfigPtr@{IConfigPtr}}
+\index{IConfigPtr@{IConfigPtr}!Catch@{Catch}}
+\subsubsection{IConfigPtr}
+{\footnotesize\ttfamily typedef std\+::shared\+\_\+ptr$<$ \textbf{ I\+Config} const  $>$ \textbf{ Catch\+::\+I\+Config\+Ptr}}
+
+\mbox{\label{namespace_catch_ad1b36ac40c2739e52fd453dcdddf0d09}} 
+\index{Catch@{Catch}!IReporterFactoryPtr@{IReporterFactoryPtr}}
+\index{IReporterFactoryPtr@{IReporterFactoryPtr}!Catch@{Catch}}
+\subsubsection{IReporterFactoryPtr}
+{\footnotesize\ttfamily using \textbf{ Catch\+::\+I\+Reporter\+Factory\+Ptr} = typedef std\+::shared\+\_\+ptr$<$I\+Reporter\+Factory$>$}
+
+\mbox{\label{namespace_catch_aba438977e831821a2eeca82b9b4f4af2}} 
+\index{Catch@{Catch}!StringMatcher@{StringMatcher}}
+\index{StringMatcher@{StringMatcher}!Catch@{Catch}}
+\subsubsection{StringMatcher}
+{\footnotesize\ttfamily using \textbf{ Catch\+::\+String\+Matcher} = typedef \textbf{ Matchers\+::\+Impl\+::\+Matcher\+Base}$<$std\+::string$>$}
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\label{namespace_catch_af85c0d46dfe687d923a157362fd07737}} 
+\index{Catch@{Catch}!Verbosity@{Verbosity}}
+\index{Verbosity@{Verbosity}!Catch@{Catch}}
+\subsubsection{Verbosity}
+{\footnotesize\ttfamily enum \textbf{ Catch\+::\+Verbosity}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Quiet@{Quiet}!Catch@{Catch}}\index{Catch@{Catch}!Quiet@{Quiet}}}\mbox{\label{namespace_catch_af85c0d46dfe687d923a157362fd07737a098753f8980036f4b936e3d4b6997111}} 
+Quiet&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Normal@{Normal}!Catch@{Catch}}\index{Catch@{Catch}!Normal@{Normal}}}\mbox{\label{namespace_catch_af85c0d46dfe687d923a157362fd07737a960b44c579bc2f6818d2daaf9e4c16f0}} 
+Normal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{High@{High}!Catch@{Catch}}\index{Catch@{Catch}!High@{High}}}\mbox{\label{namespace_catch_af85c0d46dfe687d923a157362fd07737a655d20c1ca69519ca647684edbb2db35}} 
+High&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\label{namespace_catch_a4e5b5dc07abdfa30de33593dfab71f43}} 
+\index{Catch@{Catch}!cerr@{cerr}}
+\index{cerr@{cerr}!Catch@{Catch}}
+\subsubsection{cerr()}
+{\footnotesize\ttfamily std\+::ostream\& Catch\+::cerr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_a0f78e9afdebc6d4512d18e76fbf54b8c}} 
+\index{Catch@{Catch}!cleanUp@{cleanUp}}
+\index{cleanUp@{cleanUp}!Catch@{Catch}}
+\subsubsection{cleanUp()}
+{\footnotesize\ttfamily void Catch\+::clean\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_ae50508f10ffc4ed873a31a4db4caea16}} 
+\index{Catch@{Catch}!cleanUpContext@{cleanUpContext}}
+\index{cleanUpContext@{cleanUpContext}!Catch@{Catch}}
+\subsubsection{cleanUpContext()}
+{\footnotesize\ttfamily void Catch\+::clean\+Up\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_a5a0677089050dcdb4848f56fb47e9279}} 
+\index{Catch@{Catch}!clog@{clog}}
+\index{clog@{clog}!Catch@{Catch}}
+\subsubsection{clog()}
+{\footnotesize\ttfamily std\+::ostream\& Catch\+::clog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_af89b8df30cfaf09abd048c6ff67359ee}} 
+\index{Catch@{Catch}!compareEqual@{compareEqual}}
+\index{compareEqual@{compareEqual}!Catch@{Catch}}
+\subsubsection{compareEqual()\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$typename LhsT , typename RhsT $>$ \\
+auto Catch\+::compare\+Equal (\begin{DoxyParamCaption}\item[{LhsT const \&}]{lhs,  }\item[{RhsT const \&}]{rhs }\end{DoxyParamCaption}) -\/$>$ bool }
+
+\mbox{\label{namespace_catch_a68f451c45e65f242dde5f21c19a4cf7a}} 
+\index{Catch@{Catch}!compareEqual@{compareEqual}}
+\index{compareEqual@{compareEqual}!Catch@{Catch}}
+\subsubsection{compareEqual()\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+auto Catch\+::compare\+Equal (\begin{DoxyParamCaption}\item[{T $\ast$const \&}]{lhs,  }\item[{int}]{rhs }\end{DoxyParamCaption}) -\/$>$ bool }
+
+\mbox{\label{namespace_catch_afca4a005e1053c542462dc7a603b41b3}} 
+\index{Catch@{Catch}!compareEqual@{compareEqual}}
+\index{compareEqual@{compareEqual}!Catch@{Catch}}
+\subsubsection{compareEqual()\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+auto Catch\+::compare\+Equal (\begin{DoxyParamCaption}\item[{T $\ast$const \&}]{lhs,  }\item[{long}]{rhs }\end{DoxyParamCaption}) -\/$>$ bool }
+
+\mbox{\label{namespace_catch_a6af99378569fc6f68270b6af669f1c3b}} 
+\index{Catch@{Catch}!compareEqual@{compareEqual}}
+\index{compareEqual@{compareEqual}!Catch@{Catch}}
+\subsubsection{compareEqual()\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+auto Catch\+::compare\+Equal (\begin{DoxyParamCaption}\item[{int}]{lhs,  }\item[{T $\ast$const \&}]{rhs }\end{DoxyParamCaption}) -\/$>$ bool }
+
+\mbox{\label{namespace_catch_a72f10ec2cad6db16029d48c8c1d9df2f}} 
+\index{Catch@{Catch}!compareEqual@{compareEqual}}
+\index{compareEqual@{compareEqual}!Catch@{Catch}}
+\subsubsection{compareEqual()\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+auto Catch\+::compare\+Equal (\begin{DoxyParamCaption}\item[{long}]{lhs,  }\item[{T $\ast$const \&}]{rhs }\end{DoxyParamCaption}) -\/$>$ bool }
+
+\mbox{\label{namespace_catch_a8bec217f5ef5f09c17074c311c958f3c}} 
+\index{Catch@{Catch}!compareNotEqual@{compareNotEqual}}
+\index{compareNotEqual@{compareNotEqual}!Catch@{Catch}}
+\subsubsection{compareNotEqual()\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$typename LhsT , typename RhsT $>$ \\
+auto Catch\+::compare\+Not\+Equal (\begin{DoxyParamCaption}\item[{LhsT const \&}]{lhs,  }\item[{RhsT \&\&}]{rhs }\end{DoxyParamCaption}) -\/$>$ bool }
+
+\mbox{\label{namespace_catch_aa81c95898f22dce1f61d7710e495d1ee}} 
+\index{Catch@{Catch}!compareNotEqual@{compareNotEqual}}
+\index{compareNotEqual@{compareNotEqual}!Catch@{Catch}}
+\subsubsection{compareNotEqual()\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+auto Catch\+::compare\+Not\+Equal (\begin{DoxyParamCaption}\item[{T $\ast$const \&}]{lhs,  }\item[{int}]{rhs }\end{DoxyParamCaption}) -\/$>$ bool }
+
+\mbox{\label{namespace_catch_adad6539b3780b9a8953221efd038e2e4}} 
+\index{Catch@{Catch}!compareNotEqual@{compareNotEqual}}
+\index{compareNotEqual@{compareNotEqual}!Catch@{Catch}}
+\subsubsection{compareNotEqual()\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+auto Catch\+::compare\+Not\+Equal (\begin{DoxyParamCaption}\item[{T $\ast$const \&}]{lhs,  }\item[{long}]{rhs }\end{DoxyParamCaption}) -\/$>$ bool }
+
+\mbox{\label{namespace_catch_adb4b3e912b89a987025ca28cf0c92ba8}} 
+\index{Catch@{Catch}!compareNotEqual@{compareNotEqual}}
+\index{compareNotEqual@{compareNotEqual}!Catch@{Catch}}
+\subsubsection{compareNotEqual()\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+auto Catch\+::compare\+Not\+Equal (\begin{DoxyParamCaption}\item[{int}]{lhs,  }\item[{T $\ast$const \&}]{rhs }\end{DoxyParamCaption}) -\/$>$ bool }
+
+\mbox{\label{namespace_catch_a3db634a0adf44a1148767ba149ccf34d}} 
+\index{Catch@{Catch}!compareNotEqual@{compareNotEqual}}
+\index{compareNotEqual@{compareNotEqual}!Catch@{Catch}}
+\subsubsection{compareNotEqual()\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+auto Catch\+::compare\+Not\+Equal (\begin{DoxyParamCaption}\item[{long}]{lhs,  }\item[{T $\ast$const \&}]{rhs }\end{DoxyParamCaption}) -\/$>$ bool }
+
+\mbox{\label{namespace_catch_aa52974b0e426e7e2fbd725a900e9c36e}} 
+\index{Catch@{Catch}!contains@{contains}}
+\index{contains@{contains}!Catch@{Catch}}
+\subsubsection{contains()}
+{\footnotesize\ttfamily bool Catch\+::contains (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{s,  }\item[{std\+::string const \&}]{infix }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_a50af73c5a37ad5c6558df4ce4a275e83}} 
+\index{Catch@{Catch}!cout@{cout}}
+\index{cout@{cout}!Catch@{Catch}}
+\subsubsection{cout()}
+{\footnotesize\ttfamily std\+::ostream\& Catch\+::cout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_ada025504f627feaf9ac68ca391515dff}} 
+\index{Catch@{Catch}!endsWith@{endsWith}}
+\index{endsWith@{endsWith}!Catch@{Catch}}
+\subsubsection{endsWith()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Catch\+::ends\+With (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{s,  }\item[{std\+::string const \&}]{suffix }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_afd801a3e33fd7a8b91ded0d02747a93f}} 
+\index{Catch@{Catch}!endsWith@{endsWith}}
+\index{endsWith@{endsWith}!Catch@{Catch}}
+\subsubsection{endsWith()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Catch\+::ends\+With (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{s,  }\item[{char}]{suffix }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_ab5da9aa67c42a3f626aea07d0b556829}} 
+\index{Catch@{Catch}!filterTests@{filterTests}}
+\index{filterTests@{filterTests}!Catch@{Catch}}
+\subsubsection{filterTests()}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ Test\+Case}$>$ Catch\+::filter\+Tests (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \textbf{ Test\+Case} $>$ const \&}]{test\+Cases,  }\item[{Test\+Spec const \&}]{test\+Spec,  }\item[{\textbf{ I\+Config} const \&}]{config }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_a520110c31f26cf9892595772ab814fc0}} 
+\index{Catch@{Catch}!formatReconstructedExpression@{formatReconstructedExpression}}
+\index{formatReconstructedExpression@{formatReconstructedExpression}!Catch@{Catch}}
+\subsubsection{formatReconstructedExpression()}
+{\footnotesize\ttfamily void Catch\+::format\+Reconstructed\+Expression (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{std\+::string const \&}]{lhs,  }\item[{\textbf{ String\+Ref}}]{op,  }\item[{std\+::string const \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_a1c9b1a23bc947ea70ddaabf067276cf2}} 
+\index{Catch@{Catch}!getAllTestCasesSorted@{getAllTestCasesSorted}}
+\index{getAllTestCasesSorted@{getAllTestCasesSorted}!Catch@{Catch}}
+\subsubsection{getAllTestCasesSorted()}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ Test\+Case}$>$ const\& Catch\+::get\+All\+Test\+Cases\+Sorted (\begin{DoxyParamCaption}\item[{\textbf{ I\+Config} const \&}]{config }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_ad517cca9b21deb79101e90e5508dd161}} 
+\index{Catch@{Catch}!getCurrentContext@{getCurrentContext}}
+\index{getCurrentContext@{getCurrentContext}!Catch@{Catch}}
+\subsubsection{getCurrentContext()}
+{\footnotesize\ttfamily \textbf{ I\+Context}\& Catch\+::get\+Current\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{namespace_catch_af7bb0c32ab2453d2f53e92a96d15360e}} 
+\index{Catch@{Catch}!getCurrentMutableContext@{getCurrentMutableContext}}
+\index{getCurrentMutableContext@{getCurrentMutableContext}!Catch@{Catch}}
+\subsubsection{getCurrentMutableContext()}
+{\footnotesize\ttfamily \textbf{ I\+Mutable\+Context}\& Catch\+::get\+Current\+Mutable\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{namespace_catch_a98d058468488c486a9cb5c8463f3ba29}} 
+\index{Catch@{Catch}!getCurrentNanosecondsSinceEpoch@{getCurrentNanosecondsSinceEpoch}}
+\index{getCurrentNanosecondsSinceEpoch@{getCurrentNanosecondsSinceEpoch}!Catch@{Catch}}
+\subsubsection{getCurrentNanosecondsSinceEpoch()}
+{\footnotesize\ttfamily auto Catch\+::get\+Current\+Nanoseconds\+Since\+Epoch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$  uint64\+\_\+t}
+
+\mbox{\label{namespace_catch_ac8e1ed37624bd0d97b2c0d4ec099d31f}} 
+\index{Catch@{Catch}!getEstimatedClockResolution@{getEstimatedClockResolution}}
+\index{getEstimatedClockResolution@{getEstimatedClockResolution}!Catch@{Catch}}
+\subsubsection{getEstimatedClockResolution()}
+{\footnotesize\ttfamily auto Catch\+::get\+Estimated\+Clock\+Resolution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$  uint64\+\_\+t}
+
+\mbox{\label{namespace_catch_ac9ddcc6d66079add9cb2a3140b8ae51e}} 
+\index{Catch@{Catch}!getMutableRegistryHub@{getMutableRegistryHub}}
+\index{getMutableRegistryHub@{getMutableRegistryHub}!Catch@{Catch}}
+\subsubsection{getMutableRegistryHub()}
+{\footnotesize\ttfamily \textbf{ I\+Mutable\+Registry\+Hub}\& Catch\+::get\+Mutable\+Registry\+Hub (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_a6332c92ab0c3952586b22cb96fdb8d44}} 
+\index{Catch@{Catch}!getRegistryHub@{getRegistryHub}}
+\index{getRegistryHub@{getRegistryHub}!Catch@{Catch}}
+\subsubsection{getRegistryHub()}
+{\footnotesize\ttfamily \textbf{ I\+Registry\+Hub} const\& Catch\+::get\+Registry\+Hub (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_aff60c1de6ac6cea30175d70e33d83c8e}} 
+\index{Catch@{Catch}!getResultCapture@{getResultCapture}}
+\index{getResultCapture@{getResultCapture}!Catch@{Catch}}
+\subsubsection{getResultCapture()}
+{\footnotesize\ttfamily \textbf{ I\+Result\+Capture}\& Catch\+::get\+Result\+Capture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_aea6f8ff3b3838829d4a61694e4bc41ca}} 
+\index{Catch@{Catch}!handleExceptionMatchExpr@{handleExceptionMatchExpr}}
+\index{handleExceptionMatchExpr@{handleExceptionMatchExpr}!Catch@{Catch}}
+\subsubsection{handleExceptionMatchExpr()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Catch\+::handle\+Exception\+Match\+Expr (\begin{DoxyParamCaption}\item[{\textbf{ Assertion\+Handler} \&}]{handler,  }\item[{std\+::string const \&}]{str,  }\item[{\textbf{ String\+Ref} const \&}]{matcher\+String }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_a3a96a82307107087642e22fc4be5844d}} 
+\index{Catch@{Catch}!handleExceptionMatchExpr@{handleExceptionMatchExpr}}
+\index{handleExceptionMatchExpr@{handleExceptionMatchExpr}!Catch@{Catch}}
+\subsubsection{handleExceptionMatchExpr()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Catch\+::handle\+Exception\+Match\+Expr (\begin{DoxyParamCaption}\item[{\textbf{ Assertion\+Handler} \&}]{handler,  }\item[{\textbf{ String\+Matcher} const \&}]{matcher,  }\item[{\textbf{ String\+Ref} const \&}]{matcher\+String }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_a65af25091f2ab61056e166765963e525}} 
+\index{Catch@{Catch}!handleExpression@{handleExpression}}
+\index{handleExpression@{handleExpression}!Catch@{Catch}}
+\subsubsection{handleExpression()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Catch\+::handle\+Expression (\begin{DoxyParamCaption}\item[{\textbf{ I\+Transient\+Expression} const \&}]{expr }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_af2c93db76668a981e75ae835699efce7}} 
+\index{Catch@{Catch}!handleExpression@{handleExpression}}
+\index{handleExpression@{handleExpression}!Catch@{Catch}}
+\subsubsection{handleExpression()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Catch\+::handle\+Expression (\begin{DoxyParamCaption}\item[{\textbf{ Expr\+Lhs}$<$ T $>$ const \&}]{expr }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_a93ef4e3e307a2021ca0d41b32c0e54b0}} 
+\index{Catch@{Catch}!isFalseTest@{isFalseTest}}
+\index{isFalseTest@{isFalseTest}!Catch@{Catch}}
+\subsubsection{isFalseTest()}
+{\footnotesize\ttfamily bool Catch\+::is\+False\+Test (\begin{DoxyParamCaption}\item[{int}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{namespace_catch_a54b01af61673a3e1f21f31713639b180}} 
+\index{Catch@{Catch}!isJustInfo@{isJustInfo}}
+\index{isJustInfo@{isJustInfo}!Catch@{Catch}}
+\subsubsection{isJustInfo()}
+{\footnotesize\ttfamily bool Catch\+::is\+Just\+Info (\begin{DoxyParamCaption}\item[{int}]{flags }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_a5205869c81c06d3460759cb86676ae68}} 
+\index{Catch@{Catch}!isOk@{isOk}}
+\index{isOk@{isOk}!Catch@{Catch}}
+\subsubsection{isOk()}
+{\footnotesize\ttfamily bool Catch\+::is\+Ok (\begin{DoxyParamCaption}\item[{\textbf{ Result\+Was\+::\+Of\+Type}}]{result\+Type }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_a23a9a9a6dfef7ecd5e0eaf553fc52de6}} 
+\index{Catch@{Catch}!makeMatchExpr@{makeMatchExpr}}
+\index{makeMatchExpr@{makeMatchExpr}!Catch@{Catch}}
+\subsubsection{makeMatchExpr()}
+{\footnotesize\ttfamily template$<$typename ArgT , typename MatcherT $>$ \\
+auto Catch\+::make\+Match\+Expr (\begin{DoxyParamCaption}\item[{ArgT const \&}]{arg,  }\item[{MatcherT const \&}]{matcher,  }\item[{\textbf{ String\+Ref} const \&}]{matcher\+String }\end{DoxyParamCaption}) -\/$>$ \textbf{ Match\+Expr}$<$ArgT, MatcherT$>$ }
+
+\mbox{\label{namespace_catch_af6d27462573d60c30c51acf1c980e3ff}} 
+\index{Catch@{Catch}!makeStream@{makeStream}}
+\index{makeStream@{makeStream}!Catch@{Catch}}
+\subsubsection{makeStream()}
+{\footnotesize\ttfamily auto Catch\+::make\+Stream (\begin{DoxyParamCaption}\item[{\textbf{ String\+Ref} const \&}]{filename }\end{DoxyParamCaption}) -\/$>$  \textbf{ I\+Stream} const $\ast$}
+
+\mbox{\label{namespace_catch_a5e63df38d06a43d4cee17454e724b5c0}} 
+\index{Catch@{Catch}!makeTestCase@{makeTestCase}}
+\index{makeTestCase@{makeTestCase}!Catch@{Catch}}
+\subsubsection{makeTestCase()}
+{\footnotesize\ttfamily \textbf{ Test\+Case} Catch\+::make\+Test\+Case (\begin{DoxyParamCaption}\item[{\textbf{ I\+Test\+Invoker} $\ast$}]{test\+Case,  }\item[{std\+::string const \&}]{class\+Name,  }\item[{\textbf{ Name\+And\+Tags} const \&}]{name\+And\+Tags,  }\item[{\textbf{ Source\+Line\+Info} const \&}]{line\+Info }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_ab3d8ccbc900fe50322c39ecbba52f536}} 
+\index{Catch@{Catch}!makeTestInvoker@{makeTestInvoker}}
+\index{makeTestInvoker@{makeTestInvoker}!Catch@{Catch}}
+\subsubsection{makeTestInvoker()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily auto Catch\+::make\+Test\+Invoker (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{test\+As\+Function }\end{DoxyParamCaption}) -\/$>$  \textbf{ I\+Test\+Invoker} $\ast$\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\label{namespace_catch_a82a954c4d70afa716115820dc7dc8d24}} 
+\index{Catch@{Catch}!makeTestInvoker@{makeTestInvoker}}
+\index{makeTestInvoker@{makeTestInvoker}!Catch@{Catch}}
+\subsubsection{makeTestInvoker()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename C $>$ \\
+auto Catch\+::make\+Test\+Invoker (\begin{DoxyParamCaption}\item[{void(C\+::$\ast$)()}]{test\+As\+Method }\end{DoxyParamCaption}) -\/$>$ \textbf{ I\+Test\+Invoker}$\ast$ \hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\label{namespace_catch_aadef80fbc6bc84589777a462770cef49}} 
+\index{Catch@{Catch}!matchTest@{matchTest}}
+\index{matchTest@{matchTest}!Catch@{Catch}}
+\subsubsection{matchTest()}
+{\footnotesize\ttfamily bool Catch\+::match\+Test (\begin{DoxyParamCaption}\item[{\textbf{ Test\+Case} const \&}]{test\+Case,  }\item[{Test\+Spec const \&}]{test\+Spec,  }\item[{\textbf{ I\+Config} const \&}]{config }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_a56dcfbb436fa40d778e784bf862e78a6}} 
+\index{Catch@{Catch}!operator\char`\"{}\char`\"{}\_sr@{operator""""\_sr}}
+\index{operator\char`\"{}\char`\"{}\_sr@{operator""""\_sr}!Catch@{Catch}}
+\subsubsection{operator""""\_sr()}
+{\footnotesize\ttfamily auto Catch\+::operator\char`\"{}\char`\"{}\+\_\+sr (\begin{DoxyParamCaption}\item[{char const $\ast$}]{raw\+Chars,  }\item[{std\+::size\+\_\+t}]{size }\end{DoxyParamCaption}) -\/$>$ \textbf{ String\+Ref} \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\label{namespace_catch_a5e95b3c47a7618db3649dc39b0bb9004}} 
+\index{Catch@{Catch}!operator+@{operator+}}
+\index{operator+@{operator+}!Catch@{Catch}}
+\subsubsection{operator+()\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T const\& Catch\+::operator+ (\begin{DoxyParamCaption}\item[{T const \&}]{value,  }\item[{\textbf{ Stream\+End\+Stop}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_a3a766cb0b8c792c9151baaaf1e8003eb}} 
+\index{Catch@{Catch}!operator+@{operator+}}
+\index{operator+@{operator+}!Catch@{Catch}}
+\subsubsection{operator+()\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily auto Catch\+::operator+ (\begin{DoxyParamCaption}\item[{\textbf{ String\+Ref} const \&}]{lhs,  }\item[{\textbf{ String\+Ref} const \&}]{rhs }\end{DoxyParamCaption}) -\/$>$  std\+::string}
+
+\mbox{\label{namespace_catch_ab7bdb68d0e4329df79e293f9207b55e9}} 
+\index{Catch@{Catch}!operator+@{operator+}}
+\index{operator+@{operator+}!Catch@{Catch}}
+\subsubsection{operator+()\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily auto Catch\+::operator+ (\begin{DoxyParamCaption}\item[{\textbf{ String\+Ref} const \&}]{lhs,  }\item[{char const $\ast$}]{rhs }\end{DoxyParamCaption}) -\/$>$  std\+::string}
+
+\mbox{\label{namespace_catch_a764a678121fa11c590a53618baa47680}} 
+\index{Catch@{Catch}!operator+@{operator+}}
+\index{operator+@{operator+}!Catch@{Catch}}
+\subsubsection{operator+()\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily auto Catch\+::operator+ (\begin{DoxyParamCaption}\item[{char const $\ast$}]{lhs,  }\item[{\textbf{ String\+Ref} const \&}]{rhs }\end{DoxyParamCaption}) -\/$>$  std\+::string}
+
+\mbox{\label{namespace_catch_a61711bc909f8dc76d8b3deccc1440f46}} 
+\index{Catch@{Catch}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Catch@{Catch}}
+\subsubsection{operator+=()}
+{\footnotesize\ttfamily auto Catch\+::operator+= (\begin{DoxyParamCaption}\item[{std\+::string \&}]{lhs,  }\item[{\textbf{ String\+Ref} const \&}]{sr }\end{DoxyParamCaption}) -\/$>$  std\+::string \&}
+
+\mbox{\label{namespace_catch_a6ec18b5054d7fdfdde861c580b082995}} 
+\index{Catch@{Catch}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Catch@{Catch}}
+\subsubsection{operator$<$$<$()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::ostream\& Catch\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{\textbf{ Source\+Line\+Info} const \&}]{info }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_a5e37b333d756a28e12d44977f063af43}} 
+\index{Catch@{Catch}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Catch@{Catch}}
+\subsubsection{operator$<$$<$()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily auto Catch\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{\textbf{ String\+Ref} const \&}]{sr }\end{DoxyParamCaption}) -\/$>$  std\+::ostream \&}
+
+\mbox{\label{namespace_catch_ab32a083e442cc09f736327d2e2865999}} 
+\index{Catch@{Catch}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!Catch@{Catch}}
+\subsubsection{operator\texttt{"|}()}
+{\footnotesize\ttfamily \textbf{ Result\+Disposition\+::\+Flags} Catch\+::operator$\vert$ (\begin{DoxyParamCaption}\item[{\textbf{ Result\+Disposition\+::\+Flags}}]{lhs,  }\item[{\textbf{ Result\+Disposition\+::\+Flags}}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_af13494e925a793e3e7143c6ce6f442c2}} 
+\index{Catch@{Catch}!rangeToString@{rangeToString}}
+\index{rangeToString@{rangeToString}!Catch@{Catch}}
+\subsubsection{rangeToString()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Range $>$ \\
+std\+::string Catch\+::range\+To\+String (\begin{DoxyParamCaption}\item[{Range const \&}]{range }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_ae162dc66b7767a52e7e4283915fd3d9f}} 
+\index{Catch@{Catch}!rangeToString@{rangeToString}}
+\index{rangeToString@{rangeToString}!Catch@{Catch}}
+\subsubsection{rangeToString()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Allocator $>$ \\
+std\+::string Catch\+::range\+To\+String (\begin{DoxyParamCaption}\item[{std\+::vector$<$ bool, Allocator $>$ const \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_afe4e6770da547e43e9e4eeaa05f946ea}} 
+\index{Catch@{Catch}!replaceInPlace@{replaceInPlace}}
+\index{replaceInPlace@{replaceInPlace}!Catch@{Catch}}
+\subsubsection{replaceInPlace()}
+{\footnotesize\ttfamily bool Catch\+::replace\+In\+Place (\begin{DoxyParamCaption}\item[{std\+::string \&}]{str,  }\item[{std\+::string const \&}]{replace\+This,  }\item[{std\+::string const \&}]{with\+This }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_acf5ea05e942d2d7fe79111e12754ed76}} 
+\index{Catch@{Catch}!rngSeed@{rngSeed}}
+\index{rngSeed@{rngSeed}!Catch@{Catch}}
+\subsubsection{rngSeed()}
+{\footnotesize\ttfamily unsigned int Catch\+::rng\+Seed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_a7f7480b15d74965459c844f0d393ed87}} 
+\index{Catch@{Catch}!shouldContinueOnFailure@{shouldContinueOnFailure}}
+\index{shouldContinueOnFailure@{shouldContinueOnFailure}!Catch@{Catch}}
+\subsubsection{shouldContinueOnFailure()}
+{\footnotesize\ttfamily bool Catch\+::should\+Continue\+On\+Failure (\begin{DoxyParamCaption}\item[{int}]{flags }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_ab91eb13081203d634fe48d3d2ab386d7}} 
+\index{Catch@{Catch}!shouldSuppressFailure@{shouldSuppressFailure}}
+\index{shouldSuppressFailure@{shouldSuppressFailure}!Catch@{Catch}}
+\subsubsection{shouldSuppressFailure()}
+{\footnotesize\ttfamily bool Catch\+::should\+Suppress\+Failure (\begin{DoxyParamCaption}\item[{int}]{flags }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_a35ef4c6329ab86a47243c25a58274109}} 
+\index{Catch@{Catch}!splitStringRef@{splitStringRef}}
+\index{splitStringRef@{splitStringRef}!Catch@{Catch}}
+\subsubsection{splitStringRef()}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ String\+Ref}$>$ Catch\+::split\+String\+Ref (\begin{DoxyParamCaption}\item[{\textbf{ String\+Ref}}]{str,  }\item[{char}]{delimiter }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_a695f62327be0676e046291eeaae15110}} 
+\index{Catch@{Catch}!startsWith@{startsWith}}
+\index{startsWith@{startsWith}!Catch@{Catch}}
+\subsubsection{startsWith()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Catch\+::starts\+With (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{s,  }\item[{std\+::string const \&}]{prefix }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_acad23751846ac23d0f379e34f5adebb1}} 
+\index{Catch@{Catch}!startsWith@{startsWith}}
+\index{startsWith@{startsWith}!Catch@{Catch}}
+\subsubsection{startsWith()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Catch\+::starts\+With (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{s,  }\item[{char}]{prefix }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_a3cbceeab9252d1b752f66a2826e92548}} 
+\index{Catch@{Catch}!throw\_exception@{throw\_exception}}
+\index{throw\_exception@{throw\_exception}!Catch@{Catch}}
+\subsubsection{throw\_exception()}
+{\footnotesize\ttfamily void Catch\+::throw\+\_\+exception (\begin{DoxyParamCaption}\item[{std\+::exception const \&}]{e }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_ac036a17412d318598ffda8e1fe7a1177}} 
+\index{Catch@{Catch}!toLower@{toLower}}
+\index{toLower@{toLower}!Catch@{Catch}}
+\subsubsection{toLower()}
+{\footnotesize\ttfamily std\+::string Catch\+::to\+Lower (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{s }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_a0760dbe87d090a55a35414db57d272c4}} 
+\index{Catch@{Catch}!toLowerInPlace@{toLowerInPlace}}
+\index{toLowerInPlace@{toLowerInPlace}!Catch@{Catch}}
+\subsubsection{toLowerInPlace()}
+{\footnotesize\ttfamily void Catch\+::to\+Lower\+In\+Place (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_adafff91485eeeeb9e9333f317cc0e3b1}} 
+\index{Catch@{Catch}!translateActiveException@{translateActiveException}}
+\index{translateActiveException@{translateActiveException}!Catch@{Catch}}
+\subsubsection{translateActiveException()}
+{\footnotesize\ttfamily std\+::string Catch\+::translate\+Active\+Exception (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{namespace_catch_a084108b47f37d8bfd5db51c50c7451b3}} 
+\index{Catch@{Catch}!trim@{trim}}
+\index{trim@{trim}!Catch@{Catch}}
+\subsubsection{trim()}
+{\footnotesize\ttfamily std\+::string Catch\+::trim (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{str }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\label{namespace_catch_ac7ccff5c186bffa3b448b218ecf15956}} 
+\index{Catch@{Catch}!begin@{begin}}
+\index{begin@{begin}!Catch@{Catch}}
+\subsubsection{begin}
+{\footnotesize\ttfamily \textbf{ not\+\_\+this\+\_\+one} Catch\+::begin(...)}
+
+\mbox{\label{namespace_catch_a71fef6a57614eb2d9751f8586ff6de6a}} 
+\index{Catch@{Catch}!end@{end}}
+\index{end@{end}!Catch@{Catch}}
+\subsubsection{end}
+{\footnotesize\ttfamily \textbf{ not\+\_\+this\+\_\+one} Catch\+::end(...)}
+

@@ -1,0 +1,25 @@
+var annotated_dup =
+[
+    [ "Catch", "namespace_catch.html", "namespace_catch" ],
+    [ "AInteractable", "class_a_interactable.html", "class_a_interactable" ],
+    [ "AMediator", "class_a_mediator.html", "class_a_mediator" ],
+    [ "AObstacle", "class_a_obstacle.html", "class_a_obstacle" ],
+    [ "APenguinController", "class_a_penguin_controller.html", "class_a_penguin_controller" ],
+    [ "APenguinGlideGameModeBase", "class_a_penguin_glide_game_mode_base.html", "class_a_penguin_glide_game_mode_base" ],
+    [ "APowerUp", "class_a_power_up.html", "class_a_power_up" ],
+    [ "ASnowball", "class_a_snowball.html", "class_a_snowball" ],
+    [ "ASoundManager", "class_a_sound_manager.html", "class_a_sound_manager" ],
+    [ "ASpawnableObject", "class_a_spawnable_object.html", "class_a_spawnable_object" ],
+    [ "ASpeedBoostGenerator", "class_a_speed_boost_generator.html", "class_a_speed_boost_generator" ],
+    [ "ATempPlayer", "class_a_temp_player.html", "class_a_temp_player" ],
+    [ "ATEMPpowerUp", "class_a_t_e_m_ppower_up.html", "class_a_t_e_m_ppower_up" ],
+    [ "ATrackGeneratorBezier", "class_a_track_generator_bezier.html", "class_a_track_generator_bezier" ],
+    [ "AUserInterfaceManager", "class_a_user_interface_manager.html", "class_a_user_interface_manager" ],
+    [ "AWakParticleSystem", "class_a_wak_particle_system.html", "class_a_wak_particle_system" ],
+    [ "Catch_global_namespace_dummy", "struct_catch__global__namespace__dummy.html", null ],
+    [ "MeshSection", "class_mesh_section.html", "class_mesh_section" ],
+    [ "PenguinGlide", "class_penguin_glide.html", "class_penguin_glide" ],
+    [ "UCollisionCameraShake", "class_u_collision_camera_shake.html", "class_u_collision_camera_shake" ],
+    [ "ULocalHighscoreAccesor", "class_u_local_highscore_accesor.html", "class_u_local_highscore_accesor" ],
+    [ "UPenguinSlideGameInstance", "class_u_penguin_slide_game_instance.html", "class_u_penguin_slide_game_instance" ]
+];

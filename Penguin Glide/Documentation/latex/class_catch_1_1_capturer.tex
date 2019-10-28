@@ -1,0 +1,92 @@
+\section{Catch\+::Capturer Class Reference}
+\label{class_catch_1_1_capturer}\index{Catch::Capturer@{Catch::Capturer}}
+
+
+{\ttfamily \#include $<$catch.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Capturer} (\textbf{ String\+Ref} macro\+Name, \textbf{ Source\+Line\+Info} const \&line\+Info, \textbf{ Result\+Was\+::\+Of\+Type} result\+Type, \textbf{ String\+Ref} names)
+\item 
+\textbf{ $\sim$\+Capturer} ()
+\item 
+void \textbf{ capture\+Value} (size\+\_\+t index, std\+::string const \&value)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \textbf{ capture\+Values} (size\+\_\+t index, T const \&value)
+\item 
+{\footnotesize template$<$typename T , typename... Ts$>$ }\\void \textbf{ capture\+Values} (size\+\_\+t index, T const \&value, Ts const \&... values)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \textbf{ Message\+Info} $>$ \textbf{ m\+\_\+messages}
+\item 
+\textbf{ I\+Result\+Capture} \& \textbf{ m\+\_\+result\+Capture} = \textbf{ get\+Result\+Capture}()
+\item 
+size\+\_\+t \textbf{ m\+\_\+captured} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_catch_1_1_capturer_a86b0b27acc803a4e1310c10820f3038f}} 
+\index{Catch::Capturer@{Catch::Capturer}!Capturer@{Capturer}}
+\index{Capturer@{Capturer}!Catch::Capturer@{Catch::Capturer}}
+\subsubsection{Capturer()}
+{\footnotesize\ttfamily Catch\+::\+Capturer\+::\+Capturer (\begin{DoxyParamCaption}\item[{\textbf{ String\+Ref}}]{macro\+Name,  }\item[{\textbf{ Source\+Line\+Info} const \&}]{line\+Info,  }\item[{\textbf{ Result\+Was\+::\+Of\+Type}}]{result\+Type,  }\item[{\textbf{ String\+Ref}}]{names }\end{DoxyParamCaption})}
+
+\mbox{\label{class_catch_1_1_capturer_aecde85cf69e65565cec91e325a657b82}} 
+\index{Catch::Capturer@{Catch::Capturer}!````~Capturer@{$\sim$Capturer}}
+\index{````~Capturer@{$\sim$Capturer}!Catch::Capturer@{Catch::Capturer}}
+\subsubsection{$\sim$Capturer()}
+{\footnotesize\ttfamily Catch\+::\+Capturer\+::$\sim$\+Capturer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_catch_1_1_capturer_a0695ebf77f7cdcb344c73bcb3d9131e4}} 
+\index{Catch::Capturer@{Catch::Capturer}!captureValue@{captureValue}}
+\index{captureValue@{captureValue}!Catch::Capturer@{Catch::Capturer}}
+\subsubsection{captureValue()}
+{\footnotesize\ttfamily void Catch\+::\+Capturer\+::capture\+Value (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index,  }\item[{std\+::string const \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\label{class_catch_1_1_capturer_a60d08e6db2e54740bb2298bbbec3bc0b}} 
+\index{Catch::Capturer@{Catch::Capturer}!captureValues@{captureValues}}
+\index{captureValues@{captureValues}!Catch::Capturer@{Catch::Capturer}}
+\subsubsection{captureValues()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Catch\+::\+Capturer\+::capture\+Values (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index,  }\item[{T const \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_catch_1_1_capturer_a76f2a097cfeb3042688300b81eb9bcbc}} 
+\index{Catch::Capturer@{Catch::Capturer}!captureValues@{captureValues}}
+\index{captureValues@{captureValues}!Catch::Capturer@{Catch::Capturer}}
+\subsubsection{captureValues()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename... Ts$>$ \\
+void Catch\+::\+Capturer\+::capture\+Values (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index,  }\item[{T const \&}]{value,  }\item[{Ts const \&...}]{values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_catch_1_1_capturer_a1c3bea0fde97a7663ece4b81187fa9ed}} 
+\index{Catch::Capturer@{Catch::Capturer}!m\_captured@{m\_captured}}
+\index{m\_captured@{m\_captured}!Catch::Capturer@{Catch::Capturer}}
+\subsubsection{m\_captured}
+{\footnotesize\ttfamily size\+\_\+t Catch\+::\+Capturer\+::m\+\_\+captured = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_catch_1_1_capturer_aefa14693d28906e5e7b06975af38aaed}} 
+\index{Catch::Capturer@{Catch::Capturer}!m\_messages@{m\_messages}}
+\index{m\_messages@{m\_messages}!Catch::Capturer@{Catch::Capturer}}
+\subsubsection{m\_messages}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ Message\+Info}$>$ Catch\+::\+Capturer\+::m\+\_\+messages\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_catch_1_1_capturer_a29edecce81d56837945ba2585c0ff941}} 
+\index{Catch::Capturer@{Catch::Capturer}!m\_resultCapture@{m\_resultCapture}}
+\index{m\_resultCapture@{m\_resultCapture}!Catch::Capturer@{Catch::Capturer}}
+\subsubsection{m\_resultCapture}
+{\footnotesize\ttfamily \textbf{ I\+Result\+Capture}\& Catch\+::\+Capturer\+::m\+\_\+result\+Capture = \textbf{ get\+Result\+Capture}()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/\textbf{ catch.\+hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,104 @@
+\section{Catch\+::Generators\+::Chunk\+Generator$<$ T $>$ Class Template Reference}
+\label{class_catch_1_1_generators_1_1_chunk_generator}\index{Catch::Generators::ChunkGenerator$<$ T $>$@{Catch::Generators::ChunkGenerator$<$ T $>$}}
+
+
+{\ttfamily \#include $<$catch.\+hpp$>$}
+
+Inheritance diagram for Catch\+::Generators\+::Chunk\+Generator$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_catch_1_1_generators_1_1_chunk_generator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Chunk\+Generator} (size\+\_\+t size, \textbf{ Generator\+Wrapper}$<$ T $>$ generator)
+\item 
+std\+::vector$<$ T $>$ const  \& \textbf{ get} () const override
+\item 
+bool \textbf{ next} () override
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ T $>$ \textbf{ m\+\_\+chunk}
+\item 
+size\+\_\+t \textbf{ m\+\_\+chunk\+\_\+size}
+\item 
+\textbf{ Generator\+Wrapper}$<$ T $>$ \textbf{ m\+\_\+generator}
+\item 
+bool \textbf{ m\+\_\+used\+\_\+up} = false
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_catch_1_1_generators_1_1_chunk_generator_a50c334d00cde3166d71e9b90ebc2d2e3}} 
+\index{Catch::Generators::ChunkGenerator$<$ T $>$@{Catch::Generators::ChunkGenerator$<$ T $>$}!ChunkGenerator@{ChunkGenerator}}
+\index{ChunkGenerator@{ChunkGenerator}!Catch::Generators::ChunkGenerator$<$ T $>$@{Catch::Generators::ChunkGenerator$<$ T $>$}}
+\subsubsection{ChunkGenerator()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ Catch\+::\+Generators\+::\+Chunk\+Generator}$<$ T $>$\+::\textbf{ Chunk\+Generator} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{\textbf{ Generator\+Wrapper}$<$ T $>$}]{generator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_catch_1_1_generators_1_1_chunk_generator_aa41c7d08a165b6a18560f2ab9e977f0b}} 
+\index{Catch::Generators::ChunkGenerator$<$ T $>$@{Catch::Generators::ChunkGenerator$<$ T $>$}!get@{get}}
+\index{get@{get}!Catch::Generators::ChunkGenerator$<$ T $>$@{Catch::Generators::ChunkGenerator$<$ T $>$}}
+\subsubsection{get()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$T$>$ const\& \textbf{ Catch\+::\+Generators\+::\+Chunk\+Generator}$<$ T $>$\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Catch\+::\+Generators\+::\+I\+Generator$<$ std\+::vector$<$ T $>$ $>$} \doxyref{}{p.}{struct_catch_1_1_generators_1_1_i_generator_a525d381fc9249a885b075a0632a8579a}.
+
+\mbox{\label{class_catch_1_1_generators_1_1_chunk_generator_a545e89f80eb1e3c953491541ea083f86}} 
+\index{Catch::Generators::ChunkGenerator$<$ T $>$@{Catch::Generators::ChunkGenerator$<$ T $>$}!next@{next}}
+\index{next@{next}!Catch::Generators::ChunkGenerator$<$ T $>$@{Catch::Generators::ChunkGenerator$<$ T $>$}}
+\subsubsection{next()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \textbf{ Catch\+::\+Generators\+::\+Chunk\+Generator}$<$ T $>$\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Catch\+::\+Generators\+::\+Generator\+Untyped\+Base} \doxyref{}{p.}{class_catch_1_1_generators_1_1_generator_untyped_base_aeed3c0cd6233c5f553549e453b8d6638}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_catch_1_1_generators_1_1_chunk_generator_ab5e382bc5be2e327331bd694a40fa827}} 
+\index{Catch::Generators::ChunkGenerator$<$ T $>$@{Catch::Generators::ChunkGenerator$<$ T $>$}!m\_chunk@{m\_chunk}}
+\index{m\_chunk@{m\_chunk}!Catch::Generators::ChunkGenerator$<$ T $>$@{Catch::Generators::ChunkGenerator$<$ T $>$}}
+\subsubsection{m\_chunk}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$T$>$ \textbf{ Catch\+::\+Generators\+::\+Chunk\+Generator}$<$ T $>$\+::m\+\_\+chunk\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_catch_1_1_generators_1_1_chunk_generator_a222b9cd460e6d48b12f939833b1b0beb}} 
+\index{Catch::Generators::ChunkGenerator$<$ T $>$@{Catch::Generators::ChunkGenerator$<$ T $>$}!m\_chunk\_size@{m\_chunk\_size}}
+\index{m\_chunk\_size@{m\_chunk\_size}!Catch::Generators::ChunkGenerator$<$ T $>$@{Catch::Generators::ChunkGenerator$<$ T $>$}}
+\subsubsection{m\_chunk\_size}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \textbf{ Catch\+::\+Generators\+::\+Chunk\+Generator}$<$ T $>$\+::m\+\_\+chunk\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_catch_1_1_generators_1_1_chunk_generator_aa12b90ee9d029c44528fdba6b9de17bb}} 
+\index{Catch::Generators::ChunkGenerator$<$ T $>$@{Catch::Generators::ChunkGenerator$<$ T $>$}!m\_generator@{m\_generator}}
+\index{m\_generator@{m\_generator}!Catch::Generators::ChunkGenerator$<$ T $>$@{Catch::Generators::ChunkGenerator$<$ T $>$}}
+\subsubsection{m\_generator}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ Generator\+Wrapper}$<$T$>$ \textbf{ Catch\+::\+Generators\+::\+Chunk\+Generator}$<$ T $>$\+::m\+\_\+generator\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_catch_1_1_generators_1_1_chunk_generator_a4a5f14d8f6c7a94e5771eb999c1ffe5a}} 
+\index{Catch::Generators::ChunkGenerator$<$ T $>$@{Catch::Generators::ChunkGenerator$<$ T $>$}!m\_used\_up@{m\_used\_up}}
+\index{m\_used\_up@{m\_used\_up}!Catch::Generators::ChunkGenerator$<$ T $>$@{Catch::Generators::ChunkGenerator$<$ T $>$}}
+\subsubsection{m\_used\_up}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \textbf{ Catch\+::\+Generators\+::\+Chunk\+Generator}$<$ T $>$\+::m\+\_\+used\+\_\+up = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/\textbf{ catch.\+hpp}\end{DoxyCompactItemize}

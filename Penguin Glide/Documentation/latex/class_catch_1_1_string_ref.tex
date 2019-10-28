@@ -1,0 +1,271 @@
+\section{Catch\+::String\+Ref Class Reference}
+\label{class_catch_1_1_string_ref}\index{Catch::StringRef@{Catch::StringRef}}
+
+
+{\ttfamily \#include $<$catch.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \textbf{ size\+\_\+type} = std\+::size\+\_\+t
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ String\+Ref} () noexcept
+\item 
+\textbf{ String\+Ref} (\textbf{ String\+Ref} const \&other) noexcept
+\item 
+\textbf{ String\+Ref} (\textbf{ String\+Ref} \&\&other) noexcept
+\item 
+\textbf{ String\+Ref} (char const $\ast$raw\+Chars) noexcept
+\item 
+\textbf{ String\+Ref} (char const $\ast$raw\+Chars, \textbf{ size\+\_\+type} \textbf{ size}) noexcept
+\item 
+\textbf{ String\+Ref} (std\+::string const \&std\+String) noexcept
+\item 
+\textbf{ $\sim$\+String\+Ref} () noexcept
+\item 
+auto \textbf{ operator=} (\textbf{ String\+Ref} const \&other) noexcept -\/$>$ \textbf{ String\+Ref} \&
+\item 
+\textbf{ operator std\+::string} () const
+\item 
+void \textbf{ swap} (\textbf{ String\+Ref} \&other) noexcept
+\item 
+auto \textbf{ operator==} (\textbf{ String\+Ref} const \&other) const noexcept -\/$>$ bool
+\item 
+auto \textbf{ operator !=} (\textbf{ String\+Ref} const \&other) const noexcept -\/$>$ bool
+\item 
+auto \textbf{ operator[$\,$]} (\textbf{ size\+\_\+type} index) const noexcept -\/$>$ char
+\item 
+auto \textbf{ empty} () const noexcept -\/$>$ bool
+\item 
+auto \textbf{ size} () const noexcept -\/$>$ \textbf{ size\+\_\+type}
+\item 
+auto \textbf{ number\+Of\+Characters} () const noexcept -\/$>$ \textbf{ size\+\_\+type}
+\item 
+auto \textbf{ c\+\_\+str} () const -\/$>$ char const $\ast$
+\item 
+auto \textbf{ substr} (\textbf{ size\+\_\+type} start, \textbf{ size\+\_\+type} \textbf{ size}) const noexcept -\/$>$ \textbf{ String\+Ref}
+\item 
+auto \textbf{ current\+Data} () const noexcept -\/$>$ char const $\ast$
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ take\+Ownership} ()
+\item 
+auto \textbf{ is\+Owned} () const noexcept -\/$>$ bool
+\item 
+auto \textbf{ is\+Substring} () const noexcept -\/$>$ bool
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char const  $\ast$ \textbf{ m\+\_\+start}
+\item 
+\textbf{ size\+\_\+type} \textbf{ m\+\_\+size}
+\item 
+char $\ast$ \textbf{ m\+\_\+data} = nullptr
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr char const  $\ast$const \textbf{ s\+\_\+empty} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ String\+Ref\+Test\+Access}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A non-\/owning string class (similar to the forthcoming std\+::string\+\_\+view) Note that, because a \doxyref{String\+Ref}{p.}{class_catch_1_1_string_ref} may be a substring of another string, it may not be null terminated. \doxyref{c\+\_\+str()}{p.}{class_catch_1_1_string_ref_a1669cb2765e820ca258159676cbd82a5} must return a null terminated string, however, and so the \doxyref{String\+Ref}{p.}{class_catch_1_1_string_ref} will internally take ownership (taking a copy), if necessary. In theory this ownership is not externally visible -\/ but it does mean (substring) String\+Refs should not be shared between threads. 
+
+\subsection{Member Typedef Documentation}
+\mbox{\label{class_catch_1_1_string_ref_a06b4db8fc82b197004291cf370b2ba7c}} 
+\index{Catch::StringRef@{Catch::StringRef}!size\_type@{size\_type}}
+\index{size\_type@{size\_type}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{size\_type}
+{\footnotesize\ttfamily using \textbf{ Catch\+::\+String\+Ref\+::size\+\_\+type} =  std\+::size\+\_\+t}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_catch_1_1_string_ref_a94319c75df6542327c93a312c6a80754}} 
+\index{Catch::StringRef@{Catch::StringRef}!StringRef@{StringRef}}
+\index{StringRef@{StringRef}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{StringRef()\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily Catch\+::\+String\+Ref\+::\+String\+Ref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\label{class_catch_1_1_string_ref_a2f287267c3a988b288bfd910667c1cfc}} 
+\index{Catch::StringRef@{Catch::StringRef}!StringRef@{StringRef}}
+\index{StringRef@{StringRef}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{StringRef()\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily Catch\+::\+String\+Ref\+::\+String\+Ref (\begin{DoxyParamCaption}\item[{\textbf{ String\+Ref} const \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\label{class_catch_1_1_string_ref_a407d5737b94e5a374add5c2794589733}} 
+\index{Catch::StringRef@{Catch::StringRef}!StringRef@{StringRef}}
+\index{StringRef@{StringRef}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{StringRef()\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily Catch\+::\+String\+Ref\+::\+String\+Ref (\begin{DoxyParamCaption}\item[{\textbf{ String\+Ref} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\label{class_catch_1_1_string_ref_aea45f5089c53adac362bff6bd7c40943}} 
+\index{Catch::StringRef@{Catch::StringRef}!StringRef@{StringRef}}
+\index{StringRef@{StringRef}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{StringRef()\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily Catch\+::\+String\+Ref\+::\+String\+Ref (\begin{DoxyParamCaption}\item[{char const $\ast$}]{raw\+Chars }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\label{class_catch_1_1_string_ref_a320bf235274ebb90dd6af80485af2797}} 
+\index{Catch::StringRef@{Catch::StringRef}!StringRef@{StringRef}}
+\index{StringRef@{StringRef}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{StringRef()\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily Catch\+::\+String\+Ref\+::\+String\+Ref (\begin{DoxyParamCaption}\item[{char const $\ast$}]{raw\+Chars,  }\item[{\textbf{ size\+\_\+type}}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\label{class_catch_1_1_string_ref_a7fe41469048f906e9a847798cd335f23}} 
+\index{Catch::StringRef@{Catch::StringRef}!StringRef@{StringRef}}
+\index{StringRef@{StringRef}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{StringRef()\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily Catch\+::\+String\+Ref\+::\+String\+Ref (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{std\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\label{class_catch_1_1_string_ref_a387795c6d883d7281befe5e82920faf8}} 
+\index{Catch::StringRef@{Catch::StringRef}!````~StringRef@{$\sim$StringRef}}
+\index{````~StringRef@{$\sim$StringRef}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{$\sim$StringRef()}
+{\footnotesize\ttfamily Catch\+::\+String\+Ref\+::$\sim$\+String\+Ref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_catch_1_1_string_ref_a1669cb2765e820ca258159676cbd82a5}} 
+\index{Catch::StringRef@{Catch::StringRef}!c\_str@{c\_str}}
+\index{c\_str@{c\_str}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{c\_str()}
+{\footnotesize\ttfamily auto Catch\+::\+String\+Ref\+::c\+\_\+str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$  char const $\ast$}
+
+\mbox{\label{class_catch_1_1_string_ref_aee240387305ca8b249169d79f36e7002}} 
+\index{Catch::StringRef@{Catch::StringRef}!currentData@{currentData}}
+\index{currentData@{currentData}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{currentData()}
+{\footnotesize\ttfamily auto Catch\+::\+String\+Ref\+::current\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$  char const $\ast$\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\label{class_catch_1_1_string_ref_ac6b68b9dc1e1dec69e884e3f7be581bd}} 
+\index{Catch::StringRef@{Catch::StringRef}!empty@{empty}}
+\index{empty@{empty}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{empty()}
+{\footnotesize\ttfamily auto Catch\+::\+String\+Ref\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ bool \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\label{class_catch_1_1_string_ref_a911d426c9a979736da4bf44bec2b174c}} 
+\index{Catch::StringRef@{Catch::StringRef}!isOwned@{isOwned}}
+\index{isOwned@{isOwned}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{isOwned()}
+{\footnotesize\ttfamily auto Catch\+::\+String\+Ref\+::is\+Owned (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$  bool\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+\mbox{\label{class_catch_1_1_string_ref_adee880a214907e6a5ad64141b15f409a}} 
+\index{Catch::StringRef@{Catch::StringRef}!isSubstring@{isSubstring}}
+\index{isSubstring@{isSubstring}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{isSubstring()}
+{\footnotesize\ttfamily auto Catch\+::\+String\+Ref\+::is\+Substring (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$  bool\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+\mbox{\label{class_catch_1_1_string_ref_a6a6cac7430e626ffdd7550a081e8168f}} 
+\index{Catch::StringRef@{Catch::StringRef}!numberOfCharacters@{numberOfCharacters}}
+\index{numberOfCharacters@{numberOfCharacters}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{numberOfCharacters()}
+{\footnotesize\ttfamily auto Catch\+::\+String\+Ref\+::number\+Of\+Characters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$  \textbf{ size\+\_\+type}\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\label{class_catch_1_1_string_ref_afbd4abd62af0fc1a35697cbb91415fc6}} 
+\index{Catch::StringRef@{Catch::StringRef}!operator "!=@{operator "!=}}
+\index{operator "!=@{operator "!=}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{operator "!=()}
+{\footnotesize\ttfamily auto Catch\+::\+String\+Ref\+::operator != (\begin{DoxyParamCaption}\item[{\textbf{ String\+Ref} const \&}]{other }\end{DoxyParamCaption}) const -\/$>$  bool\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\label{class_catch_1_1_string_ref_ad9fde21785affacc32d7da7a70d74e93}} 
+\index{Catch::StringRef@{Catch::StringRef}!operator std::string@{operator std::string}}
+\index{operator std::string@{operator std::string}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{operator std::string()}
+{\footnotesize\ttfamily Catch\+::\+String\+Ref\+::operator std\+::string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\label{class_catch_1_1_string_ref_a14d5a1983e33c51c6b5fd33bffbebabb}} 
+\index{Catch::StringRef@{Catch::StringRef}!operator=@{operator=}}
+\index{operator=@{operator=}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{operator=()}
+{\footnotesize\ttfamily auto Catch\+::\+String\+Ref\+::operator= (\begin{DoxyParamCaption}\item[{\textbf{ String\+Ref} const \&}]{other }\end{DoxyParamCaption}) -\/$>$ \textbf{ String\+Ref}\& \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\label{class_catch_1_1_string_ref_aabb30149ab961187e4b3ff3394bf6e73}} 
+\index{Catch::StringRef@{Catch::StringRef}!operator==@{operator==}}
+\index{operator==@{operator==}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{operator==()}
+{\footnotesize\ttfamily auto Catch\+::\+String\+Ref\+::operator== (\begin{DoxyParamCaption}\item[{\textbf{ String\+Ref} const \&}]{other }\end{DoxyParamCaption}) const -\/$>$  bool\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\label{class_catch_1_1_string_ref_a4ba2e01eec1f0f56c257d213c796ab3b}} 
+\index{Catch::StringRef@{Catch::StringRef}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{operator[]()}
+{\footnotesize\ttfamily auto Catch\+::\+String\+Ref\+::operator[$\,$] (\begin{DoxyParamCaption}\item[{\textbf{ size\+\_\+type}}]{index }\end{DoxyParamCaption}) const -\/$>$  char\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\label{class_catch_1_1_string_ref_ae084d72cb2952cee61a63ef36611d0ad}} 
+\index{Catch::StringRef@{Catch::StringRef}!size@{size}}
+\index{size@{size}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{size()}
+{\footnotesize\ttfamily auto Catch\+::\+String\+Ref\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ \textbf{ size\+\_\+type} \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\label{class_catch_1_1_string_ref_a248568b467cf6599320903ae613c8eee}} 
+\index{Catch::StringRef@{Catch::StringRef}!substr@{substr}}
+\index{substr@{substr}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{substr()}
+{\footnotesize\ttfamily auto Catch\+::\+String\+Ref\+::substr (\begin{DoxyParamCaption}\item[{\textbf{ size\+\_\+type}}]{start,  }\item[{\textbf{ size\+\_\+type}}]{size }\end{DoxyParamCaption}) const -\/$>$  \textbf{ String\+Ref}\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\label{class_catch_1_1_string_ref_a8a843e39ad3560d10a80524ed926ed63}} 
+\index{Catch::StringRef@{Catch::StringRef}!swap@{swap}}
+\index{swap@{swap}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{swap()}
+{\footnotesize\ttfamily void Catch\+::\+String\+Ref\+::swap (\begin{DoxyParamCaption}\item[{\textbf{ String\+Ref} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\label{class_catch_1_1_string_ref_aa2723bb1d9355202209993142534d3d6}} 
+\index{Catch::StringRef@{Catch::StringRef}!takeOwnership@{takeOwnership}}
+\index{takeOwnership@{takeOwnership}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{takeOwnership()}
+{\footnotesize\ttfamily void Catch\+::\+String\+Ref\+::take\+Ownership (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\label{class_catch_1_1_string_ref_a420e64e1652de1b0d427775781b018f5}} 
+\index{Catch::StringRef@{Catch::StringRef}!StringRefTestAccess@{StringRefTestAccess}}
+\index{StringRefTestAccess@{StringRefTestAccess}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{StringRefTestAccess}
+{\footnotesize\ttfamily friend struct String\+Ref\+Test\+Access\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_catch_1_1_string_ref_ae671eabbedd386aeb334d3da1a904ba5}} 
+\index{Catch::StringRef@{Catch::StringRef}!m\_data@{m\_data}}
+\index{m\_data@{m\_data}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{m\_data}
+{\footnotesize\ttfamily char$\ast$ Catch\+::\+String\+Ref\+::m\+\_\+data = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_catch_1_1_string_ref_a91ee253f5b7e43303352186139845753}} 
+\index{Catch::StringRef@{Catch::StringRef}!m\_size@{m\_size}}
+\index{m\_size@{m\_size}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{m\_size}
+{\footnotesize\ttfamily \textbf{ size\+\_\+type} Catch\+::\+String\+Ref\+::m\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_catch_1_1_string_ref_a0583d4e5ea88c99c121504052a4fcb6c}} 
+\index{Catch::StringRef@{Catch::StringRef}!m\_start@{m\_start}}
+\index{m\_start@{m\_start}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{m\_start}
+{\footnotesize\ttfamily char const$\ast$ Catch\+::\+String\+Ref\+::m\+\_\+start\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_catch_1_1_string_ref_a38d077e89f7f2ce666507ab28dd28653}} 
+\index{Catch::StringRef@{Catch::StringRef}!s\_empty@{s\_empty}}
+\index{s\_empty@{s\_empty}!Catch::StringRef@{Catch::StringRef}}
+\subsubsection{s\_empty}
+{\footnotesize\ttfamily constexpr char const$\ast$ const Catch\+::\+String\+Ref\+::s\+\_\+empty = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/\textbf{ catch.\+hpp}\end{DoxyCompactItemize}

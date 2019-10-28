@@ -1,0 +1,95 @@
+\section{Catch\+::Generators\+::Random\+Integer\+Generator$<$ Integer $>$ Class Template Reference}
+\label{class_catch_1_1_generators_1_1_random_integer_generator}\index{Catch::Generators::RandomIntegerGenerator$<$ Integer $>$@{Catch::Generators::RandomIntegerGenerator$<$ Integer $>$}}
+
+
+{\ttfamily \#include $<$catch.\+hpp$>$}
+
+Inheritance diagram for Catch\+::Generators\+::Random\+Integer\+Generator$<$ Integer $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_catch_1_1_generators_1_1_random_integer_generator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Random\+Integer\+Generator} (Integer a, Integer b)
+\item 
+Integer const  \& \textbf{ get} () const override
+\item 
+bool \textbf{ next} () override
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::minstd\+\_\+rand \textbf{ m\+\_\+rand}
+\item 
+std\+::uniform\+\_\+int\+\_\+distribution$<$ Integer $>$ \textbf{ m\+\_\+dist}
+\item 
+Integer \textbf{ m\+\_\+current\+\_\+number}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_catch_1_1_generators_1_1_random_integer_generator_a886d16c899ad70781b83a0e8f9d2cf96}} 
+\index{Catch::Generators::RandomIntegerGenerator$<$ Integer $>$@{Catch::Generators::RandomIntegerGenerator$<$ Integer $>$}!RandomIntegerGenerator@{RandomIntegerGenerator}}
+\index{RandomIntegerGenerator@{RandomIntegerGenerator}!Catch::Generators::RandomIntegerGenerator$<$ Integer $>$@{Catch::Generators::RandomIntegerGenerator$<$ Integer $>$}}
+\subsubsection{RandomIntegerGenerator()}
+{\footnotesize\ttfamily template$<$typename Integer $>$ \\
+\textbf{ Catch\+::\+Generators\+::\+Random\+Integer\+Generator}$<$ Integer $>$\+::\textbf{ Random\+Integer\+Generator} (\begin{DoxyParamCaption}\item[{Integer}]{a,  }\item[{Integer}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_catch_1_1_generators_1_1_random_integer_generator_aafbdf9028762f5e8f8ca9c317d686fca}} 
+\index{Catch::Generators::RandomIntegerGenerator$<$ Integer $>$@{Catch::Generators::RandomIntegerGenerator$<$ Integer $>$}!get@{get}}
+\index{get@{get}!Catch::Generators::RandomIntegerGenerator$<$ Integer $>$@{Catch::Generators::RandomIntegerGenerator$<$ Integer $>$}}
+\subsubsection{get()}
+{\footnotesize\ttfamily template$<$typename Integer $>$ \\
+Integer const\& \textbf{ Catch\+::\+Generators\+::\+Random\+Integer\+Generator}$<$ Integer $>$\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Catch\+::\+Generators\+::\+I\+Generator$<$ Integer $>$} \doxyref{}{p.}{struct_catch_1_1_generators_1_1_i_generator_a525d381fc9249a885b075a0632a8579a}.
+
+\mbox{\label{class_catch_1_1_generators_1_1_random_integer_generator_aaa3db70fbdfa3e8dcb61fb5592eba81f}} 
+\index{Catch::Generators::RandomIntegerGenerator$<$ Integer $>$@{Catch::Generators::RandomIntegerGenerator$<$ Integer $>$}!next@{next}}
+\index{next@{next}!Catch::Generators::RandomIntegerGenerator$<$ Integer $>$@{Catch::Generators::RandomIntegerGenerator$<$ Integer $>$}}
+\subsubsection{next()}
+{\footnotesize\ttfamily template$<$typename Integer $>$ \\
+bool \textbf{ Catch\+::\+Generators\+::\+Random\+Integer\+Generator}$<$ Integer $>$\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Catch\+::\+Generators\+::\+Generator\+Untyped\+Base} \doxyref{}{p.}{class_catch_1_1_generators_1_1_generator_untyped_base_aeed3c0cd6233c5f553549e453b8d6638}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_catch_1_1_generators_1_1_random_integer_generator_a1b811ebf04416b6b822ce153b040f020}} 
+\index{Catch::Generators::RandomIntegerGenerator$<$ Integer $>$@{Catch::Generators::RandomIntegerGenerator$<$ Integer $>$}!m\_current\_number@{m\_current\_number}}
+\index{m\_current\_number@{m\_current\_number}!Catch::Generators::RandomIntegerGenerator$<$ Integer $>$@{Catch::Generators::RandomIntegerGenerator$<$ Integer $>$}}
+\subsubsection{m\_current\_number}
+{\footnotesize\ttfamily template$<$typename Integer $>$ \\
+Integer \textbf{ Catch\+::\+Generators\+::\+Random\+Integer\+Generator}$<$ Integer $>$\+::m\+\_\+current\+\_\+number\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_catch_1_1_generators_1_1_random_integer_generator_a0f9a8e409e291c332ebba1667cdc90fe}} 
+\index{Catch::Generators::RandomIntegerGenerator$<$ Integer $>$@{Catch::Generators::RandomIntegerGenerator$<$ Integer $>$}!m\_dist@{m\_dist}}
+\index{m\_dist@{m\_dist}!Catch::Generators::RandomIntegerGenerator$<$ Integer $>$@{Catch::Generators::RandomIntegerGenerator$<$ Integer $>$}}
+\subsubsection{m\_dist}
+{\footnotesize\ttfamily template$<$typename Integer $>$ \\
+std\+::uniform\+\_\+int\+\_\+distribution$<$Integer$>$ \textbf{ Catch\+::\+Generators\+::\+Random\+Integer\+Generator}$<$ Integer $>$\+::m\+\_\+dist\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_catch_1_1_generators_1_1_random_integer_generator_a8b64ca60f4711c9e29a68090ebdc1b94}} 
+\index{Catch::Generators::RandomIntegerGenerator$<$ Integer $>$@{Catch::Generators::RandomIntegerGenerator$<$ Integer $>$}!m\_rand@{m\_rand}}
+\index{m\_rand@{m\_rand}!Catch::Generators::RandomIntegerGenerator$<$ Integer $>$@{Catch::Generators::RandomIntegerGenerator$<$ Integer $>$}}
+\subsubsection{m\_rand}
+{\footnotesize\ttfamily template$<$typename Integer $>$ \\
+std\+::minstd\+\_\+rand \textbf{ Catch\+::\+Generators\+::\+Random\+Integer\+Generator}$<$ Integer $>$\+::m\+\_\+rand\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/\textbf{ catch.\+hpp}\end{DoxyCompactItemize}

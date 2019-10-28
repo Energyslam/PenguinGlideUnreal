@@ -1,0 +1,65 @@
+\section{Penguin\+Glide/\+Track\+Generator\+Bezier.cpp File Reference}
+\label{_track_generator_bezier_8cpp}\index{PenguinGlide/TrackGeneratorBezier.cpp@{PenguinGlide/TrackGeneratorBezier.cpp}}
+{\ttfamily \#include \char`\"{}Track\+Generator\+Bezier.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}Spawnable\+Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Temp\+Player.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Snowball.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Runtime/\+Engine/\+Public/\+Engine\+Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Draw\+Debug\+Helpers.\+h\char`\"{}}\newline
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \textbf{ point\+Spacer} = 30
+\begin{DoxyCompactList}\small\item\em The amount of points along the curve. \end{DoxyCompactList}\item 
+const int \textbf{ nodes} = 4
+\begin{DoxyCompactList}\small\item\em Our bezier curve always uses 4 nodes. \end{DoxyCompactList}\item 
+T\+Array$<$ \textbf{ Mesh\+Section} $>$ \textbf{ meshes}
+\begin{DoxyCompactList}\small\item\em Array holding the created meshes. \end{DoxyCompactList}\item 
+\textbf{ A\+Spawnable\+Object} $\ast$ \textbf{ spawnable\+Object}
+\begin{DoxyCompactList}\small\item\em Pointer to the spawnable\+Object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\label{_track_generator_bezier_8cpp_a64af1d55023ce43d43db7084953ff882}} 
+\index{TrackGeneratorBezier.cpp@{TrackGeneratorBezier.cpp}!meshes@{meshes}}
+\index{meshes@{meshes}!TrackGeneratorBezier.cpp@{TrackGeneratorBezier.cpp}}
+\subsubsection{meshes}
+{\footnotesize\ttfamily T\+Array$<$\textbf{ Mesh\+Section}$>$ meshes}
+
+
+
+Array holding the created meshes. 
+
+\mbox{\label{_track_generator_bezier_8cpp_a890397c9ca6722671c6e1ed7635b3925}} 
+\index{TrackGeneratorBezier.cpp@{TrackGeneratorBezier.cpp}!nodes@{nodes}}
+\index{nodes@{nodes}!TrackGeneratorBezier.cpp@{TrackGeneratorBezier.cpp}}
+\subsubsection{nodes}
+{\footnotesize\ttfamily const int nodes = 4}
+
+
+
+Our bezier curve always uses 4 nodes. 
+
+\mbox{\label{_track_generator_bezier_8cpp_a260ebc0df13e543db68d6dbde6c4700c}} 
+\index{TrackGeneratorBezier.cpp@{TrackGeneratorBezier.cpp}!pointSpacer@{pointSpacer}}
+\index{pointSpacer@{pointSpacer}!TrackGeneratorBezier.cpp@{TrackGeneratorBezier.cpp}}
+\subsubsection{pointSpacer}
+{\footnotesize\ttfamily const int point\+Spacer = 30}
+
+
+
+The amount of points along the curve. 
+
+\mbox{\label{_track_generator_bezier_8cpp_a0b8aeee4c48b921482309d0e9eb613ec}} 
+\index{TrackGeneratorBezier.cpp@{TrackGeneratorBezier.cpp}!spawnableObject@{spawnableObject}}
+\index{spawnableObject@{spawnableObject}!TrackGeneratorBezier.cpp@{TrackGeneratorBezier.cpp}}
+\subsubsection{spawnableObject}
+{\footnotesize\ttfamily \textbf{ A\+Spawnable\+Object}$\ast$ spawnable\+Object}
+
+
+
+Pointer to the spawnable\+Object. 
+
+Sets default values 

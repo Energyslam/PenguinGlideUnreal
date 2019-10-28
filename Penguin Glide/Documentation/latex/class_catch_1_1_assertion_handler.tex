@@ -1,0 +1,163 @@
+\section{Catch\+::Assertion\+Handler Class Reference}
+\label{class_catch_1_1_assertion_handler}\index{Catch::AssertionHandler@{Catch::AssertionHandler}}
+
+
+{\ttfamily \#include $<$catch.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Assertion\+Handler} (\textbf{ String\+Ref} const \&macro\+Name, \textbf{ Source\+Line\+Info} const \&line\+Info, \textbf{ String\+Ref} captured\+Expression, \textbf{ Result\+Disposition\+::\+Flags} result\+Disposition)
+\item 
+\textbf{ $\sim$\+Assertion\+Handler} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \textbf{ handle\+Expr} (\textbf{ Expr\+Lhs}$<$ T $>$ const \&expr)
+\item 
+void \textbf{ handle\+Expr} (\textbf{ I\+Transient\+Expression} const \&expr)
+\item 
+void \textbf{ handle\+Message} (\textbf{ Result\+Was\+::\+Of\+Type} result\+Type, \textbf{ String\+Ref} const \&message)
+\item 
+void \textbf{ handle\+Exception\+Thrown\+As\+Expected} ()
+\item 
+void \textbf{ handle\+Unexpected\+Exception\+Not\+Thrown} ()
+\item 
+void \textbf{ handle\+Exception\+Not\+Thrown\+As\+Expected} ()
+\item 
+void \textbf{ handle\+Throwing\+Call\+Skipped} ()
+\item 
+void \textbf{ handle\+Unexpected\+Inflight\+Exception} ()
+\item 
+void \textbf{ complete} ()
+\item 
+void \textbf{ set\+Completed} ()
+\item 
+auto \textbf{ allow\+Throws} () const -\/$>$ bool
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Assertion\+Info} \textbf{ m\+\_\+assertion\+Info}
+\item 
+\textbf{ Assertion\+Reaction} \textbf{ m\+\_\+reaction}
+\item 
+bool \textbf{ m\+\_\+completed} = false
+\item 
+\textbf{ I\+Result\+Capture} \& \textbf{ m\+\_\+result\+Capture}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_catch_1_1_assertion_handler_a32efbb1b56b71d758d4c2094bac1f1a9}} 
+\index{Catch::AssertionHandler@{Catch::AssertionHandler}!AssertionHandler@{AssertionHandler}}
+\index{AssertionHandler@{AssertionHandler}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\subsubsection{AssertionHandler()}
+{\footnotesize\ttfamily Catch\+::\+Assertion\+Handler\+::\+Assertion\+Handler (\begin{DoxyParamCaption}\item[{\textbf{ String\+Ref} const \&}]{macro\+Name,  }\item[{\textbf{ Source\+Line\+Info} const \&}]{line\+Info,  }\item[{\textbf{ String\+Ref}}]{captured\+Expression,  }\item[{\textbf{ Result\+Disposition\+::\+Flags}}]{result\+Disposition }\end{DoxyParamCaption})}
+
+\mbox{\label{class_catch_1_1_assertion_handler_a1e839d810f6ac0fa6d127fe8350175ed}} 
+\index{Catch::AssertionHandler@{Catch::AssertionHandler}!````~AssertionHandler@{$\sim$AssertionHandler}}
+\index{````~AssertionHandler@{$\sim$AssertionHandler}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\subsubsection{$\sim$AssertionHandler()}
+{\footnotesize\ttfamily Catch\+::\+Assertion\+Handler\+::$\sim$\+Assertion\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_catch_1_1_assertion_handler_a193bb3999494c46457f3059184c6b251}} 
+\index{Catch::AssertionHandler@{Catch::AssertionHandler}!allowThrows@{allowThrows}}
+\index{allowThrows@{allowThrows}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\subsubsection{allowThrows()}
+{\footnotesize\ttfamily auto Catch\+::\+Assertion\+Handler\+::allow\+Throws (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$  bool}
+
+\mbox{\label{class_catch_1_1_assertion_handler_a878a9eb828d8a1863c8dcb6575f6f40e}} 
+\index{Catch::AssertionHandler@{Catch::AssertionHandler}!complete@{complete}}
+\index{complete@{complete}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\subsubsection{complete()}
+{\footnotesize\ttfamily void Catch\+::\+Assertion\+Handler\+::complete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_catch_1_1_assertion_handler_a51e4936e3af43b74690cedae6d2e297a}} 
+\index{Catch::AssertionHandler@{Catch::AssertionHandler}!handleExceptionNotThrownAsExpected@{handleExceptionNotThrownAsExpected}}
+\index{handleExceptionNotThrownAsExpected@{handleExceptionNotThrownAsExpected}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\subsubsection{handleExceptionNotThrownAsExpected()}
+{\footnotesize\ttfamily void Catch\+::\+Assertion\+Handler\+::handle\+Exception\+Not\+Thrown\+As\+Expected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_catch_1_1_assertion_handler_ab6caf765764a4064e90fce829eec201d}} 
+\index{Catch::AssertionHandler@{Catch::AssertionHandler}!handleExceptionThrownAsExpected@{handleExceptionThrownAsExpected}}
+\index{handleExceptionThrownAsExpected@{handleExceptionThrownAsExpected}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\subsubsection{handleExceptionThrownAsExpected()}
+{\footnotesize\ttfamily void Catch\+::\+Assertion\+Handler\+::handle\+Exception\+Thrown\+As\+Expected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_catch_1_1_assertion_handler_a2ef387e567bad90ec6e4b5bf5c367388}} 
+\index{Catch::AssertionHandler@{Catch::AssertionHandler}!handleExpr@{handleExpr}}
+\index{handleExpr@{handleExpr}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\subsubsection{handleExpr()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Catch\+::\+Assertion\+Handler\+::handle\+Expr (\begin{DoxyParamCaption}\item[{\textbf{ Expr\+Lhs}$<$ T $>$ const \&}]{expr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_catch_1_1_assertion_handler_afe14d9cf1b1c7f70dae439fbdb51d0c4}} 
+\index{Catch::AssertionHandler@{Catch::AssertionHandler}!handleExpr@{handleExpr}}
+\index{handleExpr@{handleExpr}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\subsubsection{handleExpr()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Catch\+::\+Assertion\+Handler\+::handle\+Expr (\begin{DoxyParamCaption}\item[{\textbf{ I\+Transient\+Expression} const \&}]{expr }\end{DoxyParamCaption})}
+
+\mbox{\label{class_catch_1_1_assertion_handler_abdb4c180ed83ec2858b2fb87712c516d}} 
+\index{Catch::AssertionHandler@{Catch::AssertionHandler}!handleMessage@{handleMessage}}
+\index{handleMessage@{handleMessage}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\subsubsection{handleMessage()}
+{\footnotesize\ttfamily void Catch\+::\+Assertion\+Handler\+::handle\+Message (\begin{DoxyParamCaption}\item[{\textbf{ Result\+Was\+::\+Of\+Type}}]{result\+Type,  }\item[{\textbf{ String\+Ref} const \&}]{message }\end{DoxyParamCaption})}
+
+\mbox{\label{class_catch_1_1_assertion_handler_a67a194d5518f307c4a16faa03a7f7442}} 
+\index{Catch::AssertionHandler@{Catch::AssertionHandler}!handleThrowingCallSkipped@{handleThrowingCallSkipped}}
+\index{handleThrowingCallSkipped@{handleThrowingCallSkipped}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\subsubsection{handleThrowingCallSkipped()}
+{\footnotesize\ttfamily void Catch\+::\+Assertion\+Handler\+::handle\+Throwing\+Call\+Skipped (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_catch_1_1_assertion_handler_a7764d0adb6ed5eeb10964f6abc02fab1}} 
+\index{Catch::AssertionHandler@{Catch::AssertionHandler}!handleUnexpectedExceptionNotThrown@{handleUnexpectedExceptionNotThrown}}
+\index{handleUnexpectedExceptionNotThrown@{handleUnexpectedExceptionNotThrown}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\subsubsection{handleUnexpectedExceptionNotThrown()}
+{\footnotesize\ttfamily void Catch\+::\+Assertion\+Handler\+::handle\+Unexpected\+Exception\+Not\+Thrown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_catch_1_1_assertion_handler_aa2504dad6a91f3645e5f52c932c11270}} 
+\index{Catch::AssertionHandler@{Catch::AssertionHandler}!handleUnexpectedInflightException@{handleUnexpectedInflightException}}
+\index{handleUnexpectedInflightException@{handleUnexpectedInflightException}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\subsubsection{handleUnexpectedInflightException()}
+{\footnotesize\ttfamily void Catch\+::\+Assertion\+Handler\+::handle\+Unexpected\+Inflight\+Exception (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_catch_1_1_assertion_handler_a6756bd5395c0ddd28764a9fb4612d5e4}} 
+\index{Catch::AssertionHandler@{Catch::AssertionHandler}!setCompleted@{setCompleted}}
+\index{setCompleted@{setCompleted}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\subsubsection{setCompleted()}
+{\footnotesize\ttfamily void Catch\+::\+Assertion\+Handler\+::set\+Completed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_catch_1_1_assertion_handler_ad171e8724bb771d97949b7270f400303}} 
+\index{Catch::AssertionHandler@{Catch::AssertionHandler}!m\_assertionInfo@{m\_assertionInfo}}
+\index{m\_assertionInfo@{m\_assertionInfo}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\subsubsection{m\_assertionInfo}
+{\footnotesize\ttfamily \textbf{ Assertion\+Info} Catch\+::\+Assertion\+Handler\+::m\+\_\+assertion\+Info\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_catch_1_1_assertion_handler_a5a756818dff781c155e8eb970d1d4c68}} 
+\index{Catch::AssertionHandler@{Catch::AssertionHandler}!m\_completed@{m\_completed}}
+\index{m\_completed@{m\_completed}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\subsubsection{m\_completed}
+{\footnotesize\ttfamily bool Catch\+::\+Assertion\+Handler\+::m\+\_\+completed = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_catch_1_1_assertion_handler_a8203c08a43a3761b5f400ee6587fad55}} 
+\index{Catch::AssertionHandler@{Catch::AssertionHandler}!m\_reaction@{m\_reaction}}
+\index{m\_reaction@{m\_reaction}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\subsubsection{m\_reaction}
+{\footnotesize\ttfamily \textbf{ Assertion\+Reaction} Catch\+::\+Assertion\+Handler\+::m\+\_\+reaction\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_catch_1_1_assertion_handler_aea5283ee36124ce5c51dc2a697b22a39}} 
+\index{Catch::AssertionHandler@{Catch::AssertionHandler}!m\_resultCapture@{m\_resultCapture}}
+\index{m\_resultCapture@{m\_resultCapture}!Catch::AssertionHandler@{Catch::AssertionHandler}}
+\subsubsection{m\_resultCapture}
+{\footnotesize\ttfamily \textbf{ I\+Result\+Capture}\& Catch\+::\+Assertion\+Handler\+::m\+\_\+result\+Capture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/\textbf{ catch.\+hpp}\end{DoxyCompactItemize}

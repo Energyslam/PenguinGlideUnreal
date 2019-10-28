@@ -1,0 +1,102 @@
+\section{A\+Sound\+Manager Class Reference}
+\label{class_a_sound_manager}\index{ASoundManager@{ASoundManager}}
+
+
+This class is used to store sounds and has methods that can be called to play them.  
+
+
+
+
+{\ttfamily \#include $<$Sound\+Manager.\+h$>$}
+
+Inheritance diagram for A\+Sound\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_sound_manager}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ A\+Sound\+Manager} ()
+\item 
+void \textbf{ Play\+Pickup\+Sound} ()
+\item 
+void \textbf{ Start\+Fade\+Out} ()
+\item 
+void \textbf{ Play\+Speed\+Up\+Sound} ()
+\item 
+virtual void \textbf{ Tick} (float Delta\+Time) override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Begin\+Play} () override
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to store sounds and has methods that can be called to play them. 
+
+The class has an attached blueprint based on this class. The blueprint has the information about the sounds and on what channel to play them. The methods in this class can be called to play a function in the blueprint. It also contains a pointer to the level sequence attached to the instanced Sound\+Manager to play once a player moves to the game over screen. This is purely because we only need to call this sequence once per playthrough and this class is already instantiated. It has timer to prevent from playing continuously in a row.
+
+\begin{DoxyAuthor}{Author}
+Max Groen 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+02/06/2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Energyslam™ 
+\end{DoxyCopyright}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_a_sound_manager_a830de93c0d7d72bb9bb9f5a02903d38f}} 
+\index{ASoundManager@{ASoundManager}!ASoundManager@{ASoundManager}}
+\index{ASoundManager@{ASoundManager}!ASoundManager@{ASoundManager}}
+\subsubsection{ASoundManager()}
+{\footnotesize\ttfamily A\+Sound\+Manager\+::\+A\+Sound\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_a_sound_manager_ab91f90dafc9ff9664c13e256668e76ee}} 
+\index{ASoundManager@{ASoundManager}!BeginPlay@{BeginPlay}}
+\index{BeginPlay@{BeginPlay}!ASoundManager@{ASoundManager}}
+\subsubsection{BeginPlay()}
+{\footnotesize\ttfamily void A\+Sound\+Manager\+::\+Begin\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\label{class_a_sound_manager_ac59f959ca1ec25d5bf8f70760a7a3969}} 
+\index{ASoundManager@{ASoundManager}!PlayPickupSound@{PlayPickupSound}}
+\index{PlayPickupSound@{PlayPickupSound}!ASoundManager@{ASoundManager}}
+\subsubsection{PlayPickupSound()}
+{\footnotesize\ttfamily void A\+Sound\+Manager\+::\+Play\+Pickup\+Sound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_a_sound_manager_a296959eeb11d6eaca5f91bb3fae58bb5}} 
+\index{ASoundManager@{ASoundManager}!PlaySpeedUpSound@{PlaySpeedUpSound}}
+\index{PlaySpeedUpSound@{PlaySpeedUpSound}!ASoundManager@{ASoundManager}}
+\subsubsection{PlaySpeedUpSound()}
+{\footnotesize\ttfamily void A\+Sound\+Manager\+::\+Play\+Speed\+Up\+Sound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_a_sound_manager_adda6fea6d9eb0925ba9b4d52af267b97}} 
+\index{ASoundManager@{ASoundManager}!StartFadeOut@{StartFadeOut}}
+\index{StartFadeOut@{StartFadeOut}!ASoundManager@{ASoundManager}}
+\subsubsection{StartFadeOut()}
+{\footnotesize\ttfamily void A\+Sound\+Manager\+::\+Start\+Fade\+Out (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_a_sound_manager_a09d5e9d7bf16a024fe7a8cb175709733}} 
+\index{ASoundManager@{ASoundManager}!Tick@{Tick}}
+\index{Tick@{Tick}!ASoundManager@{ASoundManager}}
+\subsubsection{Tick()}
+{\footnotesize\ttfamily void A\+Sound\+Manager\+::\+Tick (\begin{DoxyParamCaption}\item[{float}]{Delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/public/\textbf{ Sound\+Manager.\+h}\item 
+Penguin\+Glide/private/\textbf{ Sound\+Manager.\+cpp}\end{DoxyCompactItemize}

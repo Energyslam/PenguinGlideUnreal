@@ -1,0 +1,33 @@
+\section{Catch\+::is\+\_\+range$<$ T $>$ Struct Template Reference}
+\label{struct_catch_1_1is__range}\index{Catch::is\_range$<$ T $>$@{Catch::is\_range$<$ T $>$}}
+
+
+{\ttfamily \#include $<$catch.\+hpp$>$}
+
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const bool \textbf{ value}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{struct_catch_1_1is__range_afaec39e819c3956829cbbd00feba11be}} 
+\index{Catch::is\_range$<$ T $>$@{Catch::is\_range$<$ T $>$}!value@{value}}
+\index{value@{value}!Catch::is\_range$<$ T $>$@{Catch::is\_range$<$ T $>$}}
+\subsubsection{value}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const bool \textbf{ Catch\+::is\+\_\+range}$<$ T $>$\+::value\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{            !std::is\_same<decltype(begin(std::declval<T>())), not\_this\_one>::value \&\&}
+\DoxyCodeLine{            !std::is\_same<decltype(end(std::declval<T>())), not\_this\_one>::value}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/\textbf{ catch.\+hpp}\end{DoxyCompactItemize}

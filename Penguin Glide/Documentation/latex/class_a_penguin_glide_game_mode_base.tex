@@ -1,0 +1,115 @@
+\section{A\+Penguin\+Glide\+Game\+Mode\+Base Class Reference}
+\label{class_a_penguin_glide_game_mode_base}\index{APenguinGlideGameModeBase@{APenguinGlideGameModeBase}}
+
+
+This header controls the main gamemode of the game.  
+
+
+
+
+{\ttfamily \#include $<$Penguin\+Glide\+Game\+Mode\+Base.\+h$>$}
+
+Inheritance diagram for A\+Penguin\+Glide\+Game\+Mode\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_penguin_glide_game_mode_base}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Set\+Widget\+Active} (T\+Subclass\+Of$<$ class U\+User\+Widget $>$ active\+Widget)
+\begin{DoxyCompactList}\small\item\em This is called when a level\textquotesingle{}s Begin\+Play is being called. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T\+Subclass\+Of$<$ class U\+User\+Widget $>$ \textbf{ player\+H\+U\+D\+Class}
+\item 
+T\+Subclass\+Of$<$ class U\+User\+Widget $>$ \textbf{ main\+Menu\+H\+U\+D\+Class}
+\item 
+class U\+User\+Widget $\ast$ \textbf{ current\+Widget}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Begin\+Play} () override
+\begin{DoxyCompactList}\small\item\em This class controls the main gamemode of the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This header controls the main gamemode of the game. 
+
+This header declares all variables and methods \begin{DoxyAuthor}{Author}
+Tycho Zaal 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+08/04/2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+T\+Z\+\_\+productions 
+\end{DoxyCopyright}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_a_penguin_glide_game_mode_base_a103f7390b1d9587772dcf66a0eea4cee}} 
+\index{APenguinGlideGameModeBase@{APenguinGlideGameModeBase}!BeginPlay@{BeginPlay}}
+\index{BeginPlay@{BeginPlay}!APenguinGlideGameModeBase@{APenguinGlideGameModeBase}}
+\subsubsection{BeginPlay()}
+{\footnotesize\ttfamily void A\+Penguin\+Glide\+Game\+Mode\+Base\+::\+Begin\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+This class controls the main gamemode of the game. 
+
+This class inizializes and handles all variables and methods \begin{DoxyAuthor}{Author}
+Tycho Zaal 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+08/04/2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+T\+Z\+\_\+productions 
+\end{DoxyCopyright}
+\mbox{\label{class_a_penguin_glide_game_mode_base_ae81f88494076351c5d18b08a8854242f}} 
+\index{APenguinGlideGameModeBase@{APenguinGlideGameModeBase}!SetWidgetActive@{SetWidgetActive}}
+\index{SetWidgetActive@{SetWidgetActive}!APenguinGlideGameModeBase@{APenguinGlideGameModeBase}}
+\subsubsection{SetWidgetActive()}
+{\footnotesize\ttfamily void A\+Penguin\+Glide\+Game\+Mode\+Base\+::\+Set\+Widget\+Active (\begin{DoxyParamCaption}\item[{T\+Subclass\+Of$<$ class U\+User\+Widget $>$}]{active\+Widget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+This is called when a level\textquotesingle{}s Begin\+Play is being called. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_a_penguin_glide_game_mode_base_a0b95180b6f41e7dd4f83b50ea3cffaa3}} 
+\index{APenguinGlideGameModeBase@{APenguinGlideGameModeBase}!currentWidget@{currentWidget}}
+\index{currentWidget@{currentWidget}!APenguinGlideGameModeBase@{APenguinGlideGameModeBase}}
+\subsubsection{currentWidget}
+{\footnotesize\ttfamily class U\+User\+Widget$\ast$ A\+Penguin\+Glide\+Game\+Mode\+Base\+::current\+Widget\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_a_penguin_glide_game_mode_base_a23ac27f19126405cc41c2bc02ef2f0e8}} 
+\index{APenguinGlideGameModeBase@{APenguinGlideGameModeBase}!mainMenuHUDClass@{mainMenuHUDClass}}
+\index{mainMenuHUDClass@{mainMenuHUDClass}!APenguinGlideGameModeBase@{APenguinGlideGameModeBase}}
+\subsubsection{mainMenuHUDClass}
+{\footnotesize\ttfamily T\+Subclass\+Of$<$class U\+User\+Widget$>$ A\+Penguin\+Glide\+Game\+Mode\+Base\+::main\+Menu\+H\+U\+D\+Class\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_a_penguin_glide_game_mode_base_ad1a642f5b944d76adb1658940dc8617c}} 
+\index{APenguinGlideGameModeBase@{APenguinGlideGameModeBase}!playerHUDClass@{playerHUDClass}}
+\index{playerHUDClass@{playerHUDClass}!APenguinGlideGameModeBase@{APenguinGlideGameModeBase}}
+\subsubsection{playerHUDClass}
+{\footnotesize\ttfamily T\+Subclass\+Of$<$class U\+User\+Widget$>$ A\+Penguin\+Glide\+Game\+Mode\+Base\+::player\+H\+U\+D\+Class\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/\textbf{ Penguin\+Glide\+Game\+Mode\+Base.\+h}\item 
+Penguin\+Glide/\textbf{ Penguin\+Glide\+Game\+Mode\+Base.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,515 @@
+\section{A\+Temp\+Player Class Reference}
+\label{class_a_temp_player}\index{ATempPlayer@{ATempPlayer}}
+
+
+This class is used to create our player. Originally this was not planned to be our main player class hence the name.  
+
+
+
+
+{\ttfamily \#include $<$Temp\+Player.\+h$>$}
+
+Inheritance diagram for A\+Temp\+Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_temp_player}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ A\+Temp\+Player} ()
+\item 
+float \textbf{ Get\+Current\+Speed} ()
+\item 
+void \textbf{ Set\+Spawn\+Position} ()
+\item 
+void \textbf{ Move\+Right} (float Axis\+Value)
+\item 
+void \textbf{ Pitch\+Camera} (float Axis\+Value)
+\item 
+void \textbf{ Yaw\+Camera} (float Axis\+Value)
+\item 
+void \textbf{ Has\+To\+Activate\+Player} (bool player\+State)
+\item 
+bool \textbf{ Get\+Game\+State} ()
+\item 
+void \textbf{ Stop\+Moving} (bool stop)
+\item 
+void \textbf{ Camera\+Shake} ()
+\item 
+void \textbf{ On\+Death} ()
+\item 
+void \textbf{ Die} ()
+\item 
+void \textbf{ Set\+Field\+Of\+View\+To} (int new\+Value, int seconds)
+\item 
+void \textbf{ Reset\+Field\+Of\+View} ()
+\item 
+virtual void \textbf{ Tick} (float Delta\+Time) override
+\item 
+virtual void \textbf{ Setup\+Player\+Input\+Component} (class U\+Input\+Component $\ast$Player\+Input\+Component) override
+\item 
+void \textbf{ Add\+Track\+Pivots} (F\+Vector pivot)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \textbf{ speed\+Per\+Frame} = 10.\+0f
+\item 
+float \textbf{ original\+Speed\+Per\+Frame}
+\item 
+float \textbf{ constant\+Forward\+Speed\+Per\+Frame} = 50.\+0f
+\begin{DoxyCompactList}\small\item\em Used to give a constant movement forward. \end{DoxyCompactList}\item 
+class U\+Camera\+Component $\ast$ \textbf{ camera}
+\begin{DoxyCompactList}\small\item\em the camera is attached as a child to the springarm so it follows the player at a distance \end{DoxyCompactList}\item 
+class U\+Spring\+Arm\+Component $\ast$ \textbf{ spring\+Arm}
+\begin{DoxyCompactList}\small\item\em A springarm is attached to the player so it follows the player at a static range. \end{DoxyCompactList}\item 
+class U\+Static\+Mesh\+Component $\ast$ \textbf{ sphere\+Visual}
+\begin{DoxyCompactList}\small\item\em is set as our root component \end{DoxyCompactList}\item 
+class U\+Sphere\+Component $\ast$ \textbf{ sphere\+Component}
+\begin{DoxyCompactList}\small\item\em used to display a snowball over the penguin \end{DoxyCompactList}\item 
+class U\+Scene\+Component $\ast$ \textbf{ empty\+Component}
+\begin{DoxyCompactList}\small\item\em used to prevent the rotation of the player affecting the attached children that don\textquotesingle{}t need to rotate \end{DoxyCompactList}\item 
+\textbf{ A\+Track\+Generator\+Bezier} $\ast$ \textbf{ track\+Generator\+Bezier}
+\begin{DoxyCompactList}\small\item\em a pointer to the track so the player knows when it fell off and where it has to start \end{DoxyCompactList}\item 
+T\+Subclass\+Of$<$ \textbf{ U\+Collision\+Camera\+Shake} $>$ \textbf{ shake}
+\begin{DoxyCompactList}\small\item\em A template class of \doxyref{U\+Collision\+Camera\+Shake}{p.}{class_u_collision_camera_shake} to handle the shake on collision. \end{DoxyCompactList}\item 
+F\+Vector \textbf{ Movement\+Input}
+\item 
+F\+Vector2D \textbf{ Camera\+Input}
+\item 
+F\+Vector \textbf{ start\+Position}
+\item 
+bool \textbf{ player\+Active} = false
+\item 
+bool \textbf{ resetting\+F\+OV} = false
+\item 
+bool \textbf{ increasing\+F\+OV} = false
+\item 
+float \textbf{ lowest\+VerticeZ}
+\item 
+float \textbf{ z\+Position}
+\item 
+float \textbf{ current\+F\+OV} = 100
+\item 
+float \textbf{ new\+F\+OV}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Begin\+Play} () override
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+F\+Vector \textbf{ old\+Position\+Length}
+\item 
+F\+Vector \textbf{ new\+Position\+Length}
+\item 
+F\+Vector \textbf{ new\+Velocity}
+\item 
+U\+World $\ast$ \textbf{ World}
+\item 
+F\+Timer\+Handle \textbf{ timer\+Handler}
+\item 
+F\+Timer\+Handle \textbf{ field\+Of\+View\+Handler}
+\item 
+F\+Timer\+Handle \textbf{ death\+Delay\+Handler}
+\item 
+F\+Vector \textbf{ current\+Pivot}
+\item 
+T\+Array$<$ F\+Vector $>$ \textbf{ track\+Pivots}
+\item 
+int \textbf{ pivot\+Index} = 5
+\item 
+bool \textbf{ snowball\+Collision} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to create our player. Originally this was not planned to be our main player class hence the name. 
+
+Our player manually created in C++. It uses a static mesh that is assigned in the editor for our penguin model. The player utilizes a scene component with absolute rotation to attach our springarm and camera to. This is done because the player rotates heavily during camera which causes the camera to spin if it is not set to absolute rotation. A sphere component is used to draw a snowball over the penguin, as our penguin is stuck in a snowball and rolling down the track. The player needs a pointer to the class Track\+Generator\+Bezier to retrieve the position of the last vertice of the track to determine whether the player has died or not, and to set the initial position of the player. It also needs an include of the Collision\+Camera\+Shake class in order to create a shaky effects once the player has collision with a snowball. This class handles the movement of the player and the camera, as well as calling the function in the UI to move the player from game screen to the game over screen.
+
+\begin{DoxyAuthor}{Author}
+Max Groen 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+09/06/2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Energyslam™ 
+\end{DoxyCopyright}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_a_temp_player_a4ce5eb1c6c1618d52cb6c45c4175e4a7}} 
+\index{ATempPlayer@{ATempPlayer}!ATempPlayer@{ATempPlayer}}
+\index{ATempPlayer@{ATempPlayer}!ATempPlayer@{ATempPlayer}}
+\subsubsection{ATempPlayer()}
+{\footnotesize\ttfamily A\+Temp\+Player\+::\+A\+Temp\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Uses an empty component that the camera can attach to. This component will have an absolute world rotation in the editor so it doesn\textquotesingle{}t inherit the sphere rotationns
+
+$<$ Sets the sphere\+Visual as the rootcomponent of the player 
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_a_temp_player_af6cc1013fc003bcff6db93a3d3d595f6}} 
+\index{ATempPlayer@{ATempPlayer}!AddTrackPivots@{AddTrackPivots}}
+\index{AddTrackPivots@{AddTrackPivots}!ATempPlayer@{ATempPlayer}}
+\subsubsection{AddTrackPivots()}
+{\footnotesize\ttfamily void A\+Temp\+Player\+::\+Add\+Track\+Pivots (\begin{DoxyParamCaption}\item[{F\+Vector}]{pivot }\end{DoxyParamCaption})}
+
+return the trackpivots that can be used for the rotation of the player \mbox{\label{class_a_temp_player_aceace2056147a31a0c6a90a3665a4971}} 
+\index{ATempPlayer@{ATempPlayer}!BeginPlay@{BeginPlay}}
+\index{BeginPlay@{BeginPlay}!ATempPlayer@{ATempPlayer}}
+\subsubsection{BeginPlay()}
+{\footnotesize\ttfamily void A\+Temp\+Player\+::\+Begin\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\label{class_a_temp_player_a49cbf48c04c0afabf76a56ad1466a5c2}} 
+\index{ATempPlayer@{ATempPlayer}!CameraShake@{CameraShake}}
+\index{CameraShake@{CameraShake}!ATempPlayer@{ATempPlayer}}
+\subsubsection{CameraShake()}
+{\footnotesize\ttfamily void A\+Temp\+Player\+::\+Camera\+Shake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Shakes the camera when there is a collision with a snowball \mbox{\label{class_a_temp_player_a0520be909f24bfd151c47519b599ba99}} 
+\index{ATempPlayer@{ATempPlayer}!Die@{Die}}
+\index{Die@{Die}!ATempPlayer@{ATempPlayer}}
+\subsubsection{Die()}
+{\footnotesize\ttfamily void A\+Temp\+Player\+::\+Die (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Stops the current game and moves the player to the game over screen \mbox{\label{class_a_temp_player_abab7604d240b01a6b4643d4ab1715acd}} 
+\index{ATempPlayer@{ATempPlayer}!GetCurrentSpeed@{GetCurrentSpeed}}
+\index{GetCurrentSpeed@{GetCurrentSpeed}!ATempPlayer@{ATempPlayer}}
+\subsubsection{GetCurrentSpeed()}
+{\footnotesize\ttfamily float A\+Temp\+Player\+::\+Get\+Current\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the current speed based on the change in position. This is used in the UI to display the speed of the player \mbox{\label{class_a_temp_player_a50ca9988a356376957e52098b3d271e3}} 
+\index{ATempPlayer@{ATempPlayer}!GetGameState@{GetGameState}}
+\index{GetGameState@{GetGameState}!ATempPlayer@{ATempPlayer}}
+\subsubsection{GetGameState()}
+{\footnotesize\ttfamily bool A\+Temp\+Player\+::\+Get\+Game\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the state of the player \mbox{\label{class_a_temp_player_a1702f6989e281436ffd6714c30081c10}} 
+\index{ATempPlayer@{ATempPlayer}!HasToActivatePlayer@{HasToActivatePlayer}}
+\index{HasToActivatePlayer@{HasToActivatePlayer}!ATempPlayer@{ATempPlayer}}
+\subsubsection{HasToActivatePlayer()}
+{\footnotesize\ttfamily void A\+Temp\+Player\+::\+Has\+To\+Activate\+Player (\begin{DoxyParamCaption}\item[{bool}]{player\+State }\end{DoxyParamCaption})}
+
+says whether the player is active or not \mbox{\label{class_a_temp_player_a08782176ec3f528f7057ff989857b6a9}} 
+\index{ATempPlayer@{ATempPlayer}!MoveRight@{MoveRight}}
+\index{MoveRight@{MoveRight}!ATempPlayer@{ATempPlayer}}
+\subsubsection{MoveRight()}
+{\footnotesize\ttfamily void A\+Temp\+Player\+::\+Move\+Right (\begin{DoxyParamCaption}\item[{float}]{Axis\+Value }\end{DoxyParamCaption})}
+
+handles input functions for U\+E4
+
+This region handles the U\+E4 input for the player \mbox{\label{class_a_temp_player_aee1e2803664bcd04a5e91d6137b5eedc}} 
+\index{ATempPlayer@{ATempPlayer}!OnDeath@{OnDeath}}
+\index{OnDeath@{OnDeath}!ATempPlayer@{ATempPlayer}}
+\subsubsection{OnDeath()}
+{\footnotesize\ttfamily void A\+Temp\+Player\+::\+On\+Death (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+When the player dies, he stops moving, the camera shakes and the game fades out. After 1.\+5 seconds, \doxyref{Die()}{p.}{class_a_temp_player_a0520be909f24bfd151c47519b599ba99} is called and the game is moved to the game over screen \mbox{\label{class_a_temp_player_aac043860b6aa360464446dd85d6b6ff8}} 
+\index{ATempPlayer@{ATempPlayer}!PitchCamera@{PitchCamera}}
+\index{PitchCamera@{PitchCamera}!ATempPlayer@{ATempPlayer}}
+\subsubsection{PitchCamera()}
+{\footnotesize\ttfamily void A\+Temp\+Player\+::\+Pitch\+Camera (\begin{DoxyParamCaption}\item[{float}]{Axis\+Value }\end{DoxyParamCaption})}
+
+\mbox{\label{class_a_temp_player_acdf7ec422b79ce05771bdb87c2e8a14f}} 
+\index{ATempPlayer@{ATempPlayer}!ResetFieldOfView@{ResetFieldOfView}}
+\index{ResetFieldOfView@{ResetFieldOfView}!ATempPlayer@{ATempPlayer}}
+\subsubsection{ResetFieldOfView()}
+{\footnotesize\ttfamily void A\+Temp\+Player\+::\+Reset\+Field\+Of\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Resets the field of view to the original values \mbox{\label{class_a_temp_player_a1ea1ea9ebe5cc51e792337cabe05fdf6}} 
+\index{ATempPlayer@{ATempPlayer}!SetFieldOfViewTo@{SetFieldOfViewTo}}
+\index{SetFieldOfViewTo@{SetFieldOfViewTo}!ATempPlayer@{ATempPlayer}}
+\subsubsection{SetFieldOfViewTo()}
+{\footnotesize\ttfamily void A\+Temp\+Player\+::\+Set\+Field\+Of\+View\+To (\begin{DoxyParamCaption}\item[{int}]{new\+Value,  }\item[{int}]{seconds }\end{DoxyParamCaption})}
+
+This functions changes the field of field for a set amount of time, then calls the function Reset\+Field\+Of\+View \mbox{\label{class_a_temp_player_ae2657c5780e4384b6281f1857094c3c6}} 
+\index{ATempPlayer@{ATempPlayer}!SetSpawnPosition@{SetSpawnPosition}}
+\index{SetSpawnPosition@{SetSpawnPosition}!ATempPlayer@{ATempPlayer}}
+\subsubsection{SetSpawnPosition()}
+{\footnotesize\ttfamily void A\+Temp\+Player\+::\+Set\+Spawn\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function is used to set the initial position of the player to the start of the track \mbox{\label{class_a_temp_player_a91ed4730cf7f8252919b5002a0353189}} 
+\index{ATempPlayer@{ATempPlayer}!SetupPlayerInputComponent@{SetupPlayerInputComponent}}
+\index{SetupPlayerInputComponent@{SetupPlayerInputComponent}!ATempPlayer@{ATempPlayer}}
+\subsubsection{SetupPlayerInputComponent()}
+{\footnotesize\ttfamily void A\+Temp\+Player\+::\+Setup\+Player\+Input\+Component (\begin{DoxyParamCaption}\item[{class U\+Input\+Component $\ast$}]{Player\+Input\+Component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\label{class_a_temp_player_a542e0b12e5b9df0a7d53365d99435b45}} 
+\index{ATempPlayer@{ATempPlayer}!StopMoving@{StopMoving}}
+\index{StopMoving@{StopMoving}!ATempPlayer@{ATempPlayer}}
+\subsubsection{StopMoving()}
+{\footnotesize\ttfamily void A\+Temp\+Player\+::\+Stop\+Moving (\begin{DoxyParamCaption}\item[{bool}]{stop }\end{DoxyParamCaption})}
+
+Stops player movement after hitting an obstacle \mbox{\label{class_a_temp_player_a4c46d5d1efb214eb30115dd4a8d50260}} 
+\index{ATempPlayer@{ATempPlayer}!Tick@{Tick}}
+\index{Tick@{Tick}!ATempPlayer@{ATempPlayer}}
+\subsubsection{Tick()}
+{\footnotesize\ttfamily void A\+Temp\+Player\+::\+Tick (\begin{DoxyParamCaption}\item[{float}]{Delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+$<$ Waits until the player is set to active before he moves
+
+$<$ sets the initial position of the player
+
+$<$ once active, the player receives a value per frame to move
+
+$<$ Get the current location of the player
+
+$<$ Camera is set to a -\/15.\+0 but can be adjust to have vertical rotation
+
+$<$ Gets the forward vector of the camera to determine direction
+
+$<$ This adds the movement of the player. It adds force each frame in the direction of where the camera is looking
+
+$<$ Get the current location of the player
+
+$<$ Gets the position of the middle ending vertice of the track
+
+$<$ If the player is lower than the lowest vertice of the track, this means that the player fell off and the game is over
+
+$<$ turns off the resetting of the field of view once a value has been reached
+
+$<$ stops icnreasing the field of view when a value has been reached
+
+$<$ return the actor location \mbox{\label{class_a_temp_player_a07da2545da43089739937bde60d8bfbc}} 
+\index{ATempPlayer@{ATempPlayer}!YawCamera@{YawCamera}}
+\index{YawCamera@{YawCamera}!ATempPlayer@{ATempPlayer}}
+\subsubsection{YawCamera()}
+{\footnotesize\ttfamily void A\+Temp\+Player\+::\+Yaw\+Camera (\begin{DoxyParamCaption}\item[{float}]{Axis\+Value }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_a_temp_player_a087ae8167b171f1f62c892cc1fcccaf0}} 
+\index{ATempPlayer@{ATempPlayer}!camera@{camera}}
+\index{camera@{camera}!ATempPlayer@{ATempPlayer}}
+\subsubsection{camera}
+{\footnotesize\ttfamily class U\+Camera\+Component$\ast$ A\+Temp\+Player\+::camera}
+
+
+
+the camera is attached as a child to the springarm so it follows the player at a distance 
+
+Components have been made a U\+P\+R\+O\+P\+E\+R\+T\+Y(\+Edit\+Anywhere) and public to force them to be visible in the UE editor \mbox{\label{class_a_temp_player_a0ff43db59c846d471861a2d2b7f72a28}} 
+\index{ATempPlayer@{ATempPlayer}!CameraInput@{CameraInput}}
+\index{CameraInput@{CameraInput}!ATempPlayer@{ATempPlayer}}
+\subsubsection{CameraInput}
+{\footnotesize\ttfamily F\+Vector2D A\+Temp\+Player\+::\+Camera\+Input}
+
+\mbox{\label{class_a_temp_player_aad3e6f2d0f7320dce97ec66c41ef01a8}} 
+\index{ATempPlayer@{ATempPlayer}!constantForwardSpeedPerFrame@{constantForwardSpeedPerFrame}}
+\index{constantForwardSpeedPerFrame@{constantForwardSpeedPerFrame}!ATempPlayer@{ATempPlayer}}
+\subsubsection{constantForwardSpeedPerFrame}
+{\footnotesize\ttfamily float A\+Temp\+Player\+::constant\+Forward\+Speed\+Per\+Frame = 50.\+0f}
+
+
+
+Used to give a constant movement forward. 
+
+\mbox{\label{class_a_temp_player_abab75a2e63573f4b0ed2b02ff0f108d2}} 
+\index{ATempPlayer@{ATempPlayer}!currentFOV@{currentFOV}}
+\index{currentFOV@{currentFOV}!ATempPlayer@{ATempPlayer}}
+\subsubsection{currentFOV}
+{\footnotesize\ttfamily float A\+Temp\+Player\+::current\+F\+OV = 100}
+
+\mbox{\label{class_a_temp_player_ae1681ff1796de82198e0397b9e4d0b20}} 
+\index{ATempPlayer@{ATempPlayer}!currentPivot@{currentPivot}}
+\index{currentPivot@{currentPivot}!ATempPlayer@{ATempPlayer}}
+\subsubsection{currentPivot}
+{\footnotesize\ttfamily F\+Vector A\+Temp\+Player\+::current\+Pivot\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_temp_player_ad4a12cac96230dcb343532df3f9a1f85}} 
+\index{ATempPlayer@{ATempPlayer}!deathDelayHandler@{deathDelayHandler}}
+\index{deathDelayHandler@{deathDelayHandler}!ATempPlayer@{ATempPlayer}}
+\subsubsection{deathDelayHandler}
+{\footnotesize\ttfamily F\+Timer\+Handle A\+Temp\+Player\+::death\+Delay\+Handler\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_temp_player_a607b126372d12e26ac43b3c33020d263}} 
+\index{ATempPlayer@{ATempPlayer}!emptyComponent@{emptyComponent}}
+\index{emptyComponent@{emptyComponent}!ATempPlayer@{ATempPlayer}}
+\subsubsection{emptyComponent}
+{\footnotesize\ttfamily class U\+Scene\+Component$\ast$ A\+Temp\+Player\+::empty\+Component}
+
+
+
+used to prevent the rotation of the player affecting the attached children that don\textquotesingle{}t need to rotate 
+
+\mbox{\label{class_a_temp_player_a994ab9d5d3238e0a922dcfd7193d8a99}} 
+\index{ATempPlayer@{ATempPlayer}!fieldOfViewHandler@{fieldOfViewHandler}}
+\index{fieldOfViewHandler@{fieldOfViewHandler}!ATempPlayer@{ATempPlayer}}
+\subsubsection{fieldOfViewHandler}
+{\footnotesize\ttfamily F\+Timer\+Handle A\+Temp\+Player\+::field\+Of\+View\+Handler\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_temp_player_ad447762e085c9f82d230776d74cf44d5}} 
+\index{ATempPlayer@{ATempPlayer}!increasingFOV@{increasingFOV}}
+\index{increasingFOV@{increasingFOV}!ATempPlayer@{ATempPlayer}}
+\subsubsection{increasingFOV}
+{\footnotesize\ttfamily bool A\+Temp\+Player\+::increasing\+F\+OV = false}
+
+\mbox{\label{class_a_temp_player_a27b32530d8edaa9bfa115b47a1ce777e}} 
+\index{ATempPlayer@{ATempPlayer}!lowestVerticeZ@{lowestVerticeZ}}
+\index{lowestVerticeZ@{lowestVerticeZ}!ATempPlayer@{ATempPlayer}}
+\subsubsection{lowestVerticeZ}
+{\footnotesize\ttfamily float A\+Temp\+Player\+::lowest\+VerticeZ}
+
+\mbox{\label{class_a_temp_player_abeeef7c722e14fb1d087239ebe7db40d}} 
+\index{ATempPlayer@{ATempPlayer}!MovementInput@{MovementInput}}
+\index{MovementInput@{MovementInput}!ATempPlayer@{ATempPlayer}}
+\subsubsection{MovementInput}
+{\footnotesize\ttfamily F\+Vector A\+Temp\+Player\+::\+Movement\+Input}
+
+\mbox{\label{class_a_temp_player_ae5fddd2dbc2e2fbd1eb4adc60c1074fe}} 
+\index{ATempPlayer@{ATempPlayer}!newFOV@{newFOV}}
+\index{newFOV@{newFOV}!ATempPlayer@{ATempPlayer}}
+\subsubsection{newFOV}
+{\footnotesize\ttfamily float A\+Temp\+Player\+::new\+F\+OV}
+
+\mbox{\label{class_a_temp_player_aa26c40b56eba2853f8575caea3901526}} 
+\index{ATempPlayer@{ATempPlayer}!newPositionLength@{newPositionLength}}
+\index{newPositionLength@{newPositionLength}!ATempPlayer@{ATempPlayer}}
+\subsubsection{newPositionLength}
+{\footnotesize\ttfamily F\+Vector A\+Temp\+Player\+::new\+Position\+Length\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_temp_player_ae98768fa1763fbed1143e0fb677e6cb0}} 
+\index{ATempPlayer@{ATempPlayer}!newVelocity@{newVelocity}}
+\index{newVelocity@{newVelocity}!ATempPlayer@{ATempPlayer}}
+\subsubsection{newVelocity}
+{\footnotesize\ttfamily F\+Vector A\+Temp\+Player\+::new\+Velocity\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_temp_player_a34ec2a63019e48c2b5a0c700d46054a2}} 
+\index{ATempPlayer@{ATempPlayer}!oldPositionLength@{oldPositionLength}}
+\index{oldPositionLength@{oldPositionLength}!ATempPlayer@{ATempPlayer}}
+\subsubsection{oldPositionLength}
+{\footnotesize\ttfamily F\+Vector A\+Temp\+Player\+::old\+Position\+Length\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_temp_player_ad940076719a041aa4ce0e164174fdfdb}} 
+\index{ATempPlayer@{ATempPlayer}!originalSpeedPerFrame@{originalSpeedPerFrame}}
+\index{originalSpeedPerFrame@{originalSpeedPerFrame}!ATempPlayer@{ATempPlayer}}
+\subsubsection{originalSpeedPerFrame}
+{\footnotesize\ttfamily float A\+Temp\+Player\+::original\+Speed\+Per\+Frame}
+
+\mbox{\label{class_a_temp_player_aada8bcfd17645ea16975dfaa626928df}} 
+\index{ATempPlayer@{ATempPlayer}!pivotIndex@{pivotIndex}}
+\index{pivotIndex@{pivotIndex}!ATempPlayer@{ATempPlayer}}
+\subsubsection{pivotIndex}
+{\footnotesize\ttfamily int A\+Temp\+Player\+::pivot\+Index = 5\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_temp_player_aa61729cbbc9c808e273b8ff7380b05e8}} 
+\index{ATempPlayer@{ATempPlayer}!playerActive@{playerActive}}
+\index{playerActive@{playerActive}!ATempPlayer@{ATempPlayer}}
+\subsubsection{playerActive}
+{\footnotesize\ttfamily bool A\+Temp\+Player\+::player\+Active = false}
+
+\mbox{\label{class_a_temp_player_ac06dc7ef414b6dfd45b80744ff70771c}} 
+\index{ATempPlayer@{ATempPlayer}!resettingFOV@{resettingFOV}}
+\index{resettingFOV@{resettingFOV}!ATempPlayer@{ATempPlayer}}
+\subsubsection{resettingFOV}
+{\footnotesize\ttfamily bool A\+Temp\+Player\+::resetting\+F\+OV = false}
+
+\mbox{\label{class_a_temp_player_a67a2b59b09ab7a3aabb9c0cc1d23e617}} 
+\index{ATempPlayer@{ATempPlayer}!shake@{shake}}
+\index{shake@{shake}!ATempPlayer@{ATempPlayer}}
+\subsubsection{shake}
+{\footnotesize\ttfamily T\+Subclass\+Of$<$\textbf{ U\+Collision\+Camera\+Shake}$>$ A\+Temp\+Player\+::shake}
+
+
+
+A template class of \doxyref{U\+Collision\+Camera\+Shake}{p.}{class_u_collision_camera_shake} to handle the shake on collision. 
+
+\mbox{\label{class_a_temp_player_a0cf5861fcf8e13de1441c87851aacc9c}} 
+\index{ATempPlayer@{ATempPlayer}!snowballCollision@{snowballCollision}}
+\index{snowballCollision@{snowballCollision}!ATempPlayer@{ATempPlayer}}
+\subsubsection{snowballCollision}
+{\footnotesize\ttfamily bool A\+Temp\+Player\+::snowball\+Collision = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_temp_player_a77c591dff2e42fab6fdd70ec46b5bda3}} 
+\index{ATempPlayer@{ATempPlayer}!speedPerFrame@{speedPerFrame}}
+\index{speedPerFrame@{speedPerFrame}!ATempPlayer@{ATempPlayer}}
+\subsubsection{speedPerFrame}
+{\footnotesize\ttfamily float A\+Temp\+Player\+::speed\+Per\+Frame = 10.\+0f}
+
+\mbox{\label{class_a_temp_player_a2b10a92ce2ae4f6d9eb2cd3668b78a56}} 
+\index{ATempPlayer@{ATempPlayer}!sphereComponent@{sphereComponent}}
+\index{sphereComponent@{sphereComponent}!ATempPlayer@{ATempPlayer}}
+\subsubsection{sphereComponent}
+{\footnotesize\ttfamily class U\+Sphere\+Component$\ast$ A\+Temp\+Player\+::sphere\+Component}
+
+
+
+used to display a snowball over the penguin 
+
+\mbox{\label{class_a_temp_player_ae581707fc2b5d56470b683e1871d6931}} 
+\index{ATempPlayer@{ATempPlayer}!sphereVisual@{sphereVisual}}
+\index{sphereVisual@{sphereVisual}!ATempPlayer@{ATempPlayer}}
+\subsubsection{sphereVisual}
+{\footnotesize\ttfamily class U\+Static\+Mesh\+Component$\ast$ A\+Temp\+Player\+::sphere\+Visual}
+
+
+
+is set as our root component 
+
+\mbox{\label{class_a_temp_player_af91019d0131cd7d971da9eb0d0e8e061}} 
+\index{ATempPlayer@{ATempPlayer}!springArm@{springArm}}
+\index{springArm@{springArm}!ATempPlayer@{ATempPlayer}}
+\subsubsection{springArm}
+{\footnotesize\ttfamily class U\+Spring\+Arm\+Component$\ast$ A\+Temp\+Player\+::spring\+Arm}
+
+
+
+A springarm is attached to the player so it follows the player at a static range. 
+
+\mbox{\label{class_a_temp_player_ad50276ef867eacf5cbab70386d5ea4b8}} 
+\index{ATempPlayer@{ATempPlayer}!startPosition@{startPosition}}
+\index{startPosition@{startPosition}!ATempPlayer@{ATempPlayer}}
+\subsubsection{startPosition}
+{\footnotesize\ttfamily F\+Vector A\+Temp\+Player\+::start\+Position}
+
+\mbox{\label{class_a_temp_player_ab1cf056dda8db7ee2f9bde1b75677e1f}} 
+\index{ATempPlayer@{ATempPlayer}!timerHandler@{timerHandler}}
+\index{timerHandler@{timerHandler}!ATempPlayer@{ATempPlayer}}
+\subsubsection{timerHandler}
+{\footnotesize\ttfamily F\+Timer\+Handle A\+Temp\+Player\+::timer\+Handler\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_temp_player_a07c141a150f2983259fd476ea7761389}} 
+\index{ATempPlayer@{ATempPlayer}!trackGeneratorBezier@{trackGeneratorBezier}}
+\index{trackGeneratorBezier@{trackGeneratorBezier}!ATempPlayer@{ATempPlayer}}
+\subsubsection{trackGeneratorBezier}
+{\footnotesize\ttfamily \textbf{ A\+Track\+Generator\+Bezier}$\ast$ A\+Temp\+Player\+::track\+Generator\+Bezier}
+
+
+
+a pointer to the track so the player knows when it fell off and where it has to start 
+
+\mbox{\label{class_a_temp_player_a929e36a28e98591905a53ba134784bfb}} 
+\index{ATempPlayer@{ATempPlayer}!trackPivots@{trackPivots}}
+\index{trackPivots@{trackPivots}!ATempPlayer@{ATempPlayer}}
+\subsubsection{trackPivots}
+{\footnotesize\ttfamily T\+Array$<$F\+Vector$>$ A\+Temp\+Player\+::track\+Pivots\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_temp_player_ae536d0f02464b143b30834b4119a0e5d}} 
+\index{ATempPlayer@{ATempPlayer}!World@{World}}
+\index{World@{World}!ATempPlayer@{ATempPlayer}}
+\subsubsection{World}
+{\footnotesize\ttfamily U\+World$\ast$ A\+Temp\+Player\+::\+World\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_a_temp_player_aef5a8139028bd00a0030e99db5fc68e8}} 
+\index{ATempPlayer@{ATempPlayer}!zPosition@{zPosition}}
+\index{zPosition@{zPosition}!ATempPlayer@{ATempPlayer}}
+\subsubsection{zPosition}
+{\footnotesize\ttfamily float A\+Temp\+Player\+::z\+Position}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/public/\textbf{ Temp\+Player.\+h}\item 
+Penguin\+Glide/private/\textbf{ Temp\+Player.\+cpp}\end{DoxyCompactItemize}

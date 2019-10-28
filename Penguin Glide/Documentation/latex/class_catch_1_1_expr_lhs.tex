@@ -1,0 +1,151 @@
+\section{Catch\+::Expr\+Lhs$<$ LhsT $>$ Class Template Reference}
+\label{class_catch_1_1_expr_lhs}\index{Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}}
+
+
+{\ttfamily \#include $<$catch.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Expr\+Lhs} (LhsT lhs)
+\item 
+{\footnotesize template$<$typename RhsT $>$ }\\auto \textbf{ operator==} (RhsT const \&rhs) -\/$>$ \textbf{ Binary\+Expr}$<$ LhsT, RhsT const \& $>$ const
+\item 
+auto \textbf{ operator==} (bool rhs) -\/$>$ \textbf{ Binary\+Expr}$<$ LhsT, bool $>$ const
+\item 
+{\footnotesize template$<$typename RhsT $>$ }\\auto \textbf{ operator !=} (RhsT const \&rhs) -\/$>$ \textbf{ Binary\+Expr}$<$ LhsT, RhsT const \& $>$ const
+\item 
+auto \textbf{ operator !=} (bool rhs) -\/$>$ \textbf{ Binary\+Expr}$<$ LhsT, bool $>$ const
+\item 
+{\footnotesize template$<$typename RhsT $>$ }\\auto \textbf{ operator $>$} (RhsT const \&rhs) -\/$>$ \textbf{ Binary\+Expr}$<$ LhsT, RhsT const \& $>$ const
+\item 
+{\footnotesize template$<$typename RhsT $>$ }\\auto \textbf{ operator$<$} (RhsT const \&rhs) -\/$>$ \textbf{ Binary\+Expr}$<$ LhsT, RhsT const \& $>$ const
+\item 
+{\footnotesize template$<$typename RhsT $>$ }\\auto \textbf{ operator $>$=} (RhsT const \&rhs) -\/$>$ \textbf{ Binary\+Expr}$<$ LhsT, RhsT const \& $>$ const
+\item 
+{\footnotesize template$<$typename RhsT $>$ }\\auto \textbf{ operator$<$=} (RhsT const \&rhs) -\/$>$ \textbf{ Binary\+Expr}$<$ LhsT, RhsT const \& $>$ const
+\item 
+{\footnotesize template$<$typename RhsT $>$ }\\auto \textbf{ operator \&\&} (RhsT const \&) -\/$>$ \textbf{ Binary\+Expr}$<$ LhsT, RhsT const \& $>$ const
+\item 
+{\footnotesize template$<$typename RhsT $>$ }\\auto \textbf{ operator$\vert$$\vert$} (RhsT const \&) -\/$>$ \textbf{ Binary\+Expr}$<$ LhsT, RhsT const \& $>$ const
+\item 
+auto \textbf{ make\+Unary\+Expr} () const -\/$>$ \textbf{ Unary\+Expr}$<$ LhsT $>$
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+LhsT \textbf{ m\+\_\+lhs}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_catch_1_1_expr_lhs_ad22c6af1a7d6993240624d299714a479}} 
+\index{Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}!ExprLhs@{ExprLhs}}
+\index{ExprLhs@{ExprLhs}!Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}}
+\subsubsection{ExprLhs()}
+{\footnotesize\ttfamily template$<$typename LhsT$>$ \\
+\textbf{ Catch\+::\+Expr\+Lhs}$<$ LhsT $>$\+::\textbf{ Expr\+Lhs} (\begin{DoxyParamCaption}\item[{LhsT}]{lhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_catch_1_1_expr_lhs_ab68bd6d5d3ae21b7fba9010150fba95d}} 
+\index{Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}!makeUnaryExpr@{makeUnaryExpr}}
+\index{makeUnaryExpr@{makeUnaryExpr}!Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}}
+\subsubsection{makeUnaryExpr()}
+{\footnotesize\ttfamily template$<$typename LhsT$>$ \\
+auto \textbf{ Catch\+::\+Expr\+Lhs}$<$ LhsT $>$\+::make\+Unary\+Expr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ \textbf{ Unary\+Expr}$<$LhsT$>$ \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_catch_1_1_expr_lhs_af4c6b85fb0d089fcf55d961e1efed5ea}} 
+\index{Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}!operator "!=@{operator "!=}}
+\index{operator "!=@{operator "!=}!Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}}
+\subsubsection{operator "!=()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename LhsT$>$ \\
+template$<$typename RhsT $>$ \\
+auto \textbf{ Catch\+::\+Expr\+Lhs}$<$ LhsT $>$\+::operator != (\begin{DoxyParamCaption}\item[{RhsT const \&}]{rhs }\end{DoxyParamCaption}) -\/$>$ \textbf{ Binary\+Expr}$<$LhsT, RhsT const\&$>$ const \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_catch_1_1_expr_lhs_a75c4081701b1e57c32ffbdf124fe4297}} 
+\index{Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}!operator "!=@{operator "!=}}
+\index{operator "!=@{operator "!=}!Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}}
+\subsubsection{operator "!=()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename LhsT$>$ \\
+auto \textbf{ Catch\+::\+Expr\+Lhs}$<$ LhsT $>$\+::operator != (\begin{DoxyParamCaption}\item[{bool}]{rhs }\end{DoxyParamCaption}) -\/$>$ \textbf{ Binary\+Expr}$<$LhsT, bool$>$ const \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_catch_1_1_expr_lhs_ab7d8d931db0dcff46fb1d23114c738c0}} 
+\index{Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}!operator \&\&@{operator \&\&}}
+\index{operator \&\&@{operator \&\&}!Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}}
+\subsubsection{operator \&\&()}
+{\footnotesize\ttfamily template$<$typename LhsT$>$ \\
+template$<$typename RhsT $>$ \\
+auto \textbf{ Catch\+::\+Expr\+Lhs}$<$ LhsT $>$\+::operator \&\& (\begin{DoxyParamCaption}\item[{RhsT const \&}]{ }\end{DoxyParamCaption}) -\/$>$ \textbf{ Binary\+Expr}$<$LhsT, RhsT const\&$>$ const \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_catch_1_1_expr_lhs_af4f6dc7eeac031cfdc4fd4b78517e5b8}} 
+\index{Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}!operator $>$@{operator $>$}}
+\index{operator $>$@{operator $>$}!Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}}
+\subsubsection{operator $>$()}
+{\footnotesize\ttfamily template$<$typename LhsT$>$ \\
+template$<$typename RhsT $>$ \\
+auto \textbf{ Catch\+::\+Expr\+Lhs}$<$ LhsT $>$\+::operator $>$ (\begin{DoxyParamCaption}\item[{RhsT const \&}]{rhs }\end{DoxyParamCaption}) -\/$>$ \textbf{ Binary\+Expr}$<$LhsT, RhsT const\&$>$ const \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_catch_1_1_expr_lhs_a621240eaaf40e186cd96511c1d29d7b0}} 
+\index{Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}!operator $>$=@{operator $>$=}}
+\index{operator $>$=@{operator $>$=}!Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}}
+\subsubsection{operator $>$=()}
+{\footnotesize\ttfamily template$<$typename LhsT$>$ \\
+template$<$typename RhsT $>$ \\
+auto \textbf{ Catch\+::\+Expr\+Lhs}$<$ LhsT $>$\+::operator $>$= (\begin{DoxyParamCaption}\item[{RhsT const \&}]{rhs }\end{DoxyParamCaption}) -\/$>$ \textbf{ Binary\+Expr}$<$LhsT, RhsT const\&$>$ const \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_catch_1_1_expr_lhs_afd1ce21cb0be233a63cbdd7724adffea}} 
+\index{Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}}
+\subsubsection{operator$<$()}
+{\footnotesize\ttfamily template$<$typename LhsT$>$ \\
+template$<$typename RhsT $>$ \\
+auto \textbf{ Catch\+::\+Expr\+Lhs}$<$ LhsT $>$\+::operator$<$ (\begin{DoxyParamCaption}\item[{RhsT const \&}]{rhs }\end{DoxyParamCaption}) -\/$>$ \textbf{ Binary\+Expr}$<$LhsT, RhsT const\&$>$ const \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_catch_1_1_expr_lhs_a918090c28bee54222730159b56240af1}} 
+\index{Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}}
+\subsubsection{operator$<$=()}
+{\footnotesize\ttfamily template$<$typename LhsT$>$ \\
+template$<$typename RhsT $>$ \\
+auto \textbf{ Catch\+::\+Expr\+Lhs}$<$ LhsT $>$\+::operator$<$= (\begin{DoxyParamCaption}\item[{RhsT const \&}]{rhs }\end{DoxyParamCaption}) -\/$>$ \textbf{ Binary\+Expr}$<$LhsT, RhsT const\&$>$ const \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_catch_1_1_expr_lhs_af218aaf7b5b0a0ebb6b3697f2c89893d}} 
+\index{Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}}
+\subsubsection{operator==()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename LhsT$>$ \\
+template$<$typename RhsT $>$ \\
+auto \textbf{ Catch\+::\+Expr\+Lhs}$<$ LhsT $>$\+::operator== (\begin{DoxyParamCaption}\item[{RhsT const \&}]{rhs }\end{DoxyParamCaption}) -\/$>$ \textbf{ Binary\+Expr}$<$LhsT, RhsT const\&$>$ const \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_catch_1_1_expr_lhs_ab707a84abdffbdc35962a495e238d393}} 
+\index{Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}}
+\subsubsection{operator==()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename LhsT$>$ \\
+auto \textbf{ Catch\+::\+Expr\+Lhs}$<$ LhsT $>$\+::operator== (\begin{DoxyParamCaption}\item[{bool}]{rhs }\end{DoxyParamCaption}) -\/$>$ \textbf{ Binary\+Expr}$<$LhsT, bool$>$ const \hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_catch_1_1_expr_lhs_ae9b4ee923b90af22c9e39261c2f03cd3}} 
+\index{Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}!operator\texttt{"|}\texttt{"|}@{operator\texttt{"|}\texttt{"|}}}
+\index{operator\texttt{"|}\texttt{"|}@{operator\texttt{"|}\texttt{"|}}!Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}}
+\subsubsection{operator\texttt{"|}\texttt{"|}()}
+{\footnotesize\ttfamily template$<$typename LhsT$>$ \\
+template$<$typename RhsT $>$ \\
+auto \textbf{ Catch\+::\+Expr\+Lhs}$<$ LhsT $>$\+::operator$\vert$$\vert$ (\begin{DoxyParamCaption}\item[{RhsT const \&}]{ }\end{DoxyParamCaption}) -\/$>$ \textbf{ Binary\+Expr}$<$LhsT, RhsT const\&$>$ const \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_catch_1_1_expr_lhs_af290873a8427ccbdae6acb915fb7366a}} 
+\index{Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}!m\_lhs@{m\_lhs}}
+\index{m\_lhs@{m\_lhs}!Catch::ExprLhs$<$ LhsT $>$@{Catch::ExprLhs$<$ LhsT $>$}}
+\subsubsection{m\_lhs}
+{\footnotesize\ttfamily template$<$typename LhsT$>$ \\
+LhsT \textbf{ Catch\+::\+Expr\+Lhs}$<$ LhsT $>$\+::m\+\_\+lhs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/\textbf{ catch.\+hpp}\end{DoxyCompactItemize}

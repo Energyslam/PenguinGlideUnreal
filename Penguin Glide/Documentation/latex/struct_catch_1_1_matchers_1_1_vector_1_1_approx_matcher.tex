@@ -1,0 +1,112 @@
+\section{Catch\+::Matchers\+::Vector\+::Approx\+Matcher$<$ T $>$ Struct Template Reference}
+\label{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher}\index{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$@{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$}}
+
+
+{\ttfamily \#include $<$catch.\+hpp$>$}
+
+Inheritance diagram for Catch\+::Matchers\+::Vector\+::Approx\+Matcher$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.514970cm]{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Approx\+Matcher} (std\+::vector$<$ T $>$ const \&comparator)
+\item 
+bool \textbf{ match} (std\+::vector$<$ T $>$ const \&v) const override
+\item 
+std\+::string \textbf{ describe} () const override
+\item 
+{\footnotesize template$<$typename  = typename std\+::enable\+\_\+if$<$std\+::is\+\_\+constructible$<$double, T$>$\+::value$>$\+::type$>$ }\\\textbf{ Approx\+Matcher} \& \textbf{ epsilon} (T const \&new\+Epsilon)
+\item 
+{\footnotesize template$<$typename  = typename std\+::enable\+\_\+if$<$std\+::is\+\_\+constructible$<$double, T$>$\+::value$>$\+::type$>$ }\\\textbf{ Approx\+Matcher} \& \textbf{ margin} (T const \&new\+Margin)
+\item 
+{\footnotesize template$<$typename  = typename std\+::enable\+\_\+if$<$std\+::is\+\_\+constructible$<$double, T$>$\+::value$>$\+::type$>$ }\\\textbf{ Approx\+Matcher} \& \textbf{ scale} (T const \&new\+Scale)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ T $>$ const  \& \textbf{ m\+\_\+comparator}
+\item 
+\textbf{ Catch\+::\+Detail\+::\+Approx} \textbf{ approx} = \textbf{ Catch\+::\+Detail\+::\+Approx\+::custom}()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a55e8f7018104e0730eef656a61646870}} 
+\index{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$@{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$}!ApproxMatcher@{ApproxMatcher}}
+\index{ApproxMatcher@{ApproxMatcher}!Catch::Matchers::Vector::ApproxMatcher$<$ T $>$@{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$}}
+\subsubsection{ApproxMatcher()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ Catch\+::\+Matchers\+::\+Vector\+::\+Approx\+Matcher}$<$ T $>$\+::\textbf{ Approx\+Matcher} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ const \&}]{comparator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a1a9237e24c513c1448fa0624b3e14232}} 
+\index{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$@{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$}!describe@{describe}}
+\index{describe@{describe}!Catch::Matchers::Vector::ApproxMatcher$<$ T $>$@{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$}}
+\subsubsection{describe()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::string \textbf{ Catch\+::\+Matchers\+::\+Vector\+::\+Approx\+Matcher}$<$ T $>$\+::describe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Catch\+::\+Matchers\+::\+Impl\+::\+Matcher\+Untyped\+Base} \doxyref{}{p.}{class_catch_1_1_matchers_1_1_impl_1_1_matcher_untyped_base_a91d3a907dbfcbb596077df24f6e11fe2}.
+
+\mbox{\label{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a319b3a7fa9d0f401bfda5b45dafbbf5a}} 
+\index{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$@{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$}!epsilon@{epsilon}}
+\index{epsilon@{epsilon}!Catch::Matchers::Vector::ApproxMatcher$<$ T $>$@{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$}}
+\subsubsection{epsilon()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename  = typename std\+::enable\+\_\+if$<$std\+::is\+\_\+constructible$<$double, T$>$\+::value$>$\+::type$>$ \\
+\textbf{ Approx\+Matcher}\& \textbf{ Catch\+::\+Matchers\+::\+Vector\+::\+Approx\+Matcher}$<$ T $>$\+::epsilon (\begin{DoxyParamCaption}\item[{T const \&}]{new\+Epsilon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_ac3b3afb3e5a9ad9ee0516e0202e08959}} 
+\index{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$@{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$}!margin@{margin}}
+\index{margin@{margin}!Catch::Matchers::Vector::ApproxMatcher$<$ T $>$@{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$}}
+\subsubsection{margin()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename  = typename std\+::enable\+\_\+if$<$std\+::is\+\_\+constructible$<$double, T$>$\+::value$>$\+::type$>$ \\
+\textbf{ Approx\+Matcher}\& \textbf{ Catch\+::\+Matchers\+::\+Vector\+::\+Approx\+Matcher}$<$ T $>$\+::margin (\begin{DoxyParamCaption}\item[{T const \&}]{new\+Margin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a9cbd62093c4c123f1984726e1a14b270}} 
+\index{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$@{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$}!match@{match}}
+\index{match@{match}!Catch::Matchers::Vector::ApproxMatcher$<$ T $>$@{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$}}
+\subsubsection{match()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \textbf{ Catch\+::\+Matchers\+::\+Vector\+::\+Approx\+Matcher}$<$ T $>$\+::match (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ const \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+\mbox{\label{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a8658dc0564e0f80f101e4574830a3b18}} 
+\index{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$@{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$}!scale@{scale}}
+\index{scale@{scale}!Catch::Matchers::Vector::ApproxMatcher$<$ T $>$@{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$}}
+\subsubsection{scale()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename  = typename std\+::enable\+\_\+if$<$std\+::is\+\_\+constructible$<$double, T$>$\+::value$>$\+::type$>$ \\
+\textbf{ Approx\+Matcher}\& \textbf{ Catch\+::\+Matchers\+::\+Vector\+::\+Approx\+Matcher}$<$ T $>$\+::scale (\begin{DoxyParamCaption}\item[{T const \&}]{new\+Scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a5515447af58adb5dc48a5d300b9ae162}} 
+\index{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$@{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$}!approx@{approx}}
+\index{approx@{approx}!Catch::Matchers::Vector::ApproxMatcher$<$ T $>$@{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$}}
+\subsubsection{approx}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ Catch\+::\+Detail\+::\+Approx} \textbf{ Catch\+::\+Matchers\+::\+Vector\+::\+Approx\+Matcher}$<$ T $>$\+::approx = \textbf{ Catch\+::\+Detail\+::\+Approx\+::custom}()\hspace{0.3cm}{\ttfamily [mutable]}}
+
+\mbox{\label{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a1394b5913d30bdd1147e1941fc41af56}} 
+\index{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$@{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$}!m\_comparator@{m\_comparator}}
+\index{m\_comparator@{m\_comparator}!Catch::Matchers::Vector::ApproxMatcher$<$ T $>$@{Catch::Matchers::Vector::ApproxMatcher$<$ T $>$}}
+\subsubsection{m\_comparator}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$T$>$ const\& \textbf{ Catch\+::\+Matchers\+::\+Vector\+::\+Approx\+Matcher}$<$ T $>$\+::m\+\_\+comparator}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/\textbf{ catch.\+hpp}\end{DoxyCompactItemize}

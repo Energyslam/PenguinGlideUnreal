@@ -1,0 +1,105 @@
+\section{Catch\+::I\+Mutable\+Context Struct Reference}
+\label{struct_catch_1_1_i_mutable_context}\index{Catch::IMutableContext@{Catch::IMutableContext}}
+
+
+{\ttfamily \#include $<$catch.\+hpp$>$}
+
+Inheritance diagram for Catch\+::I\+Mutable\+Context\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_catch_1_1_i_mutable_context}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+I\+Mutable\+Context} ()
+\item 
+virtual void \textbf{ set\+Result\+Capture} (\textbf{ I\+Result\+Capture} $\ast$result\+Capture)=0
+\item 
+virtual void \textbf{ set\+Runner} (\textbf{ I\+Runner} $\ast$runner)=0
+\item 
+virtual void \textbf{ set\+Config} (\textbf{ I\+Config\+Ptr} const \&config)=0
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \textbf{ create\+Context} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ I\+Mutable\+Context} $\ast$ \textbf{ current\+Context}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ I\+Mutable\+Context} \& \textbf{ get\+Current\+Mutable\+Context} ()
+\item 
+void \textbf{ clean\+Up\+Context} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{struct_catch_1_1_i_mutable_context_a93f32b2ab6d0fb83637059240be799ab}} 
+\index{Catch::IMutableContext@{Catch::IMutableContext}!````~IMutableContext@{$\sim$IMutableContext}}
+\index{````~IMutableContext@{$\sim$IMutableContext}!Catch::IMutableContext@{Catch::IMutableContext}}
+\subsubsection{$\sim$IMutableContext()}
+{\footnotesize\ttfamily virtual Catch\+::\+I\+Mutable\+Context\+::$\sim$\+I\+Mutable\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{struct_catch_1_1_i_mutable_context_a17e4b3f9a9674af7e2c4f081c692a628}} 
+\index{Catch::IMutableContext@{Catch::IMutableContext}!createContext@{createContext}}
+\index{createContext@{createContext}!Catch::IMutableContext@{Catch::IMutableContext}}
+\subsubsection{createContext()}
+{\footnotesize\ttfamily static void Catch\+::\+I\+Mutable\+Context\+::create\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{struct_catch_1_1_i_mutable_context_aa81ba080fce084e9482f20338bc88531}} 
+\index{Catch::IMutableContext@{Catch::IMutableContext}!setConfig@{setConfig}}
+\index{setConfig@{setConfig}!Catch::IMutableContext@{Catch::IMutableContext}}
+\subsubsection{setConfig()}
+{\footnotesize\ttfamily virtual void Catch\+::\+I\+Mutable\+Context\+::set\+Config (\begin{DoxyParamCaption}\item[{\textbf{ I\+Config\+Ptr} const \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\label{struct_catch_1_1_i_mutable_context_a4a80afd0525b7def21bee8d9b48f2d39}} 
+\index{Catch::IMutableContext@{Catch::IMutableContext}!setResultCapture@{setResultCapture}}
+\index{setResultCapture@{setResultCapture}!Catch::IMutableContext@{Catch::IMutableContext}}
+\subsubsection{setResultCapture()}
+{\footnotesize\ttfamily virtual void Catch\+::\+I\+Mutable\+Context\+::set\+Result\+Capture (\begin{DoxyParamCaption}\item[{\textbf{ I\+Result\+Capture} $\ast$}]{result\+Capture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\label{struct_catch_1_1_i_mutable_context_af2e53b1dea4527a2587cff266a730f6e}} 
+\index{Catch::IMutableContext@{Catch::IMutableContext}!setRunner@{setRunner}}
+\index{setRunner@{setRunner}!Catch::IMutableContext@{Catch::IMutableContext}}
+\subsubsection{setRunner()}
+{\footnotesize\ttfamily virtual void Catch\+::\+I\+Mutable\+Context\+::set\+Runner (\begin{DoxyParamCaption}\item[{\textbf{ I\+Runner} $\ast$}]{runner }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\label{struct_catch_1_1_i_mutable_context_ac07cdb7d744cc8f09672d924324b55fd}} 
+\index{Catch::IMutableContext@{Catch::IMutableContext}!cleanUpContext@{cleanUpContext}}
+\index{cleanUpContext@{cleanUpContext}!Catch::IMutableContext@{Catch::IMutableContext}}
+\subsubsection{cleanUpContext}
+{\footnotesize\ttfamily void clean\+Up\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\label{struct_catch_1_1_i_mutable_context_aea4b25692aaf4397cdf630716976f6b8}} 
+\index{Catch::IMutableContext@{Catch::IMutableContext}!getCurrentMutableContext@{getCurrentMutableContext}}
+\index{getCurrentMutableContext@{getCurrentMutableContext}!Catch::IMutableContext@{Catch::IMutableContext}}
+\subsubsection{getCurrentMutableContext}
+{\footnotesize\ttfamily \textbf{ I\+Mutable\+Context}\& get\+Current\+Mutable\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{struct_catch_1_1_i_mutable_context_aca4de034d0deed74dba34f143e4e273e}} 
+\index{Catch::IMutableContext@{Catch::IMutableContext}!currentContext@{currentContext}}
+\index{currentContext@{currentContext}!Catch::IMutableContext@{Catch::IMutableContext}}
+\subsubsection{currentContext}
+{\footnotesize\ttfamily \textbf{ I\+Mutable\+Context}$\ast$ Catch\+::\+I\+Mutable\+Context\+::current\+Context\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Penguin\+Glide/\textbf{ catch.\+hpp}\end{DoxyCompactItemize}
